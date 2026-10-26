@@ -13,6 +13,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 .container{max-width:1100px;margin:0 auto;padding:0 24px}
+
 .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;background:rgba(12,26,43,.9);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}
 .navbar .container{display:flex;align-items:center;justify-content:space-between}
 .nav-logo{display:flex;align-items:center;gap:12px;color:#fff;font-weight:700;font-size:1.4rem}
@@ -23,6 +24,7 @@ img{max-width:100%;display:block}
 .nav-back:hover{color:#fff}
 .nav-cta{background:var(--orange);color:#fff;padding:8px 22px;border-radius:50px;font-weight:600;font-size:.92rem;transition:var(--transition);box-shadow:0 4px 16px rgba(232,137,52,.3)}
 .nav-cta:hover{transform:translateY(-2px);background:#f09a4a}
+
 .page-hero{padding:160px 0 80px;background:linear-gradient(160deg,#0c1a2b 0%,#1a2f44 55%,#1f3a54 100%);color:#fff;position:relative;overflow:hidden}
 .page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
 .page-hero::after{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(232,137,52,.12),transparent 65%);pointer-events:none}
@@ -33,6 +35,7 @@ img{max-width:100%;display:block}
 .page-hero h1{font-size:3rem;font-weight:800;line-height:1.15;letter-spacing:-1.5px;margin-bottom:16px}
 .page-hero h1 .orange{background:linear-gradient(135deg,var(--orange),#f5c06a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .page-hero p{font-size:1.05rem;color:rgba(255,255,255,.65);max-width:640px;line-height:1.8}
+
 .projects-list{padding:80px 0 100px}
 .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
 .project-card{display:flex;flex-direction:column;background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid rgba(12,26,43,.06);transition:var(--transition);position:relative}
@@ -54,6 +57,8 @@ img{max-width:100%;display:block}
 .card-num.p2{color:#ff9a9a}
 .card-num.p3{color:#9ecbff}
 .card-num.p4{color:var(--purple-light)}
+.card-done{position:absolute;top:16px;right:16px;display:inline-flex;align-items:center;gap:5px;font-size:.7rem;font-weight:600;padding:4px 12px;border-radius:50px;background:rgba(52,211,153,.15);border:1px solid rgba(52,211,153,.4);color:#34d399;backdrop-filter:blur(8px);z-index:1}
+.card-done::before{content:'';width:5px;height:5px;border-radius:50%;background:#34d399;box-shadow:0 0 0 2px rgba(52,211,153,.25)}
 .card-body{padding:26px 28px 28px;display:flex;flex-direction:column;flex:1}
 .card-body h3{font-size:1.2rem;font-weight:700;color:var(--dark);line-height:1.35;margin-bottom:10px;letter-spacing:-.3px}
 .card-body p{font-size:.92rem;color:var(--text-mid);line-height:1.7;margin-bottom:18px}
@@ -65,6 +70,31 @@ img{max-width:100%;display:block}
 .project-card.p4 .card-cta{color:var(--purple)}
 .card-cta i{transition:var(--transition)}
 .project-card:hover .card-cta i{transform:translateX(4px)}
+
+/* ===== 合作形式区块 ===== */
+.collab-section{padding:80px 0;background:#fff;position:relative}
+.collab-section::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60px;height:3px;background:linear-gradient(90deg,var(--orange),var(--blue));border-radius:2px;margin-top:40px}
+.collab-wrap{max-width:880px;margin:0 auto;text-align:center}
+.collab-section .section-label{display:inline-block;font-family:monospace;font-size:.75rem;font-weight:700;letter-spacing:3px;color:var(--orange);background:rgba(232,137,52,.08);padding:5px 16px;border-radius:50px;margin-bottom:20px}
+.collab-section h2{font-size:2rem;font-weight:800;letter-spacing:-1px;color:var(--dark);margin-bottom:16px}
+.collab-section h2 .orange{color:var(--orange)}
+.collab-section .collab-lead{font-size:1rem;color:var(--text-mid);line-height:1.8;max-width:680px;margin:0 auto 40px}
+.collab-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px}
+.collab-step{position:relative;padding:28px 22px;background:var(--bg);border-radius:20px;border:1px solid rgba(12,26,43,.06);text-align:left;transition:var(--transition)}
+.collab-step:hover{transform:translateY(-4px);box-shadow:var(--shadow-sm);border-color:rgba(232,137,52,.2)}
+.collab-step .step-num{font-family:monospace;font-size:.8rem;font-weight:700;letter-spacing:2px;color:var(--orange);background:rgba(232,137,52,.1);padding:3px 12px;border-radius:50px;display:inline-block;margin-bottom:14px}
+.collab-step:nth-child(2) .step-num{color:var(--blue);background:rgba(74,158,255,.1)}
+.collab-step:nth-child(3) .step-num{color:var(--green);background:rgba(52,211,153,.1)}
+.collab-step .step-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;background:rgba(232,137,52,.1);color:var(--orange);margin-bottom:14px}
+.collab-step:nth-child(2) .step-icon{background:rgba(74,158,255,.1);color:var(--blue)}
+.collab-step:nth-child(3) .step-icon{background:rgba(52,211,153,.1);color:var(--green)}
+.collab-step h3{font-size:1.05rem;font-weight:700;color:var(--dark);margin-bottom:8px}
+.collab-step p{font-size:.88rem;color:var(--text-mid);line-height:1.7}
+.collab-step p strong{color:var(--dark);font-weight:600}
+.collab-note{margin-top:36px;padding:20px 26px;background:rgba(12,26,43,.02);border-radius:16px;border-left:4px solid var(--orange);font-size:.9rem;color:var(--text-mid);line-height:1.75;text-align:left;max-width:760px;margin-left:auto;margin-right:auto}
+.collab-note i{color:var(--orange);margin-right:8px}
+.collab-note strong{color:var(--dark);font-weight:600}
+
 .cta-section{padding:90px 0;background:linear-gradient(160deg,#0c1a2b,#1a2f44);color:#fff;position:relative;overflow:hidden;text-align:center}
 .cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,rgba(232,137,52,.1),transparent 60%);pointer-events:none}
 .cta-section .container{position:relative;z-index:1}
@@ -76,15 +106,17 @@ img{max-width:100%;display:block}
 .btn-primary:hover{transform:translateY(-3px);background:#f09a4a;box-shadow:0 14px 40px rgba(232,137,52,.5)}
 .btn-secondary{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);color:#fff;padding:14px 30px;border-radius:50px;font-weight:500;border:1px solid rgba(255,255,255,.15);transition:var(--transition)}
 .btn-secondary:hover{background:rgba(255,255,255,.18);transform:translateY(-3px)}
+
 .footer{background:#08121e;color:rgba(255,255,255,.5);padding:36px 0;font-size:.85rem;text-align:center}
 .footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
 .footer .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:600}
 .footer .brand i{color:var(--orange)}
 .footer a{color:rgba(255,255,255,.5);transition:var(--transition)}
 .footer a:hover{color:#fff}
-@media(max-width:900px){.projects-grid{grid-template-columns:1fr;gap:24px}}
-@media(max-width:768px){.page-hero{padding:130px 0 60px}.page-hero h1{font-size:2.2rem}.nav-back span{display:none}.nav-logo{font-size:1.15rem}.nav-logo i{font-size:1.5rem}.projects-list{padding:60px 0 80px}.card-body{padding:22px 22px 24px}.cta-section h2{font-size:1.7rem}.footer .container{flex-direction:column}}
-@media(max-width:480px){.container{padding:0 16px}.page-hero h1{font-size:1.8rem}.nav-cta{padding:7px 16px;font-size:.85rem}.card-body h3{font-size:1.05rem}}
+
+@media(max-width:900px){.projects-grid{grid-template-columns:1fr;gap:24px}.collab-steps{grid-template-columns:1fr;gap:16px}}
+@media(max-width:768px){.page-hero{padding:130px 0 60px}.page-hero h1{font-size:2.2rem}.nav-back span{display:none}.nav-logo{font-size:1.15rem}.nav-logo i{font-size:1.5rem}.projects-list{padding:60px 0 80px}.card-body{padding:22px 22px 24px}.cta-section h2{font-size:1.7rem}.footer .container{flex-direction:column}.collab-section{padding:60px 0}.collab-section h2{font-size:1.6rem}.collab-section .collab-lead{font-size:.95rem}}
+@media(max-width:480px){.container{padding:0 16px}.page-hero h1{font-size:1.8rem}.nav-cta{padding:7px 16px;font-size:.85rem}.card-body h3{font-size:1.05rem}.collab-step{padding:22px 18px}}
 </style>
 </head>
 <body>
@@ -161,6 +193,7 @@ img{max-width:100%;display:block}
 <a href="project-2.html" class="project-card p2">
 <div class="card-visual">
 <span class="card-num p2">PROJECT 02</span>
+<span class="card-done">已完成</span>
 <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
 <defs>
 <linearGradient id="c2bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0c1a2b"/><stop offset="1" stop-color="#2a1525"/></linearGradient>
@@ -199,10 +232,10 @@ img{max-width:100%;display:block}
 </svg>
 </div>
 <div class="card-body">
-    <h3>手搓低成本「Roadster」</h3>
-    <p>用零花钱和废旧手机复现 Roadster，让它翻滚、悬浮——「飞行汽车」从概念变成一台可复现的典型教程。</p>
-    <div class="card-tags"><span>#氮气推进</span><span>#手机飞控</span><span>#低成本硬件</span></div>
-    <span class="card-cta">查看详情与加入 <i class="fas fa-arrow-right"></i></span>
+<h3>手搓低成本「Roadster」</h3>
+<p>用零花钱和废旧手机复现 Roadster 的翻滚与悬浮——「飞行汽车」从概念变成一台可复现的典型教程。</p>
+<div class="card-tags"><span>#氮气推进</span><span>#手机飞控</span><span>#低成本硬件</span></div>
+<span class="card-cta">查看详情与加入 <i class="fas fa-arrow-right"></i></span>
 </div>
 </a>
 
@@ -309,6 +342,49 @@ img{max-width:100%;display:block}
 </div>
 </a>
 
+</div>
+</div>
+</section>
+
+<!-- ===== 合作形式 ===== -->
+<section class="collab-section">
+<div class="container">
+<div class="collab-wrap">
+<span class="section-label">HOW WE COLLABORATE</span>
+<h2>合作 <span class="orange">形式</span></h2>
+<p class="collab-lead">
+    所有成员都是<strong>兼职参与</strong>，核心原则是<strong>自驱为主</strong>：
+    大家共同研讨技术方案与实现路径，形成共识后再动手；
+    每个人根据自己的时间和兴趣设计阶段性目标，按自己的节奏推进。
+</p>
+
+<div class="collab-steps">
+<div class="collab-step">
+<span class="step-num">STEP 01</span>
+<div class="step-icon"><i class="fas fa-comments"></i></div>
+<h3>共同研讨</h3>
+<p>定期在群里讨论实现方案，<strong>先形成共识，再动手</strong>。不预设角色，谁有想法谁提，谁擅长谁上。</p>
+</div>
+<div class="collab-step">
+<span class="step-num">STEP 02</span>
+<div class="step-icon"><i class="fas fa-compass"></i></div>
+<h3>自驱推进</h3>
+<p>根据各自的时间和兴趣<strong>认领阶段性目标</strong>，按自己的节奏推进。没有强制的里程碑，也没有打卡式考核。</p>
+</div>
+<div class="collab-step">
+<span class="step-num">STEP 03</span>
+<div class="step-icon"><i class="fas fa-sync-alt"></i></div>
+<h3>公开同步</h3>
+<p>进展在群里<strong>随时同步</strong>，遇到问题可以随时求助；<strong>随时可以加入或调整方向</strong>，不被绑死在某个角色上。</p>
+</div>
+</div>
+
+<div class="collab-note">
+<i class="fas fa-lightbulb"></i>
+<strong>为什么这么做？</strong>
+项目参与者大多有本职工作和生活节奏，集中式的排期和强考核反而不适合。
+把节奏交还给每个人，让兴趣驱动投入——这样的合作更可持续，也更容易在真实场景里做出成果。
+</div>
 </div>
 </div>
 </section>
