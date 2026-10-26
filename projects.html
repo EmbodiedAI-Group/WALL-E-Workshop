@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>极客项目共创 · 瓦力工坊</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--dark:#0c1a2b;--orange:#e88934;--orange-light:#f5b06b;--blue:#4a9eff;--green:#34d399;--purple:#a78bfa;--purple-light:#c4b5fd;--red:#ff6b6b;--bg:#f4f7fc;--card:#fff;--text:#1a2332;--text-mid:#3d4a5c;--text-light:#8a9bb0;--shadow-sm:0 8px 30px rgba(12,26,43,.08);--shadow-lg:0 24px 64px rgba(12,26,43,.18);--radius:24px;--transition:all .3s cubic-bezier(.25,.46,.45,.94);--font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;background:rgba(12,26,43,.9);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}
+.navbar .container{display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:12px;color:#fff;font-weight:700;font-size:1.4rem}
+.nav-logo i{font-size:1.8rem;color:var(--orange)}
+.nav-logo span{background:linear-gradient(135deg,#fff 60%,var(--orange-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-right{display:flex;align-items:center;gap:24px}
+.nav-back{color:rgba(255,255,255,.7);font-size:.92rem;display:flex;align-items:center;gap:8px;transition:var(--transition)}
+.nav-back:hover{color:#fff}
+.nav-cta{background:var(--orange);color:#fff;padding:8px 22px;border-radius:50px;font-weight:600;font-size:.92rem;transition:var(--transition);box-shadow:0 4px 16px rgba(232,137,52,.3)}
+.nav-cta:hover{transform:translateY(-2px);background:#f09a4a}
+.page-hero{padding:160px 0 80px;background:linear-gradient(160deg,#0c1a2b 0%,#1a2f44 55%,#1f3a54 100%);color:#fff;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.page-hero::after{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(232,137,52,.12),transparent 65%);pointer-events:none}
+.page-hero .container{position:relative;z-index:2}
+.breadcrumb{font-size:.85rem;color:rgba(255,255,255,.45);margin-bottom:24px}
+.breadcrumb a{color:rgba(255,255,255,.7);transition:var(--transition)}
+.breadcrumb a:hover{color:var(--orange)}
+.page-hero h1{font-size:3rem;font-weight:800;line-height:1.15;letter-spacing:-1.5px;margin-bottom:16px}
+.page-hero h1 .orange{background:linear-gradient(135deg,var(--orange),#f5c06a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.page-hero p{font-size:1.05rem;color:rgba(255,255,255,.65);max-width:640px;line-height:1.8}
+.projects-list{padding:80px 0 100px}
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+.project-card{display:flex;flex-direction:column;background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid rgba(12,26,43,.06);transition:var(--transition);position:relative}
+.project-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.project-card.p1:hover{border-color:rgba(232,137,52,.28)}
+.project-card.p2:hover{border-color:rgba(255,107,107,.28)}
+.project-card.p3:hover{border-color:rgba(74,158,255,.28)}
+.project-card.p4:hover{border-color:rgba(167,139,250,.3)}
+.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;z-index:2;opacity:0;transition:var(--transition)}
+.project-card:hover::before{opacity:1}
+.project-card.p1::before{background:linear-gradient(90deg,var(--orange),#f5b06b)}
+.project-card.p2::before{background:linear-gradient(90deg,#ff6b6b,#ff9a76)}
+.project-card.p3::before{background:linear-gradient(90deg,var(--blue),#7ec4ff)}
+.project-card.p4::before{background:linear-gradient(90deg,var(--purple),#c4b5fd)}
+.card-visual{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--dark)}
+.card-visual svg{width:100%;height:100%;display:block}
+.card-num{position:absolute;top:16px;left:16px;font-family:monospace;font-size:.78rem;font-weight:700;letter-spacing:2px;padding:5px 14px;border-radius:50px;color:#fff;background:rgba(12,26,43,.7);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);z-index:1}
+.card-num.p1{color:var(--orange-light)}
+.card-num.p2{color:#ff9a9a}
+.card-num.p3{color:#9ecbff}
+.card-num.p4{color:var(--purple-light)}
+.card-body{padding:26px 28px 28px;display:flex;flex-direction:column;flex:1}
+.card-body h3{font-size:1.2rem;font-weight:700;color:var(--dark);line-height:1.35;margin-bottom:10px;letter-spacing:-.3px}
+.card-body p{font-size:.92rem;color:var(--text-mid);line-height:1.7;margin-bottom:18px}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
+.card-tags span{font-size:.72rem;font-weight:500;color:var(--text-mid);background:rgba(12,26,43,.04);padding:3px 11px;border-radius:50px;border:1px solid rgba(12,26,43,.06)}
+.card-cta{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-size:.92rem;font-weight:600;color:var(--orange);transition:var(--transition)}
+.project-card.p2 .card-cta{color:var(--red)}
+.project-card.p3 .card-cta{color:var(--blue)}
+.project-card.p4 .card-cta{color:var(--purple)}
+.card-cta i{transition:var(--transition)}
+.project-card:hover .card-cta i{transform:translateX(4px)}
+.cta-section{padding:90px 0;background:linear-gradient(160deg,#0c1a2b,#1a2f44);color:#fff;position:relative;overflow:hidden;text-align:center}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,rgba(232,137,52,.1),transparent 60%);pointer-events:none}
+.cta-section .container{position:relative;z-index:1}
+.cta-section h2{font-size:2.2rem;font-weight:800;letter-spacing:-1px;margin-bottom:14px}
+.cta-section h2 .orange{color:var(--orange)}
+.cta-section p{color:rgba(255,255,255,.65);font-size:1rem;max-width:560px;margin:0 auto 32px;line-height:1.8}
+.cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--orange);color:#fff;padding:14px 34px;border-radius:50px;font-weight:600;transition:var(--transition);box-shadow:0 8px 28px rgba(232,137,52,.35)}
+.btn-primary:hover{transform:translateY(-3px);background:#f09a4a;box-shadow:0 14px 40px rgba(232,137,52,.5)}
+.btn-secondary{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);color:#fff;padding:14px 30px;border-radius:50px;font-weight:500;border:1px solid rgba(255,255,255,.15);transition:var(--transition)}
+.btn-secondary:hover{background:rgba(255,255,255,.18);transform:translateY(-3px)}
+.footer{background:#08121e;color:rgba(255,255,255,.5);padding:36px 0;font-size:.85rem;text-align:center}
+.footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:600}
+.footer .brand i{color:var(--orange)}
+.footer a{color:rgba(255,255,255,.5);transition:var(--transition)}
+.footer a:hover{color:#fff}
+@media(max-width:900px){.projects-grid{grid-template-columns:1fr;gap:24px}}
+@media(max-width:768px){.page-hero{padding:130px 0 60px}.page-hero h1{font-size:2.2rem}.nav-back span{display:none}.nav-logo{font-size:1.15rem}.nav-logo i{font-size:1.5rem}.projects-list{padding:60px 0 80px}.card-body{padding:22px 22px 24px}.cta-section h2{font-size:1.7rem}.footer .container{flex-direction:column}}
+@media(max-width:480px){.container{padding:0 16px}.page-hero h1{font-size:1.8rem}.nav-cta{padding:7px 16px;font-size:.85rem}.card-body h3{font-size:1.05rem}}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+<div class="container">
+<a href="index.html" class="nav-logo"><i class="fas fa-robot"></i><span>瓦力工坊</span></a>
+<div class="nav-right">
+<a href="index.html" class="nav-back"><i class="fas fa-arrow-left"></i> <span>返回首页</span></a>
+<a href="index.html#join" class="nav-cta">加入社群</a>
+</div>
+</div>
+</nav>
+
+<section class="page-hero">
+<div class="container">
+<div class="breadcrumb"><a href="index.html">首页</a> / 极客项目共创</div>
+<h1>极客项目 <span class="orange">共创</span></h1>
+<p>我们相信最好的学习发生在动手之中。这里汇集社区伙伴正在推进的真实项目——从工厂产线、低成本硬件，到数据众包与移动操作平台。点击任意项目，查看详情、进展与加入方式。</p>
+</div>
+</section>
+
+<section class="projects-list">
+<div class="container">
+<div class="projects-grid">
+
+<a href="project-1.html" class="project-card p1">
+<div class="card-visual">
+<span class="card-num p1">PROJECT 01</span>
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs>
+<linearGradient id="c1bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0c1a2b"/><stop offset="1" stop-color="#1a2f44"/></linearGradient>
+<linearGradient id="c1armL" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#4a9eff"/><stop offset="1" stop-color="#7ec4ff"/></linearGradient>
+<linearGradient id="c1box" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e88934"/><stop offset="1" stop-color="#c26f24"/></linearGradient>
+<pattern id="c1grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0 L0 0 0 40" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/></pattern>
+</defs>
+<rect width="600" height="400" fill="url(#c1bg)"/>
+<rect width="600" height="400" fill="url(#c1grid)"/>
+<line x1="0" y1="340" x2="600" y2="340" stroke="rgba(74,158,255,0.2)" stroke-width="2"/>
+<circle cx="300" cy="230" r="110" fill="none" stroke="rgba(232,137,52,0.15)" stroke-width="1.5" stroke-dasharray="4 8"/>
+<g>
+<rect x="50" y="300" width="80" height="40" rx="6" fill="#1a2f44" stroke="#4a9eff" stroke-width="1.5"/>
+<circle cx="90" cy="300" r="20" fill="#0c1a2b" stroke="#4a9eff" stroke-width="2"/>
+<circle cx="90" cy="300" r="6" fill="#4a9eff"/>
+<line x1="90" y1="300" x2="200" y2="200" stroke="url(#c1armL)" stroke-width="18" stroke-linecap="round"/>
+<circle cx="200" cy="200" r="16" fill="#0c1a2b" stroke="#4a9eff" stroke-width="2"/>
+<line x1="200" y1="200" x2="268" y2="228" stroke="url(#c1armL)" stroke-width="13" stroke-linecap="round"/>
+<path d="M268 218 L292 218 M268 238 L292 238" stroke="#4a9eff" stroke-width="6" stroke-linecap="round"/>
+</g>
+<g>
+<rect x="470" y="300" width="80" height="40" rx="6" fill="#1a2f44" stroke="#e88934" stroke-width="1.5"/>
+<circle cx="510" cy="300" r="20" fill="#0c1a2b" stroke="#e88934" stroke-width="2"/>
+<circle cx="510" cy="300" r="6" fill="#e88934"/>
+<line x1="510" y1="300" x2="400" y2="200" stroke="#e88934" stroke-width="18" stroke-linecap="round"/>
+<circle cx="400" cy="200" r="16" fill="#0c1a2b" stroke="#e88934" stroke-width="2"/>
+<line x1="400" y1="200" x2="332" y2="228" stroke="#e88934" stroke-width="13" stroke-linecap="round"/>
+<path d="M332 218 L308 218 M332 238 L308 238" stroke="#e88934" stroke-width="6" stroke-linecap="round"/>
+</g>
+<rect x="240" y="170" width="120" height="120" rx="6" fill="url(#c1box)"/>
+<rect x="240" y="170" width="120" height="24" rx="6" fill="rgba(255,255,255,0.15)"/>
+<line x1="300" y1="194" x2="300" y2="290" stroke="rgba(12,26,43,0.25)" stroke-width="2"/>
+<circle cx="300" cy="120" r="4" fill="#34d399"><animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/></circle>
+<text x="312" y="124" fill="rgba(52,211,153,0.8)" font-size="12" font-family="monospace">TARGET LOCKED</text>
+</svg>
+</div>
+<div class="card-body">
+<h3>将工业场景双臂打包装任务成功率推向 100%</h3>
+<p>让双臂机器人在真实产线上稳定完成柔性打包装任务，从 82.4% 到 99.2%，想把最后一步也拿下来。</p>
+<div class="card-tags"><span>#ROS 2</span><span>#Diffusion Policy</span><span>#双臂协同</span></div>
+<span class="card-cta">查看详情与加入 <i class="fas fa-arrow-right"></i></span>
+</div>
+</a>
+
+<a href="project-2.html" class="project-card p2">
+<div class="card-visual">
+<span class="card-num p2">PROJECT 02</span>
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs>
+<linearGradient id="c2bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0c1a2b"/><stop offset="1" stop-color="#2a1525"/></linearGradient>
+<linearGradient id="c2car" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff5252"/><stop offset="1" stop-color="#b91c1c"/></linearGradient>
+<linearGradient id="c2flame" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d0e8ff" stop-opacity="0.9"/><stop offset="1" stop-color="#7ec4ff" stop-opacity="0"/></linearGradient>
+<linearGradient id="c2bottle" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5b6b85"/><stop offset="1" stop-color="#2a3345"/></linearGradient>
+</defs>
+<rect width="600" height="400" fill="url(#c2bg)"/>
+<ellipse cx="300" cy="170" rx="200" ry="85" fill="none" stroke="rgba(255,107,107,0.2)" stroke-width="2" stroke-dasharray="8 8"/>
+<ellipse cx="300" cy="315" rx="130" ry="14" fill="#7ec4ff" opacity="0.1"/>
+<g transform="translate(300 225)">
+<rect x="-80" y="55" width="22" height="55" fill="url(#c2flame)" opacity="0.75"/>
+<rect x="-28" y="55" width="22" height="55" fill="url(#c2flame)" opacity="0.75"/>
+<rect x="6" y="55" width="22" height="55" fill="url(#c2flame)" opacity="0.75"/>
+<rect x="58" y="55" width="22" height="55" fill="url(#c2flame)" opacity="0.75"/>
+<rect x="-92" y="32" width="18" height="24" rx="6" fill="url(#c2bottle)" stroke="#8ea2c0" stroke-width="1"/>
+<rect x="-40" y="32" width="18" height="24" rx="6" fill="url(#c2bottle)" stroke="#8ea2c0" stroke-width="1"/>
+<rect x="-2" y="32" width="18" height="24" rx="6" fill="url(#c2bottle)" stroke="#8ea2c0" stroke-width="1"/>
+<rect x="50" y="32" width="18" height="24" rx="6" fill="url(#c2bottle)" stroke="#8ea2c0" stroke-width="1"/>
+<path d="M-115 18 Q-110 -2 -85 -10 L-55 -18 Q-30 -24 0 -24 Q30 -24 55 -18 L85 -10 Q110 -2 115 18 Q95 28 70 28 L-70 28 Q-95 28 -115 18 Z" fill="url(#c2car)" stroke="#ff6b6b" stroke-width="1.2"/>
+<path d="M-52 -12 L-20 -18 L20 -18 L52 -12 L40 -4 L-40 -4 Z" fill="#1a2332" opacity="0.9"/>
+<circle cx="-65" cy="28" r="18" fill="#0c1a2b" stroke="#444" stroke-width="2.5"/>
+<circle cx="-65" cy="28" r="7" fill="#555"/>
+<circle cx="65" cy="28" r="18" fill="#0c1a2b" stroke="#444" stroke-width="2.5"/>
+<circle cx="65" cy="28" r="7" fill="#555"/>
+<g transform="translate(0 -30)">
+<rect x="-18" y="-14" width="36" height="22" rx="4" fill="#111722" stroke="#4a9eff" stroke-width="1.2"/>
+<rect x="-14" y="-10" width="28" height="14" rx="2" fill="#1a2f44"/>
+<circle cx="-8" cy="-4" r="1.5" fill="#4a9eff"/>
+<circle cx="0" cy="-4" r="1.5" fill="#34d399"/>
+<circle cx="8" cy="-4" r="1.5" fill="#e88934"/>
+</g>
+</g>
+<circle cx="290" cy="120" r="4" fill="#34d399"><animate attributeName="opacity" values="1;0.3;1" dur="1.6s" repeatCount="indefinite"/></circle>
+<text x="302" y="124" fill="rgba(52,211,153,0.85)" font-size="12" font-family="monospace">HOVER OK · 4.2s</text>
+</svg>
+</div>
+<div class="card-body">
+    <h3>手搓低成本「Roadster」</h3>
+    <p>用零花钱和废旧手机复现 Roadster，让它翻滚、悬浮——「飞行汽车」从概念变成一台可复现的典型教程。</p>
+    <div class="card-tags"><span>#氮气推进</span><span>#手机飞控</span><span>#低成本硬件</span></div>
+    <span class="card-cta">查看详情与加入 <i class="fas fa-arrow-right"></i></span>
+</div>
+</a>
+
+<a href="project-3.html" class="project-card p3">
+<div class="card-visual">
+<span class="card-num p3">PROJECT 03</span>
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs>
+<linearGradient id="c3bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0c1a2b"/><stop offset="1" stop-color="#122a44"/></linearGradient>
+<linearGradient id="c3lens" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a9eff"/><stop offset="1" stop-color="#7ec4ff"/></linearGradient>
+<linearGradient id="c3beam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4a9eff" stop-opacity="0.35"/><stop offset="1" stop-color="#4a9eff" stop-opacity="0"/></linearGradient>
+</defs>
+<rect width="600" height="400" fill="url(#c3bg)"/>
+<path d="M300 200 L560 100 L560 300 Z" fill="url(#c3beam)"/>
+<g transform="translate(300 200)">
+<path d="M-95 0 Q-140 0 -145 -10 Q-140 15 -95 15" fill="none" stroke="#3a4a63" stroke-width="10" stroke-linecap="round"/>
+<path d="M95 0 Q140 0 145 -10 Q140 15 95 15" fill="none" stroke="#3a4a63" stroke-width="10" stroke-linecap="round"/>
+<rect x="-95" y="-30" width="190" height="60" rx="26" fill="#1a2f44" stroke="#4a9eff" stroke-width="2"/>
+<rect x="-82" y="-20" width="66" height="40" rx="16" fill="#0c1a2b" stroke="#7ec4ff" stroke-width="1.2"/>
+<rect x="16" y="-20" width="66" height="40" rx="16" fill="#0c1a2b" stroke="#7ec4ff" stroke-width="1.2"/>
+<circle cx="-49" cy="0" r="11" fill="url(#c3lens)" opacity="0.85"/>
+<circle cx="-49" cy="0" r="5" fill="#0c1a2b"/>
+<circle cx="49" cy="0" r="11" fill="url(#c3lens)" opacity="0.85"/>
+<circle cx="49" cy="0" r="5" fill="#0c1a2b"/>
+<circle cx="-82" cy="-22" r="3" fill="#ff3333"><animate attributeName="opacity" values="1;0.2;1" dur="1.2s" repeatCount="indefinite"/></circle>
+<text x="-70" y="-18" fill="rgba(255,80,80,0.9)" font-size="8" font-family="monospace">REC</text>
+<line x1="-95" y1="0" x2="-160" y2="-40" stroke="rgba(74,158,255,0.3)" stroke-width="1" stroke-dasharray="3 4"/>
+<line x1="95" y1="-10" x2="160" y2="-50" stroke="rgba(74,158,255,0.3)" stroke-width="1" stroke-dasharray="3 4"/>
+</g>
+<g opacity="0.85"><circle cx="130" cy="150" r="18" fill="#1a2f44" stroke="#4a9eff" stroke-width="1.5"/><circle cx="130" cy="146" r="5" fill="#4a9eff"/><path d="M122 162 Q130 154 138 162" fill="#4a9eff"/></g>
+<g opacity="0.7"><circle cx="455" cy="155" r="16" fill="#1a2f44" stroke="#7ec4ff" stroke-width="1.5"/><circle cx="455" cy="152" r="4" fill="#7ec4ff"/><path d="M448 166 Q455 159 462 166" fill="#7ec4ff"/></g>
+<circle cx="300" cy="310" r="4" fill="#4a9eff"><animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/></circle>
+<text x="312" y="314" fill="rgba(74,158,255,0.85)" font-size="12" font-family="monospace">EGO STREAM · REC</text>
+</svg>
+</div>
+<div class="card-body">
+<h3>EGO 数据众包：让全社区教机器人做事</h3>
+<p>社区出想法、我们发 EGO 设备、伙伴日常顺手采集第一视角数据，让机器人仅从 EGO 数据学会技能并部署到真实场景。</p>
+<div class="card-tags"><span>#EGO 采集</span><span>#数据众包</span><span>#模仿学习</span></div>
+<span class="card-cta">查看详情与加入 <i class="fas fa-arrow-right"></i></span>
+</div>
+</a>
+
+<a href="project-4.html" class="project-card p4">
+<div class="card-visual">
+<span class="card-num p4">PROJECT 04</span>
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs>
+<linearGradient id="c4bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0c1a2b"/><stop offset="1" stop-color="#241a3f"/></linearGradient>
+<linearGradient id="c4arm" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#c4b5fd"/></linearGradient>
+<linearGradient id="c4body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a1f4a"/><stop offset="1" stop-color="#181030"/></linearGradient>
+<pattern id="c4grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0 L0 0 0 40" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/></pattern>
+</defs>
+<rect width="600" height="400" fill="url(#c4bg)"/>
+<rect width="600" height="400" fill="url(#c4grid)"/>
+<line x1="0" y1="330" x2="600" y2="330" stroke="rgba(167,139,250,0.22)" stroke-width="2"/>
+<ellipse cx="300" cy="332" rx="140" ry="12" fill="#a78bfa" opacity="0.08"/>
+<g stroke-linecap="round" stroke-linejoin="round" fill="none">
+<path d="M222 262 L204 296 L196 326" stroke="#5c4d80" stroke-width="11"/>
+<path d="M378 262 L396 296 L404 326" stroke="#5c4d80" stroke-width="11"/>
+<circle cx="196" cy="326" r="6" fill="#5c4d80" stroke="none"/>
+<circle cx="404" cy="326" r="6" fill="#5c4d80" stroke="none"/>
+</g>
+<g stroke-linecap="round" stroke-linejoin="round" fill="none">
+<path d="M248 272 L232 302 L224 330" stroke="#7c6aa8" stroke-width="14"/>
+<path d="M352 272 L368 302 L376 330" stroke="#7c6aa8" stroke-width="14"/>
+<circle cx="224" cy="330" r="7" fill="#8b78c0" stroke="none"/>
+<circle cx="376" cy="330" r="7" fill="#8b78c0" stroke="none"/>
+</g>
+<rect x="228" y="200" width="144" height="76" rx="14" fill="url(#c4body)" stroke="#a78bfa" stroke-width="2"/>
+<rect x="240" y="212" width="120" height="10" rx="4" fill="rgba(167,139,250,0.15)"/>
+<text x="300" y="248" fill="rgba(196,181,253,0.55)" font-size="11" font-family="monospace" text-anchor="middle">ORTHRUS</text>
+<circle cx="300" cy="264" r="3" fill="#34d399"><animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/></circle>
+<g>
+<rect x="272" y="172" width="56" height="30" rx="8" fill="#1a1530" stroke="#a78bfa" stroke-width="1.6"/>
+<circle cx="288" cy="187" r="5" fill="#c4b5fd"/>
+<circle cx="288" cy="187" r="2" fill="#0c1a2b"/>
+<circle cx="312" cy="187" r="5" fill="#c4b5fd"/>
+<circle cx="312" cy="187" r="2" fill="#0c1a2b"/>
+</g>
+<g stroke-linecap="round" stroke-linejoin="round" fill="none">
+<line x1="238" y1="212" x2="180" y2="168" stroke="url(#c4arm)" stroke-width="16"/>
+<circle cx="180" cy="168" r="13" fill="#0c1a2b" stroke="#a78bfa" stroke-width="2"/>
+<line x1="180" y1="168" x2="132" y2="196" stroke="url(#c4arm)" stroke-width="12"/>
+<circle cx="132" cy="196" r="9" fill="#0c1a2b" stroke="#a78bfa" stroke-width="1.6"/>
+<path d="M122 190 L110 186 M122 202 L110 206" stroke="#c4b5fd" stroke-width="4.5"/>
+</g>
+<g stroke-linecap="round" stroke-linejoin="round" fill="none">
+<line x1="362" y1="212" x2="420" y2="168" stroke="url(#c4arm)" stroke-width="16"/>
+<circle cx="420" cy="168" r="13" fill="#0c1a2b" stroke="#a78bfa" stroke-width="2"/>
+<line x1="420" y1="168" x2="468" y2="196" stroke="url(#c4arm)" stroke-width="12"/>
+<circle cx="468" cy="196" r="9" fill="#0c1a2b" stroke="#a78bfa" stroke-width="1.6"/>
+<path d="M478 190 L490 186 M478 202 L490 206" stroke="#c4b5fd" stroke-width="4.5"/>
+</g>
+<circle cx="300" cy="130" r="4" fill="#34d399"><animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/></circle>
+<text x="312" y="134" fill="rgba(52,211,153,0.85)" font-size="12" font-family="monospace">BALANCE · STABLE</text>
+</svg>
+</div>
+<div class="card-body">
+<h3>Orthrus 双臂机器狗：稳定的移动操作平台</h3>
+<p>四足底盘提供越障能力，双臂提供操作能力——难点是走路时末端还得稳。目标是成为真正能用的移动操作平台。</p>
+<div class="card-tags"><span>#四足机器人</span><span>#WBC</span><span>#移动操作</span></div>
+<span class="card-cta">查看详情与加入 <i class="fas fa-arrow-right"></i></span>
+</div>
+</a>
+
+</div>
+</div>
+</section>
+
+<section class="cta-section">
+<div class="container">
+<h2>有想法？<span class="orange">一起做出来</span></h2>
+<p>极客项目共创欢迎任何愿意动手的伙伴。无论你擅长机械、电子、算法、结构，还是只是有一堆想法想找地方实现，这里都欢迎你。</p>
+<div class="cta-buttons">
+<a href="index.html#join" class="btn-primary"><i class="fas fa-rocket"></i> 加入社群</a>
+<a href="index.html#activities" class="btn-secondary"><i class="fas fa-compass"></i> 了解社区活动</a>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<div class="brand"><i class="fas fa-robot"></i> 瓦力工坊</div>
+<div><a href="index.html">返回首页</a> &nbsp;|&nbsp; &copy; 2026 瓦力工坊</div>
+</div>
+</footer>
+
+</body>
+</html>
