@@ -14,6 +14,7 @@ a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 .container{max-width:1100px;margin:0 auto;padding:0 24px}
 
+/* 导航 */
 .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;background:rgba(12,26,43,.9);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}
 .navbar .container{display:flex;align-items:center;justify-content:space-between}
 .nav-logo{display:flex;align-items:center;gap:12px;color:#fff;font-weight:700;font-size:1.4rem}
@@ -25,6 +26,7 @@ img{max-width:100%;display:block}
 .nav-cta{background:var(--orange);color:#fff;padding:8px 22px;border-radius:50px;font-weight:600;font-size:.92rem;transition:var(--transition);box-shadow:0 4px 16px rgba(232,137,52,.3)}
 .nav-cta:hover{transform:translateY(-2px);background:#f09a4a}
 
+/* Hero */
 .page-hero{padding:160px 0 80px;background:linear-gradient(160deg,#0c1a2b 0%,#1a2f44 55%,#1f3a54 100%);color:#fff;position:relative;overflow:hidden}
 .page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
 .page-hero::after{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(232,137,52,.12),transparent 65%);pointer-events:none}
@@ -36,6 +38,7 @@ img{max-width:100%;display:block}
 .page-hero h1 .orange{background:linear-gradient(135deg,var(--orange),#f5c06a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .page-hero p{font-size:1.05rem;color:rgba(255,255,255,.65);max-width:640px;line-height:1.8}
 
+/* 项目列表 */
 .projects-list{padding:80px 0 100px}
 .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
 .project-card{display:flex;flex-direction:column;background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid rgba(12,26,43,.06);transition:var(--transition);position:relative}
@@ -71,7 +74,7 @@ img{max-width:100%;display:block}
 .card-cta i{transition:var(--transition)}
 .project-card:hover .card-cta i{transform:translateX(4px)}
 
-/* ===== 合作形式区块 ===== */
+/* 合作形式 */
 .collab-section{padding:80px 0;background:#fff;position:relative}
 .collab-section::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60px;height:3px;background:linear-gradient(90deg,var(--orange),var(--blue));border-radius:2px;margin-top:40px}
 .collab-wrap{max-width:880px;margin:0 auto;text-align:center}
@@ -91,10 +94,19 @@ img{max-width:100%;display:block}
 .collab-step h3{font-size:1.05rem;font-weight:700;color:var(--dark);margin-bottom:8px}
 .collab-step p{font-size:.88rem;color:var(--text-mid);line-height:1.7}
 .collab-step p strong{color:var(--dark);font-weight:600}
-.collab-note{margin-top:36px;padding:20px 26px;background:rgba(12,26,43,.02);border-radius:16px;border-left:4px solid var(--orange);font-size:.9rem;color:var(--text-mid);line-height:1.75;text-align:left;max-width:760px;margin-left:auto;margin-right:auto}
+
+/* 每周例会 */
+.collab-weekly{display:flex;align-items:flex-start;gap:18px;margin-top:24px;padding:22px 26px;background:rgba(74,158,255,.05);border-radius:16px;border-left:4px solid var(--blue);text-align:left}
+.collab-weekly-icon{flex-shrink:0;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--blue);background:rgba(74,158,255,.12)}
+.collab-weekly-body h3{font-size:1.05rem;font-weight:700;color:var(--dark);margin-bottom:6px}
+.collab-weekly-body p{font-size:.88rem;color:var(--text-mid);line-height:1.7;margin:0}
+.collab-weekly-body p strong{color:var(--dark);font-weight:600}
+
+.collab-note{margin-top:24px;padding:20px 26px;background:rgba(12,26,43,.02);border-radius:16px;border-left:4px solid var(--orange);font-size:.9rem;color:var(--text-mid);line-height:1.75;text-align:left;max-width:760px;margin-left:auto;margin-right:auto}
 .collab-note i{color:var(--orange);margin-right:8px}
 .collab-note strong{color:var(--dark);font-weight:600}
 
+/* CTA */
 .cta-section{padding:90px 0;background:linear-gradient(160deg,#0c1a2b,#1a2f44);color:#fff;position:relative;overflow:hidden;text-align:center}
 .cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,rgba(232,137,52,.1),transparent 60%);pointer-events:none}
 .cta-section .container{position:relative;z-index:1}
@@ -107,6 +119,7 @@ img{max-width:100%;display:block}
 .btn-secondary{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);color:#fff;padding:14px 30px;border-radius:50px;font-weight:500;border:1px solid rgba(255,255,255,.15);transition:var(--transition)}
 .btn-secondary:hover{background:rgba(255,255,255,.18);transform:translateY(-3px)}
 
+/* 页脚 */
 .footer{background:#08121e;color:rgba(255,255,255,.5);padding:36px 0;font-size:.85rem;text-align:center}
 .footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
 .footer .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:600}
@@ -114,9 +127,10 @@ img{max-width:100%;display:block}
 .footer a{color:rgba(255,255,255,.5);transition:var(--transition)}
 .footer a:hover{color:#fff}
 
+/* 响应式 */
 @media(max-width:900px){.projects-grid{grid-template-columns:1fr;gap:24px}.collab-steps{grid-template-columns:1fr;gap:16px}}
 @media(max-width:768px){.page-hero{padding:130px 0 60px}.page-hero h1{font-size:2.2rem}.nav-back span{display:none}.nav-logo{font-size:1.15rem}.nav-logo i{font-size:1.5rem}.projects-list{padding:60px 0 80px}.card-body{padding:22px 22px 24px}.cta-section h2{font-size:1.7rem}.footer .container{flex-direction:column}.collab-section{padding:60px 0}.collab-section h2{font-size:1.6rem}.collab-section .collab-lead{font-size:.95rem}}
-@media(max-width:480px){.container{padding:0 16px}.page-hero h1{font-size:1.8rem}.nav-cta{padding:7px 16px;font-size:.85rem}.card-body h3{font-size:1.05rem}.collab-step{padding:22px 18px}}
+@media(max-width:480px){.container{padding:0 16px}.page-hero h1{font-size:1.8rem}.nav-cta{padding:7px 16px;font-size:.85rem}.card-body h3{font-size:1.05rem}.collab-step{padding:22px 18px}.collab-weekly{flex-direction:column;gap:12px;padding:20px 18px}}
 </style>
 </head>
 <body>
@@ -193,6 +207,7 @@ img{max-width:100%;display:block}
 <a href="project-2.html" class="project-card p2">
 <div class="card-visual">
 <span class="card-num p2">PROJECT 02</span>
+<span class="card-done">已完成</span>
 <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
 <defs>
 <linearGradient id="c2bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0c1a2b"/><stop offset="1" stop-color="#2a1525"/></linearGradient>
@@ -345,7 +360,6 @@ img{max-width:100%;display:block}
 </div>
 </section>
 
-<!-- ===== 合作形式 ===== -->
 <section class="collab-section">
 <div class="container">
 <div class="collab-wrap">
@@ -375,6 +389,17 @@ img{max-width:100%;display:block}
 <div class="step-icon"><i class="fas fa-sync-alt"></i></div>
 <h3>公开同步</h3>
 <p>进展在群里<strong>随时同步</strong>，遇到问题可以随时求助；<strong>随时可以加入或调整方向</strong>，不被绑死在某个角色上。</p>
+</div>
+</div>
+
+<div class="collab-weekly">
+<div class="collab-weekly-icon"><i class="fas fa-calendar-check"></i></div>
+<div class="collab-weekly-body">
+<h3>每周例会 · 同步进展、解决卡点</h3>
+<p>
+    为了顺利推进项目，<strong>每周灵活安排一次例会</strong>：同步各自进展、集中讨论卡点和难点，
+    把共识对齐到下一周的行动上。时间按大家的空闲协调，不强制全员出席，会议纪要会同步到群里。
+</p>
 </div>
 </div>
 
