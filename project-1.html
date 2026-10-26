@@ -44,7 +44,8 @@ img{max-width:100%;display:block}
 .project-detail{padding:40px 0 100px}
 .detail-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:start}
 .visual{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);background:var(--dark);position:sticky;top:100px}
-.visual svg{width:100%;height:auto;display:block}
+.visual svg,
+.visual img{width:100%;height:auto;display:block}
 .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px;padding:22px;background:var(--card);border-radius:18px;box-shadow:var(--shadow-sm);border:1px solid rgba(12,26,43,.04)}
 .metric .value{font-size:1.55rem;font-weight:800;letter-spacing:-.8px;color:var(--dark);line-height:1.1}
 .metric .value .accent{color:var(--orange)}
@@ -113,51 +114,7 @@ img{max-width:100%;display:block}
 <div class="container">
 <div class="detail-grid">
 <div class="visual">
-<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="双臂机器人打包装示意图">
-<defs>
-<linearGradient id="p1bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0c1a2b"/><stop offset="1" stop-color="#1a2f44"/></linearGradient>
-<linearGradient id="p1armL" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#4a9eff"/><stop offset="1" stop-color="#7ec4ff"/></linearGradient>
-<linearGradient id="p1box" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e88934"/><stop offset="1" stop-color="#c26f24"/></linearGradient>
-<pattern id="p1grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0 L0 0 0 40" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/></pattern>
-</defs>
-<rect width="600" height="400" fill="url(#p1bg)"/>
-<rect width="600" height="400" fill="url(#p1grid)"/>
-<line x1="0" y1="340" x2="600" y2="340" stroke="rgba(74,158,255,0.2)" stroke-width="2"/>
-<line x1="0" y1="345" x2="600" y2="345" stroke="rgba(74,158,255,0.08)" stroke-width="1"/>
-<circle cx="300" cy="230" r="110" fill="none" stroke="rgba(232,137,52,0.15)" stroke-width="1.5" stroke-dasharray="4 8"/>
-<circle cx="300" cy="230" r="80" fill="none" stroke="rgba(232,137,52,0.1)" stroke-width="1" stroke-dasharray="2 6"/>
-<g>
-<rect x="50" y="300" width="80" height="40" rx="6" fill="#1a2f44" stroke="#4a9eff" stroke-width="1.5"/>
-<circle cx="90" cy="300" r="20" fill="#0c1a2b" stroke="#4a9eff" stroke-width="2"/>
-<circle cx="90" cy="300" r="6" fill="#4a9eff"/>
-<line x1="90" y1="300" x2="200" y2="200" stroke="url(#p1armL)" stroke-width="18" stroke-linecap="round"/>
-<circle cx="200" cy="200" r="16" fill="#0c1a2b" stroke="#4a9eff" stroke-width="2"/>
-<circle cx="200" cy="200" r="5" fill="#4a9eff"/>
-<line x1="200" y1="200" x2="268" y2="228" stroke="url(#p1armL)" stroke-width="13" stroke-linecap="round"/>
-<path d="M268 218 L292 218 M268 238 L292 238" stroke="#4a9eff" stroke-width="6" stroke-linecap="round"/>
-</g>
-<g>
-<rect x="470" y="300" width="80" height="40" rx="6" fill="#1a2f44" stroke="#e88934" stroke-width="1.5"/>
-<circle cx="510" cy="300" r="20" fill="#0c1a2b" stroke="#e88934" stroke-width="2"/>
-<circle cx="510" cy="300" r="6" fill="#e88934"/>
-<line x1="510" y1="300" x2="400" y2="200" stroke="#e88934" stroke-width="18" stroke-linecap="round"/>
-<circle cx="400" cy="200" r="16" fill="#0c1a2b" stroke="#e88934" stroke-width="2"/>
-<circle cx="400" cy="200" r="5" fill="#e88934"/>
-<line x1="400" y1="200" x2="332" y2="228" stroke="#e88934" stroke-width="13" stroke-linecap="round"/>
-<path d="M332 218 L308 218 M332 238 L308 238" stroke="#e88934" stroke-width="6" stroke-linecap="round"/>
-</g>
-<g>
-<rect x="240" y="170" width="120" height="120" rx="6" fill="url(#p1box)"/>
-<rect x="240" y="170" width="120" height="24" rx="6" fill="rgba(255,255,255,0.15)"/>
-<line x1="300" y1="194" x2="300" y2="290" stroke="rgba(12,26,43,0.25)" stroke-width="2"/>
-<line x1="252" y1="210" x2="288" y2="210" stroke="rgba(12,26,43,0.3)" stroke-width="3" stroke-linecap="round"/>
-<line x1="252" y1="220" x2="278" y2="220" stroke="rgba(12,26,43,0.2)" stroke-width="3" stroke-linecap="round"/>
-</g>
-<circle cx="300" cy="120" r="4" fill="#34d399"><animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/></circle>
-<text x="312" y="124" fill="rgba(52,211,153,0.8)" font-size="11" font-family="monospace">TARGET LOCKED</text>
-<text x="30" y="40" fill="rgba(255,255,255,0.5)" font-size="12" font-family="monospace">DUAL-ARM PACKING</text>
-<text x="30" y="58" fill="rgba(74,158,255,0.85)" font-size="11" font-family="monospace">SUCCESS RATE → 100%</text>
-</svg>
+<img src="assets/project-1.jpg" alt="双臂机器人打包装示意图" />
 </div>
 <div class="content">
 <div class="metrics">

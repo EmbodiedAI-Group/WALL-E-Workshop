@@ -23,23 +23,20 @@ img{max-width:100%;display:block}
 .nav-back:hover{color:#fff}
 .nav-cta{background:var(--orange);color:#fff;padding:8px 22px;border-radius:50px;font-weight:600;font-size:.92rem;transition:var(--transition);box-shadow:0 4px 16px rgba(232,137,52,.3)}
 .nav-cta:hover{transform:translateY(-2px);background:#f09a4a}
-
 .page-hero{padding:160px 0 110px;background:linear-gradient(160deg,#0c1a2b,#1a2f44 55%,#1f3a54);color:#fff;position:relative;overflow:hidden}
 .page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
-.page-hero::after{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(52,211,153,.14),transparent 65%);pointer-events:none}
+.page-hero::after{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(74,158,255,.14),transparent 65%);pointer-events:none}
 .page-hero .container{position:relative;z-index:2}
 .breadcrumb{font-size:.85rem;color:rgba(255,255,255,.45);margin-bottom:24px}
 .breadcrumb a{color:rgba(255,255,255,.7);transition:var(--transition)}
 .breadcrumb a:hover{color:var(--orange)}
-
 .badge-row{display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap}
 .project-badge{display:inline-block;font-family:monospace;font-size:.75rem;font-weight:700;letter-spacing:2px;color:#ff6b6b;background:rgba(255,107,107,.15);padding:4px 14px;border-radius:50px}
-.done-badge{display:inline-flex;align-items:center;gap:6px;font-size:.75rem;font-weight:600;color:#34d399;background:rgba(52,211,153,.15);border:1px solid rgba(52,211,153,.4);padding:4px 14px;border-radius:50px}
-.done-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:#34d399;box-shadow:0 0 0 3px rgba(52,211,153,.25)}
-
+.progress-badge{display:inline-flex;align-items:center;gap:6px;font-size:.75rem;font-weight:600;color:var(--blue);background:rgba(74,158,255,.15);border:1px solid rgba(74,158,255,.4);padding:4px 14px;border-radius:50px}
+.progress-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 3px rgba(74,158,255,.25);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 .page-hero h1{font-size:2.8rem;font-weight:800;line-height:1.2;letter-spacing:-1.2px;margin-bottom:16px;max-width:820px}
 .page-hero .lead{font-size:1.05rem;color:rgba(255,255,255,.7);line-height:1.75;max-width:720px}
-
 .join-hero{position:relative;z-index:3;margin-top:-50px;padding-bottom:50px}
 .join-card{display:flex;align-items:center;gap:32px;max-width:720px;margin:0 auto;padding:28px 36px;background:var(--card);border-radius:var(--radius);box-shadow:0 24px 64px rgba(12,26,43,.15);border-top:4px solid #ff6b6b}
 .qr-box{flex-shrink:0;width:140px;height:140px;padding:8px;background:#fff;border-radius:14px;box-shadow:0 6px 20px rgba(12,26,43,.1);display:flex;align-items:center;justify-content:center}
@@ -48,17 +45,15 @@ img{max-width:100%;display:block}
 .join-info p{font-size:.92rem;color:var(--text-mid);line-height:1.6;margin-bottom:14px}
 .join-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:50px;background:#ff6b6b;color:#fff;font-weight:600;font-size:.88rem;transition:var(--transition);box-shadow:0 6px 18px rgba(255,107,107,.3)}
 .join-btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
-
 .project-detail{padding:40px 0 100px}
 .detail-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:start}
 .visual{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);background:var(--dark);position:sticky;top:100px}
-.visual svg{width:100%;height:auto;display:block}
-
+.visual svg,
+.visual img{width:100%;height:auto;display:block}
 .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px;padding:22px;background:var(--card);border-radius:18px;box-shadow:var(--shadow-sm);border:1px solid rgba(12,26,43,.04)}
 .metric .value{font-size:1.55rem;font-weight:800;letter-spacing:-.8px;color:var(--dark);line-height:1.1}
 .metric .value .accent{color:var(--orange)}
 .metric .label{font-size:.75rem;color:var(--text-light);margin-top:4px}
-
 .content h4{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:#ff6b6b;margin:24px 0 10px}
 .content h4:first-child{margin-top:0}
 .content p{font-size:.92rem;color:var(--text-mid);line-height:1.75;margin-bottom:10px}
@@ -66,24 +61,20 @@ img{max-width:100%;display:block}
 .content ul li{position:relative;padding:5px 0 5px 22px;font-size:.9rem;color:var(--text-mid);line-height:1.65}
 .content ul li::before{content:'';position:absolute;left:4px;top:13px;width:6px;height:6px;border-radius:50%;background:#ff6b6b}
 .content ul li strong{color:var(--dark);font-weight:600}
-
 .progress li{display:flex;align-items:flex-start;gap:10px;font-size:.9rem;padding:5px 0;line-height:1.6}
 .progress li i{margin-top:4px;font-size:.85rem}
 .progress li.done i{color:#34d399}
 .progress li.doing i{color:var(--blue)}
 .progress li.goal i{color:var(--orange)}
 .progress li::before{display:none}
-
 .tech-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;padding-top:22px;border-top:1px solid rgba(12,26,43,.06)}
 .tech-tags span{font-size:.78rem;font-weight:500;color:var(--text-mid);background:rgba(12,26,43,.04);padding:5px 14px;border-radius:50px;border:1px solid rgba(12,26,43,.06)}
-
 .footer{background:#08121e;color:rgba(255,255,255,.5);padding:36px 0;font-size:.85rem;text-align:center}
 .footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
 .footer .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:600}
 .footer .brand i{color:var(--orange)}
 .footer a{color:rgba(255,255,255,.5);transition:var(--transition)}
 .footer a:hover{color:#fff}
-
 @media(max-width:1024px){.page-hero{padding:130px 0 90px}.page-hero h1{font-size:2.2rem}.detail-grid{grid-template-columns:1fr;gap:40px}.visual{position:static;max-width:600px;margin:0 auto}}
 @media(max-width:768px){.nav-back span{display:none}.nav-logo{font-size:1.15rem}.nav-logo i{font-size:1.5rem}.page-hero h1{font-size:1.8rem}.join-card{flex-direction:column;text-align:center;padding:24px 20px}.qr-box{width:120px;height:120px}.metrics{grid-template-columns:1fr 1fr;padding:18px}.metric .value{font-size:1.3rem}.footer .container{flex-direction:column}}
 @media(max-width:480px){.container{padding:0 16px}.page-hero h1{font-size:1.55rem}.join-card{padding:20px 16px}.qr-box{width:110px;height:110px}.nav-cta{padding:7px 16px;font-size:.85rem}}
@@ -106,9 +97,10 @@ img{max-width:100%;display:block}
 <div class="breadcrumb"><a href="index.html">首页</a> / <a href="projects.html">极客项目共创</a> / 项目 02</div>
 <div class="badge-row">
 <span class="project-badge">PROJECT 02</span>
+<span class="progress-badge">进行中 · 翻滚与悬停已跑通</span>
 </div>
 <h1>手搓低成本「Roadster」</h1>
-<p class="lead">利用零花钱和废旧的手机成功复现了 Roadster 的翻滚与悬浮——从发布会上的一句设想，变成了一台能起飞、能翻滚、能悬停的模型车，并整理为引领"飞行汽车"的典型复现教程。</p>
+<p class="lead">利用零花钱和废旧的手机复现 Roadster 的翻滚与悬浮——从发布会上的一句设想，做成了一台能起飞、能翻滚、能悬停的模型车，并正在整理为引领"飞行汽车"的典型复现教程。</p>
 </div>
 </section>
 
@@ -129,74 +121,18 @@ img{max-width:100%;display:block}
 <div class="container">
 <div class="detail-grid">
 <div class="visual">
-<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="特斯拉 Roadster 悬停与翻滚示意图">
-<defs>
-<linearGradient id="p2bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0c1a2b"/><stop offset="1" stop-color="#2a1525"/></linearGradient>
-<linearGradient id="p2car" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff5252"/><stop offset="1" stop-color="#b91c1c"/></linearGradient>
-<linearGradient id="p2flame" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d0e8ff" stop-opacity="0.9"/><stop offset="1" stop-color="#7ec4ff" stop-opacity="0"/></linearGradient>
-<linearGradient id="p2bottle" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5b6b85"/><stop offset="1" stop-color="#2a3345"/></linearGradient>
-<pattern id="p2grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0 L0 0 0 40" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/></pattern>
-</defs>
-<rect width="600" height="400" fill="url(#p2bg)"/>
-<rect width="600" height="400" fill="url(#p2grid)"/>
-<ellipse cx="300" cy="170" rx="200" ry="85" fill="none" stroke="rgba(255,107,107,0.2)" stroke-width="2" stroke-dasharray="8 8"/>
-<path d="M470 130 Q495 170 470 210" fill="none" stroke="rgba(232,137,52,0.5)" stroke-width="2" stroke-linecap="round"/>
-<polygon points="470,210 462,200 478,200" fill="rgba(232,137,52,0.6)"/>
-<ellipse cx="300" cy="315" rx="130" ry="14" fill="#7ec4ff" opacity="0.1"/>
-<ellipse cx="300" cy="315" rx="85" ry="8" fill="#7ec4ff" opacity="0.22"/>
-<g transform="translate(300 225)">
-<rect x="-80" y="55" width="22" height="55" fill="url(#p2flame)" opacity="0.75"/>
-<rect x="-28" y="55" width="22" height="55" fill="url(#p2flame)" opacity="0.75"/>
-<rect x="6" y="55" width="22" height="55" fill="url(#p2flame)" opacity="0.75"/>
-<rect x="58" y="55" width="22" height="55" fill="url(#p2flame)" opacity="0.75"/>
-<g>
-<rect x="-92" y="32" width="18" height="24" rx="6" fill="url(#p2bottle)" stroke="#8ea2c0" stroke-width="1"/>
-<rect x="-90" y="28" width="14" height="6" rx="2" fill="#8ea2c0"/>
-<text x="-89" y="48" fill="#c9d7ee" font-size="7" font-family="monospace">N2</text>
-<rect x="-40" y="32" width="18" height="24" rx="6" fill="url(#p2bottle)" stroke="#8ea2c0" stroke-width="1"/>
-<rect x="-38" y="28" width="14" height="6" rx="2" fill="#8ea2c0"/>
-<text x="-37" y="48" fill="#c9d7ee" font-size="7" font-family="monospace">N2</text>
-<rect x="-2" y="32" width="18" height="24" rx="6" fill="url(#p2bottle)" stroke="#8ea2c0" stroke-width="1"/>
-<rect x="0" y="28" width="14" height="6" rx="2" fill="#8ea2c0"/>
-<text x="1" y="48" fill="#c9d7ee" font-size="7" font-family="monospace">N2</text>
-<rect x="50" y="32" width="18" height="24" rx="6" fill="url(#p2bottle)" stroke="#8ea2c0" stroke-width="1"/>
-<rect x="52" y="28" width="14" height="6" rx="2" fill="#8ea2c0"/>
-<text x="53" y="48" fill="#c9d7ee" font-size="7" font-family="monospace">N2</text>
-</g>
-<path d="M-115 18 Q-110 -2 -85 -10 L-55 -18 Q-30 -24 0 -24 Q30 -24 55 -18 L85 -10 Q110 -2 115 18 Q95 28 70 28 L-70 28 Q-95 28 -115 18 Z" fill="url(#p2car)" stroke="#ff6b6b" stroke-width="1.2"/>
-<path d="M-52 -12 L-20 -18 L20 -18 L52 -12 L40 -4 L-40 -4 Z" fill="#1a2332" opacity="0.9"/>
-<ellipse cx="-105" cy="12" rx="6" ry="3" fill="#fff8e0"/>
-<ellipse cx="105" cy="12" rx="6" ry="3" fill="#ff3333"/>
-<circle cx="-65" cy="28" r="18" fill="#0c1a2b" stroke="#444" stroke-width="2.5"/>
-<circle cx="-65" cy="28" r="7" fill="#555"/>
-<circle cx="-65" cy="28" r="3" fill="#888"/>
-<circle cx="65" cy="28" r="18" fill="#0c1a2b" stroke="#444" stroke-width="2.5"/>
-<circle cx="65" cy="28" r="7" fill="#555"/>
-<circle cx="65" cy="28" r="3" fill="#888"/>
-<g transform="translate(0 -30)">
-<rect x="-18" y="-14" width="36" height="22" rx="4" fill="#111722" stroke="#4a9eff" stroke-width="1.2"/>
-<rect x="-14" y="-10" width="28" height="14" rx="2" fill="#1a2f44"/>
-<circle cx="-8" cy="-4" r="1.5" fill="#4a9eff"/>
-<circle cx="0" cy="-4" r="1.5" fill="#34d399"/>
-<circle cx="8" cy="-4" r="1.5" fill="#e88934"/>
-<text x="21" y="-4" fill="rgba(74,158,255,0.85)" font-size="8" font-family="monospace">PHONE FC</text>
-</g>
-</g>
-<circle cx="290" cy="120" r="4" fill="#34d399"><animate attributeName="opacity" values="1;0.3;1" dur="1.6s" repeatCount="indefinite"/></circle>
-<text x="302" y="124" fill="rgba(52,211,153,0.85)" font-size="11" font-family="monospace">HOVER OK · 4.2s</text>
-<text x="30" y="40" fill="rgba(255,255,255,0.5)" font-size="12" font-family="monospace">ROADSTER HOVER &amp; FLIP</text>
-<text x="30" y="58" fill="rgba(52,211,153,0.85)" font-size="11" font-family="monospace">DEMO COMPLETED ✓</text>
-</svg>
+<img src="assets/project-2.jpg" alt="特斯拉 Roadster 悬停与翻滚示意图" />
 </div>
 <div class="content">
 <div class="metrics">
 <div class="metric"><div class="value">&lt; 1<span class="accent">万</span></div><div class="label">整机 BOM 成本</div></div>
 <div class="metric"><div class="value">4.2<span class="accent">s</span></div><div class="label">单次最长悬停</div></div>
+<div class="metric"><div class="value">1<span class="accent">圈</span></div><div class="label">已实现翻滚</div></div>
 </div>
 
 <h4>项目背景</h4>
 <p>特斯拉 Roadster 结合SpaceX 冷气推进器，人类首次将高大上的航天推进技术与电动车技术结合起来，让车实现了「悬停」和「翻滚」，令人印象深刻——我们也将利用零花钱和废旧的手机，使其变成了一台能起飞、能翻滚、能悬浮的比例模型。</p>
-<p>不是造一台真车，而是用一台小模型回答：车体垂直起降在工程上到底难在哪？姿态控制、动力冗余、结构强度，最终沉淀出高价值STEM教程。</p>
+<p>不是造一台真车，而是用一台小模型回答：车体垂直起降在工程上到底难在哪？姿态控制、动力冗余、结构强度，最终沉淀出高价值STEM教程，启发更多人的“飞天梦”。</p>
 
 <h4>技术路线</h4>
 <ul>
@@ -233,16 +169,19 @@ img{max-width:100%;display:block}
 <li><strong>翻滚过冲</strong>：单圈翻滚后角速度衰减要预留裕量，否则落地姿态修正不及</li>
 </ul>
 
-
-<h4>当前进展</h4>
+<h4>阶段性成果</h4>
 <ul class="progress">
-<li class="done"><i class="fas fa-circle-check"></i> 方案研讨、团队招募中 </li>
+<li class="done"><i class="fas fa-circle-check"></i> 悬停稳定实现，姿态误差 &lt; 3°</li>
 </ul>
 
 <h4>后续计划</h4>
 <ul class="progress">
+<li class="done"><i class="fas fa-circle-check"></i> 翻滚动作完成并稳定复现</li>
+<li class="done"><i class="fas fa-circle-check"></i> 手机 APP + 转接板链路跑通，USB-OTG 延迟实测 &lt; </li>
+<li class="done"><i class="fas fa-circle-check"></i> 完整飞行演示跑通，可作为复现教程的基准</li>
 <li class="doing"><i class="fas fa-circle-notch"></i> 配方清单、飞控代码、踩坑记录整理成完整教程开源</li>
 <li class="doing"><i class="fas fa-circle-notch"></i> 自动起降与连续多圈翻滚的进阶玩法</li>
+<li class="goal"><i class="fas fa-flag"></i> 目标：让更多伙伴按教程复现出自己的一台</li>
 </ul>
 
 <div class="tech-tags">

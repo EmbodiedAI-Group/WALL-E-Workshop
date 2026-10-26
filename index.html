@@ -13,6 +13,7 @@ body{font-family:var(--font-sans);background:var(--bg-light);color:var(--text-da
 a{text-decoration:none;color:inherit}
 img{max-width:100%}
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
+
 .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;background:rgba(12,26,43,.85);backdrop-filter:blur(18px) saturate(1.2);border-bottom:1px solid rgba(255,255,255,.06);transition:var(--transition)}
 .navbar.scrolled{background:rgba(12,26,43,.96);box-shadow:0 4px 30px rgba(0,0,0,.3)}
 .navbar .container{display:flex;align-items:center;justify-content:space-between}
@@ -96,7 +97,8 @@ img{max-width:100%}
 .project-mini-list li a{display:flex;align-items:center;gap:12px;padding:8px 10px;border-radius:var(--radius-sm);border:1px solid rgba(12,26,43,.06);background:rgba(12,26,43,.02);transition:var(--transition)}
 .project-mini-list li a:hover{background:rgba(52,211,153,.06);border-color:rgba(52,211,153,.28);transform:translateX(3px)}
 .mini-thumb{width:56px;height:44px;flex-shrink:0;border-radius:8px;overflow:hidden;background:var(--primary-dark);display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(12,26,43,.15)}
-.mini-thumb svg{width:100%;height:100%;display:block}
+.mini-thumb svg,
+.mini-thumb img{width:100%;height:100%;display:block;object-fit:cover}
 .mini-text{flex:1;min-width:0;display:flex;flex-direction:column}
 .mini-text strong{font-size:.86rem;font-weight:600;color:var(--primary-dark);line-height:1.35;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .mini-text em{font-style:normal;font-size:.72rem;color:var(--text-light);margin-top:2px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
@@ -277,7 +279,6 @@ img{max-width:100%}
 </ul>
 <a href="#" class="card-link">探索知识库 <i class="fas fa-arrow-right"></i></a>
 </div>
-
 <div class="activity-card">
 <div class="icon-wrap"><i class="fas fa-users"></i></div>
 <h3>🎯 专家论坛</h3>
@@ -289,7 +290,6 @@ img{max-width:100%}
 </ul>
 <a href="#" class="card-link">查看论坛 <i class="fas fa-arrow-right"></i></a>
 </div>
-
 <div class="activity-card">
 <div class="icon-wrap"><i class="fas fa-cogs"></i></div>
 <h3>🛠 极客项目共创</h3>
@@ -297,30 +297,28 @@ img{max-width:100%}
 <ul class="project-mini-list">
 <li>
 <a href="project-1.html">
-<span class="mini-thumb"><svg viewBox="0 0 112 88" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="mt1bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0c1a2b"/><stop offset="1" stop-color="#1a2f44"/></linearGradient><linearGradient id="mt1box" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e88934"/><stop offset="1" stop-color="#c26f24"/></linearGradient></defs><rect width="112" height="88" fill="url(#mt1bg)"/><line x1="0" y1="72" x2="112" y2="72" stroke="rgba(74,158,255,0.25)" stroke-width="1.5"/><line x1="12" y1="70" x2="36" y2="46" stroke="#4a9eff" stroke-width="5" stroke-linecap="round"/><line x1="36" y1="46" x2="50" y2="54" stroke="#4a9eff" stroke-width="4" stroke-linecap="round"/><line x1="100" y1="70" x2="76" y2="46" stroke="#e88934" stroke-width="5" stroke-linecap="round"/><line x1="76" y1="46" x2="62" y2="54" stroke="#e88934" stroke-width="4" stroke-linecap="round"/><rect x="42" y="34" width="28" height="28" rx="2" fill="url(#mt1box)"/><line x1="56" y1="38" x2="56" y2="58" stroke="rgba(12,26,43,0.3)" stroke-width="1.5"/></svg></span>
+<span class="mini-thumb"><img src="assets/project-1.jpg" alt="双臂打包装" /></span>
 <span class="mini-text"><strong>双臂打包装成功率 → 100%</strong><em>工业场景 · 双臂协同</em></span>
 <i class="fas fa-arrow-right"></i>
 </a>
 </li>
 <li>
 <a href="project-2.html">
-<span class="mini-thumb"><svg viewBox="0 0 112 88" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="mt2bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0c1a2b"/><stop offset="1" stop-color="#2a1525"/></linearGradient><linearGradient id="mt2car" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff5252"/><stop offset="1" stop-color="#b91c1c"/></linearGradient><linearGradient id="mt2jet" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d0e8ff" stop-opacity="0.9"/><stop offset="1" stop-color="#7ec4ff" stop-opacity="0"/></linearGradient></defs><rect width="112" height="88" fill="url(#mt2bg)"/><ellipse cx="56" cy="40" rx="42" ry="22" fill="none" stroke="rgba(255,107,107,0.22)" stroke-width="1.5" stroke-dasharray="4 4"/><rect x="30" y="56" width="6" height="18" fill="url(#mt2jet)"/><rect x="44" y="56" width="6" height="18" fill="url(#mt2jet)"/><rect x="62" y="56" width="6" height="18" fill="url(#mt2jet)"/><rect x="76" y="56" width="6" height="18" fill="url(#mt2jet)"/><path d="M18 48 Q22 38 40 36 L52 34 L60 34 L72 36 Q90 38 94 48 Q84 54 68 54 L44 54 Q28 54 18 48 Z" fill="url(#mt2car)" stroke="#ff6b6b" stroke-width="1"/><circle cx="36" cy="54" r="6" fill="#0c1a2b" stroke="#555" stroke-width="1.5"/><circle cx="76" cy="54" r="6" fill="#0c1a2b" stroke="#555" stroke-width="1.5"/><rect x="50" y="26" width="14" height="8" rx="2" fill="#111722" stroke="#4a9eff" stroke-width="1"/></svg></span>
-<span class="mini-text">
-    <strong>手搓低成本「Roadster」</strong>
-    <em>零花钱 + 废旧手机 · 翻滚悬浮 · 提炼成经典教程 </em>
-</span><i class="fas fa-arrow-right"></i>
+<span class="mini-thumb"><img src="assets/project-2.jpg" alt="Roadster" /></span>
+<span class="mini-text"><strong>手搓低成本「Roadster」</strong><em>零花钱 + 废旧手机 · 翻滚悬浮</em></span>
+<i class="fas fa-arrow-right"></i>
 </a>
 </li>
 <li>
 <a href="project-3.html">
-<span class="mini-thumb"><svg viewBox="0 0 112 88" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="mt3bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0c1a2b"/><stop offset="1" stop-color="#122a44"/></linearGradient><linearGradient id="mt3beam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4a9eff" stop-opacity="0.4"/><stop offset="1" stop-color="#4a9eff" stop-opacity="0"/></linearGradient></defs><rect width="112" height="88" fill="url(#mt3bg)"/><path d="M56 44 L108 22 L108 66 Z" fill="url(#mt3beam)"/><path d="M20 44 Q10 44 8 40 Q10 50 20 50" fill="none" stroke="#3a4a63" stroke-width="5" stroke-linecap="round"/><path d="M92 44 Q102 44 104 40 Q102 50 92 50" fill="none" stroke="#3a4a63" stroke-width="5" stroke-linecap="round"/><rect x="20" y="34" width="72" height="22" rx="11" fill="#1a2f44" stroke="#4a9eff" stroke-width="1.2"/><rect x="26" y="38" width="26" height="14" rx="7" fill="#0c1a2b" stroke="#7ec4ff" stroke-width="0.8"/><rect x="60" y="38" width="26" height="14" rx="7" fill="#0c1a2b" stroke="#7ec4ff" stroke-width="0.8"/><circle cx="39" cy="45" r="4" fill="#7ec4ff"/><circle cx="73" cy="45" r="4" fill="#7ec4ff"/><circle cx="24" cy="36" r="1.8" fill="#ff3333"/></svg></span>
+<span class="mini-thumb"><img src="assets/project-3.jpg" alt="EGO 数据众包" /></span>
 <span class="mini-text"><strong>EGO 数据众包</strong><em>集思广益出想法，社区出设备，一起教机器人干活</em></span>
 <i class="fas fa-arrow-right"></i>
 </a>
 </li>
 <li>
 <a href="project-4.html">
-<span class="mini-thumb"><svg viewBox="0 0 112 88" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="mt4bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0c1a2b"/><stop offset="1" stop-color="#1a1530"/></linearGradient><linearGradient id="mt4arm" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#c4b5fd"/></linearGradient></defs><rect width="112" height="88" fill="url(#mt4bg)"/><line x1="0" y1="76" x2="112" y2="76" stroke="rgba(167,139,250,0.25)" stroke-width="1.5"/><path d="M40 56 L34 68 L30 74" stroke="#7c6aa8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M72 56 L78 68 L82 74" stroke="#7c6aa8" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M46 54 L42 64 L40 70" stroke="#5c4d80" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M66 54 L70 64 L72 70" stroke="#5c4d80" stroke-width="2.5" fill="none" stroke-linecap="round"/><rect x="38" y="44" width="36" height="14" rx="4" fill="#1a1530" stroke="#a78bfa" stroke-width="1.4"/><rect x="50" y="34" width="12" height="9" rx="2.5" fill="#1a1530" stroke="#a78bfa" stroke-width="1.2"/><circle cx="53" cy="38.5" r="1.2" fill="#c4b5fd"/><circle cx="59" cy="38.5" r="1.2" fill="#c4b5fd"/><path d="M40 46 L28 36 L20 42" stroke="url(#mt4arm)" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M72 46 L84 36 L92 42" stroke="url(#mt4arm)" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="42" r="2.2" fill="#c4b5fd"/><circle cx="92" cy="42" r="2.2" fill="#c4b5fd"/></svg></span>
+<span class="mini-thumb"><img src="assets/project-4.jpg" alt="Orthrus 双臂机器狗" /></span>
 <span class="mini-text"><strong>Orthrus 双臂机器狗</strong><em>四足底盘 + 双臂 · 稳定的移动操作平台</em></span>
 <i class="fas fa-arrow-right"></i>
 </a>
@@ -438,7 +436,6 @@ const toggle=document.getElementById('navToggle');
 const links=document.getElementById('navLinks');
 toggle.addEventListener('click',function(){this.classList.toggle('active');links.classList.toggle('active');});
 document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',function(){toggle.classList.remove('active');links.classList.remove('active');}));
-
 function animateNumbers(){
 document.querySelectorAll('.stats-grid .number').forEach(stat=>{
 const t=stat.textContent;
@@ -447,9 +444,7 @@ const n=parseInt(t.replace(/[,+]/g,''));
 if(!isNaN(n)){
 let c=0;const step=Math.max(1,Math.floor(n/60));
 const iv=setInterval(()=>{c+=step;if(c>=n){c=n;clearInterval(iv);}stat.textContent=c.toLocaleString()+'+';},20);
-}
-}
-});
+}}});
 }
 const statsSection=document.querySelector('.stats-section');
 if(statsSection){

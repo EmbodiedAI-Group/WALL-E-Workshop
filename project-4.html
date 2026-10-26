@@ -44,7 +44,8 @@ img{max-width:100%;display:block}
 .project-detail{padding:40px 0 100px}
 .detail-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:start}
 .visual{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);background:var(--dark);position:sticky;top:100px}
-.visual svg{width:100%;height:auto;display:block}
+.visual svg,
+.visual img{width:100%;height:auto;display:block}
 .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px;padding:22px;background:var(--card);border-radius:18px;box-shadow:var(--shadow-sm);border:1px solid rgba(12,26,43,.04)}
 .metric .value{font-size:1.55rem;font-weight:800;letter-spacing:-.8px;color:var(--dark);line-height:1.1}
 .metric .value .accent{color:var(--purple)}
@@ -113,68 +114,7 @@ img{max-width:100%;display:block}
 <div class="container">
 <div class="detail-grid">
 <div class="visual">
-<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Orthrus 双臂机器狗示意图">
-<defs>
-<linearGradient id="p4bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0c1a2b"/><stop offset="1" stop-color="#241a3f"/></linearGradient>
-<linearGradient id="p4arm" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#c4b5fd"/></linearGradient>
-<linearGradient id="p4body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a1f4a"/><stop offset="1" stop-color="#181030"/></linearGradient>
-<pattern id="p4grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0 L0 0 0 40" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/></pattern>
-</defs>
-<rect width="600" height="400" fill="url(#p4bg)"/>
-<rect width="600" height="400" fill="url(#p4grid)"/>
-<line x1="0" y1="330" x2="600" y2="330" stroke="rgba(167,139,250,0.22)" stroke-width="2"/>
-<line x1="0" y1="336" x2="600" y2="336" stroke="rgba(167,139,250,0.08)" stroke-width="1"/>
-<ellipse cx="300" cy="332" rx="140" ry="12" fill="#a78bfa" opacity="0.08"/>
-<ellipse cx="300" cy="332" rx="90" ry="7" fill="#a78bfa" opacity="0.14"/>
-<g stroke-linecap="round" stroke-linejoin="round" fill="none">
-<path d="M222 262 L204 296 L196 326" stroke="#5c4d80" stroke-width="11"/>
-<path d="M378 262 L396 296 L404 326" stroke="#5c4d80" stroke-width="11"/>
-<circle cx="196" cy="326" r="6" fill="#5c4d80" stroke="none"/>
-<circle cx="404" cy="326" r="6" fill="#5c4d80" stroke="none"/>
-</g>
-<g stroke-linecap="round" stroke-linejoin="round" fill="none">
-<path d="M248 272 L232 302 L224 330" stroke="#7c6aa8" stroke-width="14"/>
-<path d="M352 272 L368 302 L376 330" stroke="#7c6aa8" stroke-width="14"/>
-<circle cx="224" cy="330" r="7" fill="#8b78c0" stroke="none"/>
-<circle cx="376" cy="330" r="7" fill="#8b78c0" stroke="none"/>
-</g>
-<rect x="228" y="200" width="144" height="76" rx="14" fill="url(#p4body)" stroke="#a78bfa" stroke-width="2"/>
-<rect x="240" y="212" width="120" height="10" rx="4" fill="rgba(167,139,250,0.15)"/>
-<text x="300" y="248" fill="rgba(196,181,253,0.55)" font-size="11" font-family="monospace" text-anchor="middle">ORTHRUS</text>
-<circle cx="300" cy="264" r="3" fill="#34d399"><animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/></circle>
-<g>
-<rect x="272" y="172" width="56" height="30" rx="8" fill="#1a1530" stroke="#a78bfa" stroke-width="1.6"/>
-<circle cx="288" cy="187" r="5" fill="#c4b5fd"/>
-<circle cx="288" cy="187" r="2" fill="#0c1a2b"/>
-<circle cx="312" cy="187" r="5" fill="#c4b5fd"/>
-<circle cx="312" cy="187" r="2" fill="#0c1a2b"/>
-<rect x="294" y="178" width="12" height="4" rx="2" fill="rgba(167,139,250,0.4)"/>
-</g>
-<g stroke-linecap="round" stroke-linejoin="round" fill="none">
-<line x1="238" y1="212" x2="180" y2="168" stroke="url(#p4arm)" stroke-width="16"/>
-<circle cx="180" cy="168" r="13" fill="#0c1a2b" stroke="#a78bfa" stroke-width="2"/>
-<circle cx="180" cy="168" r="4" fill="#c4b5fd"/>
-<line x1="180" y1="168" x2="132" y2="196" stroke="url(#p4arm)" stroke-width="12"/>
-<circle cx="132" cy="196" r="9" fill="#0c1a2b" stroke="#a78bfa" stroke-width="1.6"/>
-<path d="M122 190 L110 186 M122 202 L110 206" stroke="#c4b5fd" stroke-width="4.5"/>
-</g>
-<g stroke-linecap="round" stroke-linejoin="round" fill="none">
-<line x1="362" y1="212" x2="420" y2="168" stroke="url(#p4arm)" stroke-width="16"/>
-<circle cx="420" cy="168" r="13" fill="#0c1a2b" stroke="#a78bfa" stroke-width="2"/>
-<circle cx="420" cy="168" r="4" fill="#c4b5fd"/>
-<line x1="420" y1="168" x2="468" y2="196" stroke="url(#p4arm)" stroke-width="12"/>
-<circle cx="468" cy="196" r="9" fill="#0c1a2b" stroke="#a78bfa" stroke-width="1.6"/>
-<path d="M478 190 L490 186 M478 202 L490 206" stroke="#c4b5fd" stroke-width="4.5"/>
-</g>
-<g opacity="0.75">
-<rect x="490" y="248" width="34" height="34" rx="4" fill="none" stroke="rgba(196,181,253,0.4)" stroke-width="1.5" stroke-dasharray="4 4"/>
-<rect x="498" y="256" width="18" height="18" rx="2" fill="rgba(167,139,250,0.2)"/>
-</g>
-<circle cx="300" cy="130" r="4" fill="#34d399"><animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/></circle>
-<text x="312" y="134" fill="rgba(52,211,153,0.85)" font-size="11" font-family="monospace">BALANCE · STABLE</text>
-<text x="30" y="40" fill="rgba(255,255,255,0.5)" font-size="12" font-family="monospace">ORTHRUS QUADRUPED</text>
-<text x="30" y="58" fill="rgba(167,139,250,0.9)" font-size="11" font-family="monospace">MOBILE MANIPULATION PLATFORM</text>
-</svg>
+<img src="assets/project-4.jpg" alt="Orthrus 双臂机器狗示意图" />
 </div>
 <div class="content">
 <div class="metrics">
