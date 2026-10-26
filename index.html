@@ -21,6 +21,7 @@
             --accent-orange: #e88934;
             --accent-orange-light: #f5b06b;
             --accent-blue: #4a9eff;
+            --accent-green: #34d399;
             --bg-light: #f4f7fc;
             --card-bg: #ffffff;
             --text-dark: #1a2332;
@@ -478,6 +479,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 32px;
+            align-items: stretch;
         }
 
         .activity-card {
@@ -489,6 +491,8 @@
             border: 1px solid rgba(12, 26, 43, 0.04);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
         .activity-card::before {
             content: '';
@@ -529,7 +533,7 @@
         }
         .activity-card:nth-child(3) .icon-wrap {
             background: rgba(52, 211, 153, 0.08);
-            color: #34d399;
+            color: var(--accent-green);
         }
 
         .activity-card h3 {
@@ -566,14 +570,16 @@
             color: var(--accent-blue);
         }
         .activity-card:nth-child(3) .feature-list li i {
-            color: #34d399;
+            color: var(--accent-green);
         }
 
         .activity-card .card-link {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            margin-top: 20px;
+            margin-top: auto;
+            padding-top: 20px;
+            align-self: flex-start;
             font-weight: 600;
             font-size: 0.95rem;
             color: var(--accent-orange);
@@ -583,10 +589,88 @@
             color: var(--accent-blue);
         }
         .activity-card:nth-child(3) .card-link {
-            color: #34d399;
+            color: var(--accent-green);
         }
         .activity-card .card-link:hover {
             gap: 14px;
+        }
+
+        /* ===== 极客项目共创 · 主页缩略入口 ===== */
+        .project-mini-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .project-mini-list li a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 10px;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(12, 26, 43, 0.06);
+            background: rgba(12, 26, 43, 0.02);
+            transition: var(--transition);
+        }
+        .project-mini-list li a:hover {
+            background: rgba(52, 211, 153, 0.06);
+            border-color: rgba(52, 211, 153, 0.28);
+            transform: translateX(3px);
+        }
+        .mini-thumb {
+            width: 56px;
+            height: 44px;
+            flex-shrink: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 10px rgba(12, 26, 43, 0.15);
+        }
+        .mini-thumb svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        .mini-text {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .mini-text strong {
+            font-size: 0.86rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            line-height: 1.35;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .mini-text em {
+            font-style: normal;
+            font-size: 0.72rem;
+            color: var(--text-light);
+            margin-top: 2px;
+            line-height: 1.45;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .project-mini-list li a > i {
+            font-size: 0.72rem;
+            color: var(--text-light);
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+        .project-mini-list li a:hover > i {
+            color: var(--accent-green);
+            transform: translateX(3px);
         }
 
         /* ==================== 社区数据 ==================== */
@@ -666,12 +750,8 @@
             box-shadow: 0 0 0 4px rgba(74, 158, 255, 0.15);
         }
         .timeline-item:nth-child(3)::before {
-            background: #34d399;
+            background: var(--accent-green);
             box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.15);
-        }
-        .timeline-item:nth-child(4)::before {
-            background: #a78bfa;
-            box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.15);
         }
 
         .timeline-item .time {
@@ -693,6 +773,29 @@
             line-height: 1.6;
         }
 
+        /* ===== 可点击的动态条目 ===== */
+        .timeline-item.clickable {
+            display: block;
+            padding-right: 12px;
+            border-radius: var(--radius-md);
+            transition: var(--transition);
+        }
+        .timeline-item.clickable h4 i {
+            font-size: 0.8rem;
+            color: var(--accent-orange);
+            margin-left: 6px;
+            transition: var(--transition);
+        }
+        .timeline-item.clickable:hover {
+            background: rgba(232, 137, 52, 0.05);
+        }
+        .timeline-item.clickable:hover h4 {
+            color: var(--accent-orange);
+        }
+        .timeline-item.clickable:hover h4 i {
+            transform: translateX(4px);
+        }
+
         .updates-sidebar {
             background: var(--card-bg);
             border-radius: var(--radius-lg);
@@ -708,9 +811,9 @@
         }
         .updates-sidebar .topic-item {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 12px;
-            padding: 12px 0;
+            padding: 14px 0;
             border-bottom: 1px solid rgba(12, 26, 43, 0.04);
         }
         .updates-sidebar .topic-item:last-child {
@@ -724,6 +827,8 @@
             padding: 2px 12px;
             border-radius: 50px;
             flex-shrink: 0;
+            margin-top: 3px;
+            white-space: nowrap;
         }
         .updates-sidebar .topic-item .badge.blue {
             background: rgba(74, 158, 255, 0.12);
@@ -731,11 +836,12 @@
         }
         .updates-sidebar .topic-item .badge.green {
             background: rgba(52, 211, 153, 0.12);
-            color: #34d399;
+            color: var(--accent-green);
         }
         .updates-sidebar .topic-item span {
             font-size: 0.9rem;
             color: var(--text-mid);
+            line-height: 1.55;
         }
 
         /* ==================== 加入社区 ==================== */
@@ -794,71 +900,96 @@
             font-size: 1rem;
         }
 
-        .join-form {
-            background: rgba(255, 255, 255, 0.04);
+        /* ===== 加入社区 · 群二维码卡片 ===== */
+        .join-group-card {
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
+            padding: 36px 32px 32px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: var(--radius-lg);
-            padding: 40px 36px;
-            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.25);
+            transition: var(--transition);
         }
-        .join-form h4 {
+        .join-group-card:hover {
+            border-color: rgba(232, 137, 52, 0.35);
+        }
+
+        .qr-frame {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+            padding: 10px;
+            background: #fff;
+            border-radius: var(--radius-md);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .qr-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 6px;
+            display: block;
+        }
+
+        .join-group-card h4 {
             font-size: 1.3rem;
             font-weight: 600;
+            color: #fff;
             margin-bottom: 6px;
         }
-        .join-form .form-sub {
+        .join-group-card .qr-hint {
+            font-size: 0.88rem;
             color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 22px;
+        }
+
+        .join-steps {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 22px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .join-steps li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             font-size: 0.9rem;
-            margin-bottom: 24px;
+            color: rgba(255, 255, 255, 0.75);
         }
-        .join-form .form-group {
-            margin-bottom: 16px;
+        .join-steps li span {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: rgba(232, 137, 52, 0.15);
+            color: var(--accent-orange);
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .join-form input,
-        .join-form select {
-            width: 100%;
-            padding: 14px 18px;
-            border-radius: var(--radius-sm);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            background: rgba(255, 255, 255, 0.05);
-            color: #fff;
-            font-size: 0.95rem;
-            transition: var(--transition);
-            outline: none;
-            font-family: var(--font-sans);
+
+        .join-group-card .qr-note {
+            font-size: 0.8rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.45);
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
-        .join-form input::placeholder {
-            color: rgba(255, 255, 255, 0.3);
-        }
-        .join-form input:focus,
-        .join-form select:focus {
-            border-color: var(--accent-orange);
-            background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 0 0 4px rgba(232, 137, 52, 0.08);
-        }
-        .join-form select option {
-            background: #1a2f44;
-            color: #fff;
-        }
-        .join-form .btn-submit {
-            width: 100%;
-            padding: 16px;
-            border: none;
-            border-radius: var(--radius-sm);
-            background: var(--accent-orange);
-            color: #fff;
-            font-size: 1rem;
+        .join-group-card .qr-note strong {
+            color: var(--accent-orange-light);
             font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: 0 8px 24px rgba(232, 137, 52, 0.25);
-            font-family: var(--font-sans);
-        }
-        .join-form .btn-submit:hover {
-            background: #f09a4a;
-            transform: translateY(-2px);
-            box-shadow: 0 12px 36px rgba(232, 137, 52, 0.4);
         }
 
         /* ==================== 页脚 ==================== */
@@ -1040,10 +1171,6 @@
                 font-size: 2rem;
             }
 
-            .join-form {
-                padding: 28px 20px;
-            }
-
             .footer .container {
                 flex-direction: column;
                 text-align: center;
@@ -1084,6 +1211,13 @@
                 width: 80px;
                 height: 80px;
             }
+            .join-group-card {
+                padding: 28px 20px;
+            }
+            .qr-frame {
+                width: 170px;
+                height: 170px;
+            }
         }
 
         /* ==================== 滚动条美化 ==================== */
@@ -1115,7 +1249,7 @@
                 <li><a href="#activities">活动</a></li>
                 <li><a href="#updates">动态</a></li>
                 <li><a href="#join">加入</a></li>
-                <li><a href="#join" class="nav-cta">立即加入</a></li>
+                <li><a href="#join" class="nav-cta">加入社群</a></li>
             </ul>
             <button class="nav-toggle" id="navToggle" aria-label="切换菜单">
                 <span></span>
@@ -1147,7 +1281,7 @@
                 </p>
                 <div class="hero-buttons">
                     <a href="#join" class="btn-primary">
-                        <i class="fas fa-rocket"></i> 加入社区
+                        <i class="fas fa-rocket"></i> 加入社群
                     </a>
                     <a href="#activities" class="btn-secondary">
                         <i class="fas fa-compass"></i> 探索活动
@@ -1171,16 +1305,17 @@
             <div class="hero-visual">
                 <div class="hero-robot-card">
                     <!-- 瓦力机器人形象（DiceBear 生成） -->
-                    <img class="robot-avatar" 
-                         src="https://api.dicebear.com/7.x/bottts/svg?seed=WALL-E&backgroundColor=transparent" 
+                    <img class="robot-avatar"
+                         src="https://api.dicebear.com/7.x/bottts/svg?seed=WALL-E&backgroundColor=transparent"
                          alt="瓦力机器人形象" />
                     <h3><span class="wave">🤖</span> 瓦力 · 社区伙伴</h3>
                     <p>“一起探索具身智能的无限可能！”</p>
                     <div class="tag-group">
-                        <span class="tag">#机器人</span>
-                        <span class="tag">#大模型</span>
-                        <span class="tag">#强化学习</span>
+                        <span class="tag">#模型</span>
+                        <span class="tag">#数据</span>
+                        <span class="tag">#本体</span>
                         <span class="tag">#开源</span>
+                        <span class="tag">#场景</span>
                     </div>
                 </div>
             </div>
@@ -1224,12 +1359,108 @@
                     <div class="icon-wrap"><i class="fas fa-cogs"></i></div>
                     <h3>🛠 极客项目共创</h3>
                     <p>聚合志同道合的极客，打造创新有趣的原型。</p>
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check-circle"></i> 足够有趣</li>
-                        <li><i class="fas fa-check-circle"></i> 足够挑战</li>
-                        <li><i class="fas fa-check-circle"></i> 商业化孵化支持</li>
+
+                    <ul class="project-mini-list">
+                        <li>
+                            <a href="projects.html#project-1">
+                                <span class="mini-thumb">
+                                    <svg viewBox="0 0 112 88" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <defs>
+                                            <linearGradient id="mt1bg" x1="0" y1="0" x2="1" y2="1">
+                                                <stop offset="0" stop-color="#0c1a2b"/><stop offset="1" stop-color="#1a2f44"/>
+                                            </linearGradient>
+                                            <linearGradient id="mt1box" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0" stop-color="#e88934"/><stop offset="1" stop-color="#c26f24"/>
+                                            </linearGradient>
+                                        </defs>
+                                        <rect width="112" height="88" fill="url(#mt1bg)"/>
+                                        <line x1="0" y1="72" x2="112" y2="72" stroke="rgba(74,158,255,0.25)" stroke-width="1.5"/>
+                                        <line x1="12" y1="70" x2="36" y2="46" stroke="#4a9eff" stroke-width="5" stroke-linecap="round"/>
+                                        <line x1="36" y1="46" x2="50" y2="54" stroke="#4a9eff" stroke-width="4" stroke-linecap="round"/>
+                                        <line x1="100" y1="70" x2="76" y2="46" stroke="#e88934" stroke-width="5" stroke-linecap="round"/>
+                                        <line x1="76" y1="46" x2="62" y2="54" stroke="#e88934" stroke-width="4" stroke-linecap="round"/>
+                                        <rect x="42" y="34" width="28" height="28" rx="2" fill="url(#mt1box)"/>
+                                        <line x1="56" y1="38" x2="56" y2="58" stroke="rgba(12,26,43,0.3)" stroke-width="1.5"/>
+                                    </svg>
+                                </span>
+                                <span class="mini-text">
+                                    <strong>双臂打包装成功率 → 100%</strong>
+                                    <em>工业场景 · 双臂协同</em>
+                                </span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="projects.html#project-2">
+                                <span class="mini-thumb">
+                                    <svg viewBox="0 0 112 88" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <defs>
+                                            <linearGradient id="mt2bg" x1="0" y1="0" x2="1" y2="1">
+                                                <stop offset="0" stop-color="#0c1a2b"/><stop offset="1" stop-color="#2a1525"/>
+                                            </linearGradient>
+                                            <linearGradient id="mt2car" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0" stop-color="#ff5252"/><stop offset="1" stop-color="#b91c1c"/>
+                                            </linearGradient>
+                                            <linearGradient id="mt2jet" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0" stop-color="#d0e8ff" stop-opacity="0.9"/>
+                                                <stop offset="1" stop-color="#7ec4ff" stop-opacity="0"/>
+                                            </linearGradient>
+                                        </defs>
+                                        <rect width="112" height="88" fill="url(#mt2bg)"/>
+                                        <ellipse cx="56" cy="40" rx="42" ry="22" fill="none" stroke="rgba(255,107,107,0.22)" stroke-width="1.5" stroke-dasharray="4 4"/>
+                                        <rect x="30" y="56" width="6" height="18" fill="url(#mt2jet)"/>
+                                        <rect x="44" y="56" width="6" height="18" fill="url(#mt2jet)"/>
+                                        <rect x="62" y="56" width="6" height="18" fill="url(#mt2jet)"/>
+                                        <rect x="76" y="56" width="6" height="18" fill="url(#mt2jet)"/>
+                                        <path d="M18 48 Q22 38 40 36 L52 34 L60 34 L72 36 Q90 38 94 48 Q84 54 68 54 L44 54 Q28 54 18 48 Z"
+                                              fill="url(#mt2car)" stroke="#ff6b6b" stroke-width="1"/>
+                                        <circle cx="36" cy="54" r="6" fill="#0c1a2b" stroke="#555" stroke-width="1.5"/>
+                                        <circle cx="76" cy="54" r="6" fill="#0c1a2b" stroke="#555" stroke-width="1.5"/>
+                                        <rect x="50" y="26" width="14" height="8" rx="2" fill="#111722" stroke="#4a9eff" stroke-width="1"/>
+                                    </svg>
+                                </span>
+                                <span class="mini-text">
+                                    <strong>手搓 Roadster 翻跟斗与悬停</strong>
+                                    <em>氮气推进 · 手机飞控</em>
+                                </span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="projects.html#project-3">
+                                <span class="mini-thumb">
+                                    <svg viewBox="0 0 112 88" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <defs>
+                                            <linearGradient id="mt3bg" x1="0" y1="0" x2="1" y2="1">
+                                                <stop offset="0" stop-color="#0c1a2b"/><stop offset="1" stop-color="#122a44"/>
+                                            </linearGradient>
+                                            <linearGradient id="mt3beam" x1="0" y1="0" x2="1" y2="0">
+                                                <stop offset="0" stop-color="#4a9eff" stop-opacity="0.4"/>
+                                                <stop offset="1" stop-color="#4a9eff" stop-opacity="0"/>
+                                            </linearGradient>
+                                        </defs>
+                                        <rect width="112" height="88" fill="url(#mt3bg)"/>
+                                        <path d="M56 44 L108 22 L108 66 Z" fill="url(#mt3beam)"/>
+                                        <path d="M20 44 Q10 44 8 40 Q10 50 20 50" fill="none" stroke="#3a4a63" stroke-width="5" stroke-linecap="round"/>
+                                        <path d="M92 44 Q102 44 104 40 Q102 50 92 50" fill="none" stroke="#3a4a63" stroke-width="5" stroke-linecap="round"/>
+                                        <rect x="20" y="34" width="72" height="22" rx="11" fill="#1a2f44" stroke="#4a9eff" stroke-width="1.2"/>
+                                        <rect x="26" y="38" width="26" height="14" rx="7" fill="#0c1a2b" stroke="#7ec4ff" stroke-width="0.8"/>
+                                        <rect x="60" y="38" width="26" height="14" rx="7" fill="#0c1a2b" stroke="#7ec4ff" stroke-width="0.8"/>
+                                        <circle cx="39" cy="45" r="4" fill="#7ec4ff"/>
+                                        <circle cx="73" cy="45" r="4" fill="#7ec4ff"/>
+                                        <circle cx="24" cy="36" r="1.8" fill="#ff3333"/>
+                                    </svg>
+                                </span>
+                                <span class="mini-text">
+                                    <strong>EGO 数据众包</strong>
+                                    <em>集思广益出想法，社区出设备，一起教机器人干活</em>
+                                </span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </li>
                     </ul>
-                    <a href="#" class="card-link">浏览项目 <i class="fas fa-arrow-right"></i></a>
+
+                    <a href="projects.html" class="card-link">浏览全部项目 <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -1268,48 +1499,48 @@
             </div>
             <div class="updates-grid">
                 <div class="timeline">
+                    <!-- 1. 社区成立（不可点击） -->
                     <div class="timeline-item">
-                        <div class="time">2026.07.25</div>
-                        <h4>具身智能开源大会 · 上海站</h4>
-                        <p>瓦力工坊联合多家机构举办线下 meetup，聚焦机器人操作与大模型落地。</p>
+                        <div class="time">2026.10.01</div>
+                        <h4>瓦力工坊正式成立上线 🎉</h4>
+                        <p>聚焦于汇聚伙伴、知识分享和项目共创，具身智能创客社区从这一天开始生长。</p>
                     </div>
-                    <div class="timeline-item">
-                        <div class="time">2026.07.20</div>
-                        <h4>「具身知识库」V2.0 上线</h4>
-                        <p>新增 30+ 篇实践教程，涵盖 ROS2、PyTorch、Isaac Sim 等主流工具链。</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="time">2026.07.15</div>
-                        <h4>社区孵化项目「灵巧手」开源</h4>
-                        <p>基于仿生学的低成本灵巧手设计，全部图纸与代码已开放下载。</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="time">2026.07.10</div>
-                        <h4>专家论坛：具身智能与 AGI 之路</h4>
-                        <p>清华大学教授与一线工程师深度对话，回放已上传至社区。</p>
-                    </div>
+
+                    <!-- 2. 数据采集眼镜发布（点击进入详情页） -->
+                    <a class="timeline-item clickable" href="data-glasses.html">
+                        <div class="time">2026.10.31</div>
+                        <h4>双目具身智能数据采集眼镜 &amp; 数据平台发布 <i class="fas fa-arrow-right"></i></h4>
+                        <p>可便携、无感地采集数据，并将数据转化为可供机器人训练的数据集，欢迎点击了解。</p>
+                    </a>
+
+                    <!-- 3. 王治博士学术分享（点击进入详情页） -->
+                    <a class="timeline-item clickable" href="wang-zhi-talk.html">
+                        <div class="time">2026.11.07（周六）07:00 – 09:00</div>
+                        <h4>IROS 2026 WORLDS Workshop 最佳论文 HumanEgo 作者王治博士学术分享 <i class="fas fa-arrow-right"></i></h4>
+                        <p>社区学术分享专场，欢迎报名交流。</p>
+                    </a>
                 </div>
                 <div class="updates-sidebar">
                     <h4>🔥 热门话题</h4>
                     <div class="topic-item">
                         <span class="badge">热议</span>
-                        <span>具身智能是否需要「世界模型」？</span>
+                        <span>模仿学习、强化学习、VLA、世界模型、RSI 的技术路线特点，哪一种更可能成为未来？</span>
                     </div>
                     <div class="topic-item">
-                        <span class="badge blue">技术</span>
-                        <span>基于扩散策略的机器人操控</span>
+                        <span class="badge blue">产业</span>
+                        <span>大模型厂家下场具身智能，能否形成降维打击，具身大脑公司如何应对？</span>
                     </div>
                     <div class="topic-item">
-                        <span class="badge green">项目</span>
-                        <span>开源四足机器人运动控制框架</span>
+                        <span class="badge green">数据</span>
+                        <span>仿真数据、真机数据、Ego、UMI 等数据如何使用更高效？终极数据形态和数据获取方式是怎样的？</span>
                     </div>
                     <div class="topic-item">
-                        <span class="badge">活动</span>
-                        <span>8月「具身智能黑客松」报名开启</span>
+                        <span class="badge">实操</span>
+                        <span>有没有测试过 PI 的 API 的，欢迎多多展示 demo？</span>
                     </div>
                     <div class="topic-item">
-                        <span class="badge blue">论文</span>
-                        <span>RT-2 泛化能力深度评测</span>
+                        <span class="badge blue">落地</span>
+                        <span>具身智能的落地难点在哪？如何有效解决？</span>
                     </div>
                 </div>
             </div>
@@ -1323,8 +1554,8 @@
                 <div class="join-content">
                     <h2>加入 <span class="orange">瓦力工坊</span></h2>
                     <p>
-                        与上千名具身智能爱好者一起，共建开放、包容、创新的技术社区。
-                        无论你是开发者、研究者还是产品经理，这里都有你的位置。
+                        无需注册，扫码即可加入社区群。和上千名具身智能爱好者一起，
+                        交流技术、分享资源、组队共创。
                     </p>
                     <ul class="join-features">
                         <li><i class="fas fa-check-circle"></i> 免费获取社区学习资源</li>
@@ -1333,31 +1564,26 @@
                         <li><i class="fas fa-check-circle"></i> 与志同道合者组队共创</li>
                     </ul>
                 </div>
-                <div class="join-form">
-                    <h4>🎉 立即注册</h4>
-                    <p class="form-sub">填写信息，加入瓦力工坊大家庭</p>
-                    <form id="joinForm">
-                        <div class="form-group">
-                            <input type="text" placeholder="你的姓名" required />
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="邮箱地址" required />
-                        </div>
-                        <div class="form-group">
-                            <select required>
-                                <option value="">你感兴趣的领域</option>
-                                <option>机器人操作系统 (ROS)</option>
-                                <option>计算机视觉 &amp; 感知</option>
-                                <option>强化学习 &amp; 控制</option>
-                                <option>大模型 &amp; 具身智能</option>
-                                <option>开源硬件 &amp; 嵌入式</option>
-                                <option>产品设计与商业化</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn-submit">
-                            <i class="fas fa-paper-plane"></i> 立即加入
-                        </button>
-                    </form>
+
+                <div class="join-group-card">
+                    <div class="qr-frame">
+                        <!-- 替换成你自己的群二维码图片，如：src="assets/wechat-group-qr.png" -->
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' fill='%23f4f7fc'/%3E%3Crect x='20' y='20' width='360' height='360' fill='none' stroke='%23d5deea' stroke-width='4' stroke-dasharray='12 8'/%3E%3Ctext x='200' y='185' font-size='30' text-anchor='middle' fill='%238a9bb0' font-family='sans-serif'%3E二维码占位%3C/text%3E%3Ctext x='200' y='230' font-size='20' text-anchor='middle' fill='%23b0bccd' font-family='sans-serif'%3E请替换为群二维码图片%3C/text%3E%3C/svg%3E"
+                             alt="瓦力工坊社区微信群二维码" />
+                    </div>
+                    <h4>扫码加入社区群</h4>
+                    <p class="qr-hint">微信扫一扫 / 长按识别二维码</p>
+
+                    <ol class="join-steps">
+                        <li><span>1</span> 扫描上方二维码</li>
+                        <li><span>2</span> 备注「具身智能」</li>
+                        <li><span>3</span> 通过后即可入群交流</li>
+                    </ol>
+
+                    <p class="qr-note">
+                        群满 200 人或二维码失效？<br />
+                        添加小助手微信 <strong>wall-e-helper</strong> 拉你入群
+                    </p>
                 </div>
             </div>
         </div>
@@ -1395,7 +1621,6 @@
 
             // ---------- 导航栏滚动效果 ----------
             const navbar = document.getElementById('navbar');
-            let lastScroll = 0;
             window.addEventListener('scroll', function() {
                 const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
                 if (currentScroll > 60) {
@@ -1403,7 +1628,6 @@
                 } else {
                     navbar.classList.remove('scrolled');
                 }
-                lastScroll = currentScroll;
             });
 
             // ---------- 移动端菜单切换 ----------
@@ -1421,31 +1645,6 @@
                     toggle.classList.remove('active');
                     links.classList.remove('active');
                 });
-            });
-
-            // ---------- 表单提交 ----------
-            const form = document.getElementById('joinForm');
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const btn = this.querySelector('.btn-submit');
-                const originalText = btn.innerHTML;
-                btn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> 提交中...';
-                btn.disabled = true;
-
-                // 模拟提交
-                setTimeout(() => {
-                    btn.innerHTML = '<i class="fas fa-check-circle"></i> 加入成功！';
-                    btn.style.background = '#34d399';
-                    btn.style.boxShadow = '0 8px 24px rgba(52,211,153,0.3)';
-                    setTimeout(() => {
-                        btn.innerHTML = originalText;
-                        btn.style.background = '';
-                        btn.style.boxShadow = '';
-                        btn.disabled = false;
-                        form.reset();
-                        alert('🎉 欢迎加入瓦力工坊！我们会在24小时内与你联系。');
-                    }, 2000);
-                }, 1500);
             });
 
             // ---------- 统计数字动画 (简单) ----------
