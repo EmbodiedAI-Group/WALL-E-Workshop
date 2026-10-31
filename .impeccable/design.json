@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-31T06:12:23.761644+00:00",
+  "generatedAt": "2026-10-31T07:09:29.556940+00:00",
   "title": "Design System: moss具身工坊",
   "extensions": {
     "colorMeta": {
@@ -105,6 +105,36 @@
     "shadows": [],
     "motion": [
       {
+        "name": "hero-assembly",
+        "value": "GSAP timeline ≈.94s; power4.out; masthead .92s, photo .90s at .04s, mission .72s stagger .08s at .12s",
+        "purpose": "Work-bench assembly after document.fonts.ready; each semantic layer moves inside its fixed stack."
+      },
+      {
+        "name": "hero-photo-parallax",
+        "value": "scale=1.08; yPercent=-3..3; scrub=.55; fixed outer six-vertex frame",
+        "purpose": "Inner-image overscan prevents gaps; never animate or move the clipped outer frame."
+      },
+      {
+        "name": "desktop-scroll-clock",
+        "value": "GSAP ticker → lenis.raf(time*1000); autoRaf=false; lerp=.1; smoothWheel=true; syncTouch=false; anchors.offset=-24",
+        "purpose": "Enabled on (hover:hover) and (pointer:fine), regardless of viewport width; native touch path."
+      },
+      {
+        "name": "gallery-entry",
+        "value": "image inset reveal .64s; sibling stagger=.06; caption y=10 opacity=.5 duration=.48s stagger=.025",
+        "purpose": "Once-only image and caption reveal at top94%, not a repeated looping animation."
+      },
+      {
+        "name": "research-entry",
+        "value": "heading y=30 .72s; author x=-14 opacity=.6 .60s; research title x=28 desktop or14 other opacity=.65 .70s",
+        "purpose": "Distinct semantic choreography within the research feature, once at top82%."
+      },
+      {
+        "name": "subpage-entry",
+        "value": "main h1 y=22 opacity=.65 duration=.58s power3.out; supporting copy y=12 opacity=.7 duration=.5s delay=.08s",
+        "purpose": "Quiet subpage entrance; content is not statically CSS-hidden."
+      },
+      {
         "name": "gallery-hover",
         "value": "transform .55s cubic-bezier(.16,1,.3,1); scale(1.035)",
         "purpose": "Homepage image-only hover; disabled under reduced motion."
@@ -115,14 +145,29 @@
         "purpose": "Small catalog photograph hover; disabled under reduced motion."
       },
       {
+        "name": "navigation-feedback",
+        "value": ".35s cubic-bezier(.16,1,.3,1); underline scaleX0→1; action arrow translate(3px,-3px); gallery arrow translateX4px",
+        "purpose": "Native pointer feedback; reduced motion suppresses transforms."
+      },
+      {
+        "name": "cross-document-transition",
+        "value": "@view-transition navigation:auto; old root .18s ease; new root .3s cubic-bezier(.16,1,.3,1)",
+        "purpose": "Progressive native cross-document fades, not SPA routing; disabled under reduced motion."
+      },
+      {
         "name": "join-magnet",
-        "value": "padding=24; magnetStrength=8; maxOffset=5px; spring stiffness=170 damping=16 mass=1",
-        "purpose": "Only the primary join navigation anchor. Vendor respects touch/reduced motion."
+        "value": "padding=24; magnetStrength=8; maxOffset=5px; spring stiffness=170 damping=16 mass=1; dynamic disabled=reduce.matches",
+        "purpose": "Only the primary join navigation anchor; touch interaction is not magnetized."
       },
       {
         "name": "community-threads",
-        "value": "48 lines; amplitude=.65; distance=.4; speed=.22; angle=16; thickness=.45; softness=1.1; opacity=.28; fade=.2; outer opacity=.22",
-        "purpose": "Bounded non-interactive join background; not mounted at <=700px or reduced motion."
+        "value": "32 lines; amplitude=.8; distance=.4; speed=.3; angle=16; thickness=.5; softness=1.1; opacity=.8; fade=.2; outer opacity=.22",
+        "purpose": "Bounded non-interactive join background, not mounted at <=700px or reduced motion; pauses offscreen/hidden."
+      },
+      {
+        "name": "dynamic-reduced-motion",
+        "value": "gsap.matchMedia cleanup; destroy Lenis; clearProps(hero-photo.transform); Magnet.disabled=true; no Threads; CSS animation/transition disabled",
+        "purpose": "Preference changes remove captured transform states and restore native reading paths."
       },
       {
         "name": "focus-outline",
@@ -164,7 +209,7 @@
       "sourceFiles": [
         {
           "path": "assets/site.css",
-          "sha256": "1cd4bd4755056b7f01925e39f0bcfd972343206102fb7df76a02810ebbe2008a"
+          "sha256": "dc77091bb42d98350d8cd0b71f415e3f29c7d77a10ad7e81afe35f7f9b4901f5"
         },
         {
           "path": "assets/pages.css",
@@ -172,7 +217,7 @@
         },
         {
           "path": "src/motion.jsx",
-          "sha256": "bde8c9c2f02ebd9b8fe84c894d5104b09f6bcedaad2e4db11d2b2737f44c0ba3"
+          "sha256": "e95701203b563d3f80fd819d97cc831e09d5041b8abbd6b3c5a85921aae6c4f1"
         },
         {
           "path": "src/vendor/react-bits/Magnet.jsx",
@@ -184,53 +229,60 @@
         },
         {
           "path": "index.html",
-          "sha256": "41de47be872fd6d820c6eff73b1178c8a3baab43b1b5629ff1a37670ec2bd4f4"
+          "sha256": "e873223b2f12565576baebd2d96afa656097f07585dc8e86328c39d26d5cdd2b"
         },
         {
           "path": "projects.html",
-          "sha256": "6e1a3c66d6dc01e9538ba03fb8626ae4e77f4b7a15607cd4a37083129cbdbd47"
+          "sha256": "b8eea0a3545fa19f1e29ebddd482a6e7ce79fe623e6f20c63379d79fc84396ad"
         },
         {
           "path": "project-1.html",
-          "sha256": "d1d1e7d7c3f37648a05a477d814824e5eeb391be9a8b67d9da7ca48f7a00463e"
+          "sha256": "54944e21f0d9cb304ca1a6e9d26367359a97d4c914c2675fd4c2f25494ec9489"
         },
         {
           "path": "project-2.html",
-          "sha256": "cdc19e453532c75b253136e4fac2da135c59007d65256a2e8dd525c7acd1025a"
+          "sha256": "3ffbc115b0901f1164d26d6c2d05df16dc74e902b0344a4d2337053b1d690825"
         },
         {
           "path": "project-3.html",
-          "sha256": "aec38c6874c6b14c313c2842af0581894accdb044e21dfd8d2b9b425e3ed87c1"
+          "sha256": "ba45fb4dc69aee77a03884c634576a33dd1746db84284657de82bb9151d35b26"
         },
         {
           "path": "project-4.html",
-          "sha256": "426f58415296843c6615b092a93a8fd45f10980470abd41e300621771f5a42ba"
+          "sha256": "3553c92f7babbece0b01452db017738e54d08fde735012696ec5179e41d7d7d4"
         },
         {
           "path": "wang-zhi-talk.html",
-          "sha256": "5366c66e1444c3a334a1a3cdad0f60121ce68448c51c5db805bbc4bdb4f06e1a"
+          "sha256": "2b8e4e8902f73fb0a9d5c47e69c02fdb42d8dbb01876d87a700075c7aaf7d21d"
+        },
+        {
+          "path": "src/choreography.js",
+          "sha256": "7c33d31da20b5a0b83d67888427532646a66fc37532206aeeaf54c539365f933"
+        },
+        {
+          "path": "assets/motion.js",
+          "sha256": "80047986d8c71bf540e4b6c87eae3f3ad34057082c22f9e1b51c661de4b16795"
+        },
+        {
+          "path": "assets/motion.css",
+          "sha256": "d92d0a978f799aab44d53654f95a3790d08090655270ea8a8171ac03c44ba8ef"
+        },
+        {
+          "path": "package.json",
+          "sha256": "a44d91731018cd46f14e1719eb28a205fcab54ac4b24e5523ab59a6f7ffeb93e"
+        },
+        {
+          "path": "package-lock.json",
+          "sha256": "610f408985048f618ff406c4507f77577e203f39be36ae24aec36f82221e5a9f"
         }
       ],
       "product": "PRODUCT.md",
       "direction": ".impeccable/surfaces/home.md",
       "approval": {
         "comp": ".impeccable/mocks/home-comp-2.png",
-        "originalProjectSubstitutions": "Explicitly approved by user; actual project-1..4 source images are retained, with project-3 remaining an illustration."
+        "originalProjectSubstitutions": "Explicitly approved by user; actual project-1..4 source images are retained, with project-3 remaining an illustration.",
+        "layeringOverride": "User rejected photo cutting across the masthead; subsequent motion-upgrade brief replaces that layering while keeping palette, layout and original project substitutions."
       },
-      "screenshots": [
-        ".impeccable/screenshots/home-desktop.png",
-        ".impeccable/screenshots/home-375.png",
-        ".impeccable/screenshots/subpages/projects-desktop.png",
-        ".impeccable/screenshots/subpages/projects-mobile.png",
-        ".impeccable/screenshots/subpages/project-1-desktop.png",
-        ".impeccable/screenshots/subpages/project-1-mobile.png",
-        ".impeccable/screenshots/subpages/wang-zhi-talk-desktop.png",
-        ".impeccable/screenshots/subpages/wang-zhi-talk-mobile.png"
-      ],
-      "checks": [
-        ".impeccable/screenshots/home-validation.json",
-        ".impeccable/screenshots/subpages/checks.json"
-      ],
       "productionMedia": [
         "assets/media/hero-photo.webp",
         "assets/media/project-photo-1.webp",
@@ -246,11 +298,59 @@
         "masthead": "440px desktop cap; top:-.375em",
         "microMetadata": "11px minimum in the observed local metadata styles; not a global body-size rule",
         "heroCrop": "Six-vertex angular composition, not an organic subject matte",
-        "egoGalleryCrop": "object-position:center 25%"
+        "egoGalleryCrop": "object-position:center 25%",
+        "heroLayering": "photo-frame z1; intact masthead z2; mission z3; note z4",
+        "heroMotion": "inner image scale1.08; yPercent±3; fixed outer polygon",
+        "threads": "32lines; component opacity.8; outer opacity.22",
+        "scrollInput": "hover+finepointer irrespective width; touch native; reduced restores native"
       },
       "canonicalRepository": "EmbodiedAI-Group/Moss-Embodied-Workshop-Moss-",
       "canonicalPagesUrl": "https://embodiedai-group.github.io/Moss-Embodied-Workshop-Moss-/",
-      "metadataRefresh": "External GitHub footer URLs updated to administrator-renamed canonical repository. Visual CSS and motion source hashes unchanged."
+      "metadataRefresh": "Current motion refinement updates layering, font loading, choreography and source hashes; prior canonical repository URL remains unchanged.",
+      "motionDirection": ".impeccable/surfaces/motion-upgrade.md",
+      "primaryRegressionEvidence": ".impeccable/motion-review/user-layering-feedback.png",
+      "historicalStaticScreenshots": [
+        ".impeccable/screenshots/home-desktop.png",
+        ".impeccable/screenshots/home-375.png",
+        ".impeccable/screenshots/subpages/projects-desktop.png",
+        ".impeccable/screenshots/subpages/projects-mobile.png",
+        ".impeccable/screenshots/subpages/project-1-desktop.png",
+        ".impeccable/screenshots/subpages/project-1-mobile.png",
+        ".impeccable/screenshots/subpages/wang-zhi-talk-desktop.png",
+        ".impeccable/screenshots/subpages/wang-zhi-talk-mobile.png"
+      ],
+      "screenshots": [
+        ".impeccable/motion-review/review-desktop-settled.png",
+        ".impeccable/motion-review/review-entry-mid.png",
+        ".impeccable/motion-review/review-mobile-settled.png",
+        ".impeccable/motion-review/review-research-mid-a.png",
+        ".impeccable/motion-review/review-research-mid-b.png",
+        ".impeccable/motion-review/review-research-mid-c.png",
+        ".impeccable/motion-review/review-research-settled.png"
+      ],
+      "captureScope": "Desktop/mid-entry/mobile image evidence supports layer correction and first-entry states. Full-page mobile capture includes not-yet-triggered offscreen reveal states; it is not a settled proof for every section. Use scroll/section captures for those states.",
+      "historicalStaticChecks": [
+        ".impeccable/screenshots/home-validation.json",
+        ".impeccable/screenshots/subpages/checks.json"
+      ],
+      "checks": [
+        ".impeccable/motion-review/review-runtime.json"
+      ],
+      "bundleHash": "80047986d8c71bf540e4b6c87eae3f3ad34057082c22f9e1b51c661de4b16795",
+      "loading": "All seven HTML routes preload both fonts and include assets/motion.css?v=motion2 plus assets/motion.js?v=motion2.",
+      "performanceClaim": "Measure actual wheel scroll and frame intervals on the current machine; no generalized fixed-fps/device guarantee.",
+      "numericWorkflowStatus": "Historical static numeric workflow exception remains open/not-closed; neither this documentation refresh nor later motion evidence declares pipeline PASS."
+    },
+    "layerOrder": {
+      "hero-photo-frame": 1,
+      "hero-masthead": 2,
+      "hero-mission": 3,
+      "hero-note": 4,
+      "invariant": "Fixed frame is behind the intact masthead; only inner image moves. User motion-feedback overrides earlier comp layering."
+    },
+    "fontLoading": {
+      "Barlow Condensed": "preload; font-display:block; decorative Latin masthead does not flash a system fallback",
+      "Noto Sans SC": "preload; font-display:swap; semantic body remains available"
     }
   },
   "components": [
@@ -260,7 +360,7 @@
       "refersTo": "text-action",
       "description": "Direct text link with cobalt rule and direction arrow.",
       "html": "<a class=\"ds-text-action\" href=\"#details\">查看分享与完整大纲 <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\"/></svg></a>",
-      "css": ".ds-text-action{display:inline-flex;align-items:center;gap:20px;min-height:44px;color:var(--blue);font-family:var(--font);font-weight:700;border-bottom:1px solid currentColor;text-decoration:none}.ds-text-action svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6}.ds-text-action:hover{color:var(--ink)}.ds-text-action:focus-visible{outline:2px solid var(--blue);outline-offset:5px}"
+      "css": ".ds-text-action{display:inline-flex;align-items:center;gap:20px;min-height:44px;color:var(--blue);font-family:var(--font);font-weight:700;border-bottom:1px solid currentColor;text-decoration:none}.ds-text-action svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6}.ds-text-action:hover{color:var(--ink)}.ds-text-action:focus-visible{outline:2px solid var(--blue);outline-offset:5px}.ds-text-action svg{transition:transform .35s cubic-bezier(.16,1,.3,1)}.ds-text-action:hover svg{transform:translate(3px,-3px)}@media(prefers-reduced-motion:reduce){.ds-text-action svg{transition:none}.ds-text-action:hover svg{transform:none}}"
     },
     {
       "name": "Publication navigation",
@@ -268,7 +368,7 @@
       "refersTo": "navigation",
       "description": "Flat, text-first navigation; publication wordmark uses the actual display font.",
       "html": "<nav class=\"ds-navigation\"><a class=\"ds-brand\" href=\"#home\"><span>moss</span>具身工坊</a><a href=\"#projects\">共创项目</a><a href=\"#talk\">专家分享</a></nav>",
-      "css": ".ds-navigation{display:flex;align-items:center;gap:28px;flex-wrap:wrap;padding:6px 0;border-bottom:1px solid var(--ink);font-family:var(--font);color:var(--ink);font-size:15px;font-weight:600}.ds-navigation a{min-height:44px;display:inline-flex;align-items:center;text-decoration:none;color:inherit}.ds-navigation .ds-brand{font-size:24px;font-weight:850;gap:8px}.ds-brand span{font-family:var(--display);font-size:1.75em;font-weight:900;color:var(--blue);line-height:.9}.ds-navigation a:hover{color:var(--blue)}.ds-navigation a:focus-visible{outline:2px solid var(--blue);outline-offset:5px}"
+      "css": ".ds-navigation{display:flex;align-items:center;gap:28px;flex-wrap:wrap;padding:6px 0;border-bottom:1px solid var(--ink);font-family:var(--font);color:var(--ink);font-size:15px;font-weight:600}.ds-navigation a{min-height:44px;display:inline-flex;align-items:center;text-decoration:none;color:inherit}.ds-navigation .ds-brand{font-size:24px;font-weight:850;gap:8px}.ds-brand span{font-family:var(--display);font-size:1.75em;font-weight:900;color:var(--blue);line-height:.9}.ds-navigation a:hover{color:var(--blue)}.ds-navigation a:focus-visible{outline:2px solid var(--blue);outline-offset:5px}.ds-navigation a{position:relative}.ds-navigation a:after{content:\"\";position:absolute;left:0;right:0;bottom:5px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .35s cubic-bezier(.16,1,.3,1)}.ds-navigation a:hover:after{transform:scaleX(1);transform-origin:left}@media(prefers-reduced-motion:reduce){.ds-navigation a:after{transition:none}}"
     },
     {
       "name": "Event band",
@@ -303,12 +403,12 @@
   ],
   "narrative": {
     "northStar": "研究社区报刊",
-    "overview": "以纸白、钴蓝与墨色建立中文具身智能社区的出版物气质。品牌字标与实际项目图承担识别，细分隔线、明确列宽和可读的中文正文承担结构；正文、项目与学术分享共享一套平面视觉语言。\n\n用户明确选择 home-comp-2，并批准用原有四个项目素材替代视觉稿中的生成图。落地实现保留原素材内容：EGO 项目图仍是插画，不被包装成实拍。选定首页的具体版面属于 .impeccable/surfaces/home.md，不是所有新页面必须复制的模板。",
+    "overview": "以纸白、钴蓝与墨色建立中文具身智能社区的出版物气质。品牌字标与实际项目图承担识别，细分隔线、明确列宽和可读的中文正文承担结构；正文、项目与学术分享共享一套平面视觉语言。\n\n用户明确选择 home-comp-2，并批准用原有四个项目素材替代视觉稿中的生成图。落地实现保留原素材内容：EGO 项目图仍是插画，不被包装成实拍。选定首页的具体版面属于 .impeccable/surfaces/home.md，不是所有新页面必须复制的模板。后续用户反馈明确否定照片切穿字标的层级；.impeccable/surfaces/motion-upgrade.md 与用户附图覆盖旧稿对应的叠放逻辑。",
     "keyCharacteristics": [
       "纸白底、钴蓝强调、墨色正文与细规则线。",
       "凝缩英文品牌字标搭配清晰的中文无衬线正文。",
       "真实项目图、独立阅读列与直接的文本链接。",
-      "平面排版；有界动效仅作状态反馈和局部氛围。"
+      "平面排版；字标保持完整，动效在固定层级内组织首屏和阅读节奏。"
     ],
     "rules": [
       {

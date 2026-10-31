@@ -1,0 +1,69 @@
+{
+  "request": "Fluid high-quality motion upgrade and correction of photo slicing moss wordmark in supplied screenshot",
+  "review": {
+    "disposition": "ship",
+    "reviewer": "fresh motion_finish_review",
+    "source": ".impeccable/motion-review/fresh-review.md",
+    "fullVideoLimitation": "Raw25fpsscreencast has occasional recorderghosting not reproduced in directruntimecaptures; deliveryusesclean2.12sentryclip andlivewebsite."
+  },
+  "layering": {
+    "frameZ": 1,
+    "wordmarkZ": 2,
+    "missionZ": 3,
+    "photoMotion": "innerimageonly, fixedcropframe",
+    "userFeedback": ".impeccable/motion-review/user-layering-feedback.png"
+  },
+  "finalBundle": {
+    "sha256": "80047986d8c71bf540e4b6c87eae3f3ad34057082c22f9e1b51c661de4b16795",
+    "bytes": 379822
+  },
+  "performance": {
+    "method": "Local headless Chrome wheel-driven RAF interval measurement; mobileviewport/touch emulation and4xCPUstress. Not a physicaldeviceguarantee.",
+    "fullSuite": {
+      "bundlePrefix": "adc5f994",
+      "report": ".impeccable/performance/active-after-final.json",
+      "p95FrameIntervalMs": {
+        "desktop": 5.6,
+        "mobileTouch": 5.6,
+        "desktopCpu4x": 5.7
+      },
+      "slowMobileFrames": "One about33.3ms interval, no>50ms",
+      "longTasks": 0
+    },
+    "finalNarrowMouse": {
+      "bundlePrefix": "80047986",
+      "report": ".impeccable/performance/narrow-final.json",
+      "p95FrameIntervalMs": 5.7,
+      "p99FrameIntervalMs": 5.7,
+      "framesOver33ms": 0,
+      "longTasks": 0
+    },
+    "buildDifference": "Finalfinepointer-onlyconditionenablesnarrowmousewindow; measuredlargeDesktopandrealTouchpathsunchanged. Buildsnotconflated.",
+    "reproduceScript": ".impeccable/scripts/measure-scroll.py"
+  },
+  "functional": {
+    "report": ".impeccable/performance/final-functional.json",
+    "narrowMouse700": "Lenisactive",
+    "touch390": "native/noLenis/noThreads",
+    "earlyLateRepeatedReducedMotion": "photo transform none; LenisandThreadsremoved",
+    "restore": "1.08baseline,x0",
+    "noJs": "bodyandnativeanchorusable",
+    "allRoutes": ".impeccable/screenshots/final-validation.json",
+    "routeViewportChecks": 14,
+    "failures": 0,
+    "settledCaptures": ".impeccable/motion-review/final-desktop-full.png and final-mobile-full.png, all four gallery clips verified inset(0%) after full scroll"
+  },
+  "artifacts": {
+    "entryPreview": ".impeccable/performance/hero-motion-preview.mp4",
+    "previewFps": 25,
+    "previewDurationSec": 2.12,
+    "previewIsPerformanceEvidence": false,
+    "desktop": ".impeccable/motion-review/final-desktop.png",
+    "mobile": ".impeccable/motion-review/final-mobile-full.png"
+  },
+  "mechanicalChecks": {
+    "report": ".impeccable/motion-review/detector.json",
+    "status": "warnings/advisories retained, not declared globalPASS",
+    "scope": "Knownstaticpadding/type-ramp/hovercolorheuristics; actualhoverwhite/blue checked in browser; no organicmaskwarning afterfixedstraightframe."
+  }
+}

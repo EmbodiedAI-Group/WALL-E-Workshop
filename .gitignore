@@ -13,3 +13,7 @@ assets/plates/
 /task_plan.md
 /findings.md
 /progress.md
+
+# Local motion measurements and preview recordings.
+.impeccable/performance/
+.impeccable/motion-review/

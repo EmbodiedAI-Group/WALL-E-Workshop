@@ -5,3 +5,5 @@ React Bits Threads and Magnet source components by David Haz, source commit `4dc
 Barlow Condensed Black 900 and Noto Sans SC variable 100–900 are self-hosted from the Google Fonts repository. Their full SIL Open Font Licenses are retained here. Noto Sans SC is mechanically subset to website characters without instancing its variable weight axis; Chinese weight 900 remains real font data. Source URLs, hashes and exact glyph coverage are recorded in `assets/fonts/provenance.json`.
 
 The motion bundle also includes React and React DOM under the MIT license. esbuild retains their license comments at the end of `assets/motion.js`.
+
+GSAP 3.15.0 and ScrollTrigger retain GreenSock copyright and standard-license attribution in `GSAP-NOTICE.txt` and the built distribution banner. Lenis 1.3.27 retains its MIT license in `LENIS-LICENSE.txt`.

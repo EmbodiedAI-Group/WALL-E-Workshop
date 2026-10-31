@@ -19,6 +19,7 @@ with sync_playwright() as p:
         page.on('pageerror', lambda error: errors.append(str(error)))
         response = page.goto('http://127.0.0.1:8765/' + route, wait_until='networkidle')
         page.evaluate('document.fonts.ready')
+        page.wait_for_timeout(1300)
         links = page.eval_on_selector_all('a[href]', '(nodes) => nodes.map(a => a.getAttribute("href"))')
         broken = []
         for link in links:
@@ -36,6 +37,10 @@ with sync_playwright() as p:
             page.set_viewport_size({'width': width, 'height': height})
             page.evaluate('document.fonts.ready')
             page.evaluate('Promise.all([...document.images].map(i => {i.loading="eager"; return i.decode()}))')
+            page.evaluate('window.scrollTo({top:document.documentElement.scrollHeight,behavior:"instant"})')
+            page.wait_for_timeout(950)
+            page.evaluate('window.scrollTo({top:0,behavior:"instant"})')
+            page.wait_for_timeout(950)
             metrics = page.evaluate('({overflow:document.documentElement.scrollWidth>innerWidth, badImages:[...document.images].filter(i=>!i.naturalWidth).length, h1:document.querySelectorAll("h1").length, main:document.querySelectorAll("main").length})')
             name = ('home-desktop' if width == 1536 else 'home-375') if route == 'index.html' else route.replace('.html', f'-{width}')
             page.screenshot(path=str(out / (name + '.png')), full_page=True)
@@ -46,7 +51,8 @@ with sync_playwright() as p:
         page.close()
     page = browser.new_page(viewport={'width': 1536, 'height': 1024})
     page.goto('http://127.0.0.1:8765/', wait_until='networkidle')
-    motion = {'desktopThreads': page.locator('#community-threads canvas').count(), 'joinHref': page.locator('#join-magnet a').get_attribute('href')}
+    layers = page.evaluate('({wordmark:Number(getComputedStyle(document.querySelector(".hero-masthead")).zIndex),frame:Number(getComputedStyle(document.querySelector(".hero-photo-frame")).zIndex),photoInsideFrame:document.querySelector(".hero-photo").parentElement.classList.contains("hero-photo-frame")})')
+    motion = {'heroLayers': layers, 'desktopThreads': page.locator('#community-threads canvas').count(), 'joinHref': page.locator('#join-magnet a').get_attribute('href')}
     page.locator('#join').scroll_into_view_if_needed()
     page.locator('.join-contact a').hover()
     motion['joinHoverColor'] = page.locator('.join-contact a').evaluate('(a)=>getComputedStyle(a).color')
@@ -71,4 +77,5 @@ failures = [r for r in results if r['status'] != 200 or r['overflow'] or r['badI
 assert not failures, json.dumps(failures, ensure_ascii=False)
 assert motion['desktopThreads'] == 1 and motion['reducedThreads'] == 0 and motion['mobileThreads'] == 0
 assert motion['joinHref'] == '#join' and motion['noJsNavigationUsable']
+assert layers['wordmark'] > layers['frame'] and layers['photoInsideFrame']
 print(json.dumps({'routeViewportChecks': len(results), 'failures': len(failures), 'motion': motion}, ensure_ascii=False))
