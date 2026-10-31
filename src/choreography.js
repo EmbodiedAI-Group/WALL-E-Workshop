@@ -2,13 +2,14 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import 'lenis/dist/lenis.css';
+import { readingMotion } from './reading-motion.js';
 
 gsap.registerPlugin(ScrollTrigger);
 const media = gsap.matchMedia();
 const home = document.body.classList.contains('page-home');
 let entered = false;
 
-// Fonts set the publication's geometry. Defaults stay visible until it is ready.
+// Font loading and the early navigation marker settle geometry before choreography.
 document.fonts.ready.then(() => {
   media.add({
     desktop: '(hover: hover) and (pointer: fine)',
@@ -16,6 +17,8 @@ document.fonts.ready.then(() => {
     all: 'all'
   }, context => {
     const { desktop, reduce } = context.conditions;
+    const navigationEntry = document.documentElement.hasAttribute('data-navigation-entry');
+    const returning = document.documentElement.dataset.navigationEntry === 'detail-back';
     if (reduce) {
       if (home) gsap.set('.hero-photo', { clearProps: 'transform' });
       return;
@@ -29,7 +32,7 @@ document.fonts.ready.then(() => {
         lerp: 0.1,
         smoothWheel: true,
         syncTouch: false,
-        anchors: { offset: -24 },
+        anchors: { offset: 0 },
         stopInertiaOnNavigate: true
       });
       lenis.on('scroll', ScrollTrigger.update);
@@ -38,11 +41,10 @@ document.fonts.ready.then(() => {
     }
 
     if (home) {
-      // A media rebuild must not inherit the entrance's captured from-state.
+      // Reset the captured entrance pose on every media rebuild.
       gsap.set('.hero-photo', { x: 0, y: 0, xPercent: 0, yPercent: 0, scale: 1.08 });
-      if (!entered && window.scrollY < 32) {
-        const assembly = gsap.timeline({ defaults: { ease: 'power4.out' } });
-        assembly
+      if (!entered && !navigationEntry && window.scrollY < 32) {
+        gsap.timeline({ defaults: { ease: 'power4.out' } })
           .from('.hero-masthead', { yPercent: 12, duration: 0.92 }, 0)
           .from('.hero-photo', { x: desktop ? 36 : 18, scale: 1.16, duration: 0.9 }, 0.04)
           .from('.hero-mission span', { y: desktop ? 30 : 18, duration: 0.72, stagger: 0.08 }, 0.12)
@@ -51,71 +53,42 @@ document.fonts.ready.then(() => {
           .from('.event-strip', { y: 9, opacity: 0.6, duration: 0.45 }, 0.35);
       }
       gsap.fromTo('.hero-photo', { yPercent: -3 }, {
-        yPercent: 3,
-        ease: 'none',
+        yPercent: 3, ease: 'none',
         scrollTrigger: { trigger: '.home-opening', start: 'top top', end: 'bottom top', scrub: 0.55 }
       });
       if (desktop) gsap.to('.hero-masthead', {
-        y: -20,
-        ease: 'none',
+        y: -20, ease: 'none',
         scrollTrigger: { trigger: '.home-opening', start: 'top top', end: 'bottom top', scrub: 0.55 }
       });
-
-      gsap.timeline({
-        defaults: { ease: 'power3.out' },
-        scrollTrigger: { trigger: '.project-gallery', start: 'top 94%', once: true }
-      })
-        .fromTo('.gallery-image', { clipPath: 'inset(0% 0% 100% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.64, stagger: 0.06 }, 0)
-        .from('.gallery-item h3, .gallery-item p', { y: 10, opacity: 0.5, duration: 0.48, stagger: 0.025 }, 0.12);
-
-      gsap.timeline({
-        defaults: { ease: 'power3.out' },
-        scrollTrigger: { trigger: '.research-feature', start: 'top 82%', once: true }
-      })
-        .from('.research-heading h2', { y: 30, duration: 0.72 }, 0)
-        .from('.research-author', { x: -14, opacity: 0.6, duration: 0.6 }, 0.1)
-        .from('.research-summary h3', { x: desktop ? 28 : 14, opacity: 0.65, duration: 0.7 }, 0.16);
-
-      gsap.from('.knowledge-section .heading-rule', {
-        scaleX: 0,
-        transformOrigin: 'left center',
-        duration: 0.85,
-        ease: 'power3.inOut',
-        scrollTrigger: { trigger: '.knowledge-section', start: 'top 84%', once: true }
-      });
-      gsap.from('.updates-main .update-row', {
-        y: 16, opacity: 0.65, duration: 0.6, stagger: 0.07, ease: 'power3.out',
-        scrollTrigger: { trigger: '.community-updates', start: 'top 84%', once: true }
-      });
-      gsap.timeline({
-        defaults: { ease: 'power3.out' },
-        scrollTrigger: { trigger: '.community-join', start: 'top 84%', once: true }
-      })
-        .from('.join-copy h2', { y: 28, duration: 0.75 }, 0)
-        .from('.join-contact', { x: desktop ? 24 : 0, y: desktop ? 0 : 18, opacity: 0.6, duration: 0.65 }, 0.15);
-    } else {
-      if (!entered && window.scrollY < 32) {
-        gsap.from('main h1', { y: 22, opacity: 0.65, duration: 0.58, ease: 'power3.out' });
-        gsap.from('.page-hero > .container > p, .page-talk .english-title', { y: 12, opacity: 0.7, duration: 0.5, delay: 0.08, ease: 'power3.out' });
-      }
-      for (const row of document.querySelectorAll('.project-card')) {
+      if (!returning) {
         gsap.timeline({
-          defaults: { duration: 0.65, ease: 'power3.out' },
-          scrollTrigger: { trigger: row, start: 'top 90%', once: true }
+          defaults: { ease: 'power3.out' },
+          scrollTrigger: { trigger: '.research-feature', start: 'top 88%', once: true }
         })
-          .fromTo(row.querySelector('.card-visual'), { clipPath: 'inset(0% 14% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)' }, 0)
-          .from(row.querySelector('.card-body'), { x: desktop ? 26 : 0, y: desktop ? 0 : 12, opacity: 0.6 }, 0.08);
-      }
-      for (const section of document.querySelectorAll('.visual figure, .speaker-copy')) {
-        gsap.from(section, {
-          y: 16, opacity: 0.65, duration: 0.62, ease: 'power3.out',
-          scrollTrigger: { trigger: section, start: 'top 92%', once: true }
+          .fromTo('.research-heading h2', { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.66 }, 0)
+          .fromTo('.research-author', { x: -12, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6 }, 0.08)
+          .fromTo('.research-summary h3', { x: desktop ? 24 : 12, opacity: 0 }, { x: 0, opacity: 1, duration: 0.66 }, 0.13);
+        gsap.from('.knowledge-section .heading-rule', {
+          scaleX: 0, transformOrigin: 'left center', duration: 0.72, ease: 'power3.inOut',
+          scrollTrigger: { trigger: '.knowledge-section', start: 'top 88%', once: true }
         });
+        gsap.timeline({
+          defaults: { ease: 'power3.out' },
+          scrollTrigger: { trigger: '.community-join', start: 'top 89%', once: true }
+        })
+          .fromTo('.join-copy h2', { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.66 }, 0)
+          .fromTo('.join-contact', { x: desktop ? 20 : 0, y: desktop ? 0 : 16, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: 0.6 }, 0.12);
       }
+    } else if (!entered && !navigationEntry && window.scrollY < 32) {
+      gsap.from('main h1', { y: 22, opacity: 0.4, duration: 0.58, ease: 'power3.out' });
+      gsap.from('.page-hero > .container > p, .page-talk .english-title', { y: 12, opacity: 0.5, duration: 0.5, delay: 0.08, ease: 'power3.out' });
     }
+
+    const restoreMetrics = readingMotion(context, { returning, navigationEntry });
     entered = true;
     ScrollTrigger.refresh();
     return () => {
+      restoreMetrics();
       if (lenis) {
         gsap.ticker.remove(tick);
         lenis.destroy();

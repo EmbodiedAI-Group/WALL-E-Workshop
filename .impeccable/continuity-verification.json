@@ -1,0 +1,222 @@
+{
+  "verifiedAt": "2026-10-31T18:27:10.981524+00:00",
+  "scope": "Reading rhythm and native static-page navigation continuity across seven existing routes",
+  "assets": {
+    "assets/motion.js": {
+      "sha256": "9eb3c88c464e6672a9036f6d9bcd45a1c85d213fd9840ffb21622fa0fd1f362f",
+      "bytes": 383557,
+      "gzipBytes": 128329
+    },
+    "assets/navigation.js": {
+      "sha256": "9480a858b62c1bcee9d3c6bf54b114477d373bece9b58c005b8c4fe19889c252",
+      "bytes": 4826,
+      "gzipBytes": 1864
+    },
+    "assets/navigation.css": {
+      "sha256": "fd703bc99c3dcb901f92b06de904f996660ad4f98d6752a127fbdc916be53f68",
+      "bytes": 3956,
+      "gzipBytes": 825
+    },
+    "assets/reading-position.css": {
+      "sha256": "82977107a89cc4adf025db1d92a27f8633a6046b0c8082d551f71808443b5230",
+      "bytes": 1994,
+      "gzipBytes": 833
+    }
+  },
+  "build": "npm run build",
+  "routes": {
+    "checks": 14,
+    "failures": [],
+    "viewports": "1536x1024 desktop / 375x812 mobile"
+  },
+  "fallbackAndRendering": {
+    "heroLayers": {
+      "wordmark": 2,
+      "frame": 1,
+      "photoInsideFrame": true
+    },
+    "desktopThreads": 1,
+    "joinHref": "#join",
+    "joinHoverColor": "rgb(255, 255, 255)",
+    "reducedThreads": 0,
+    "mobileThreads": 0,
+    "noJsNavigationUsable": true
+  },
+  "interactionChecks": {
+    "nativeSharedTitleImageSnapshots": "Verified both old/new snapshots during real entry and Back; repeated use, matching breadcrumb and browser history return",
+    "sectionDirection": "Header/footer talk->projects section-back; projects->talk section-forward; no stale item or scroll restoration",
+    "metrics": "All four detail pages retain exact values, units and decimals in normal/reduced modes; temporary visual clones removed",
+    "anchors": "96px single offset; tested heading top95.64px below64px header; current TOC/section updated",
+    "listStagger": "Actual visible samples show sequential opacity progression, not all-at-once entrance",
+    "accessibility": "No-JS content/links work; reduced motion disables spatial transitions and WebGL while keeping readable state",
+    "review": "continuity-review.md: ship, no unresolved material findings"
+  },
+  "staticDetector": {
+    "command": "impeccable detect --json",
+    "findings": 0,
+    "result": "continuity-detect.json"
+  },
+  "sameDayPerformance": {
+    "method": "Same-day paired A/B in one local headless Chrome launch. Baseline read-only git object extraction234c9ad. Same40 actualwheel inputs at200ms,20down20up; warmedfonts650ms plus separatelyrecorded500msidle cadence. Desktop1536x1024; touchmobile390x844 is_mobile/has_touchTrue. Eachcasefreshcontext,1xCPU. Root/reviewerChromeheld. Twofreshdetailstartup traces useidenticalearlyrAF/longtask observer+1500msafterDOMContentLoaded; startupisnotisolatedcounterCPU. Raw intervalsretained. Notphysicaldevice validation.",
+    "baselineCommit": "234c9ad001251140e1ec408b7f1a4549039125ad",
+    "assetsUnchangedDuringSampling": true,
+    "wheelSummary": [
+      {
+        "label": "baseline",
+        "viewport": [
+          1536,
+          1024
+        ],
+        "mobileEmulation": false,
+        "frameCount": 1579,
+        "medianIntervalMs": 5.6,
+        "p95IntervalMs": 7,
+        "p99IntervalMs": 16.7,
+        "maxIntervalMs": 17.1,
+        "framesOver33ms": 0,
+        "framesOver50ms": 0,
+        "longTaskCount": 0,
+        "longTaskTotalMs": 0,
+        "overflow": false,
+        "pageErrors": []
+      },
+      {
+        "label": "current",
+        "viewport": [
+          1536,
+          1024
+        ],
+        "mobileEmulation": false,
+        "frameCount": 1440,
+        "medianIntervalMs": 5.6,
+        "p95IntervalMs": 16.5,
+        "p99IntervalMs": 16.8,
+        "maxIntervalMs": 27.8,
+        "framesOver33ms": 0,
+        "framesOver50ms": 0,
+        "longTaskCount": 0,
+        "longTaskTotalMs": 0,
+        "overflow": false,
+        "pageErrors": []
+      },
+      {
+        "label": "baseline",
+        "viewport": [
+          390,
+          844
+        ],
+        "mobileEmulation": true,
+        "frameCount": 1397,
+        "medianIntervalMs": 5.6,
+        "p95IntervalMs": 11.4,
+        "p99IntervalMs": 17.4,
+        "maxIntervalMs": 61.1,
+        "framesOver33ms": 4,
+        "framesOver50ms": 1,
+        "longTaskCount": 0,
+        "longTaskTotalMs": 0,
+        "overflow": false,
+        "pageErrors": []
+      },
+      {
+        "label": "current",
+        "viewport": [
+          390,
+          844
+        ],
+        "mobileEmulation": true,
+        "frameCount": 1299,
+        "medianIntervalMs": 5.6,
+        "p95IntervalMs": 16.7,
+        "p99IntervalMs": 33.3,
+        "maxIntervalMs": 44.5,
+        "framesOver33ms": 13,
+        "framesOver50ms": 0,
+        "longTaskCount": 0,
+        "longTaskTotalMs": 0,
+        "overflow": false,
+        "pageErrors": []
+      }
+    ],
+    "detailStartupSummary": [
+      {
+        "label": "baseline",
+        "frameCount": 230,
+        "medianIntervalMs": 5.6,
+        "p95IntervalMs": 7,
+        "p99IntervalMs": 16.7,
+        "maxIntervalMs": 55.5,
+        "framesOver33ms": 1,
+        "framesOver50ms": 1,
+        "longTaskCount": 3,
+        "longTaskTotalMs": 419,
+        "overflow": false,
+        "pageErrors": [],
+        "finalValues": [
+          "99.2%",
+          "31s",
+          "72h"
+        ],
+        "animatedClones": 0
+      },
+      {
+        "label": "current",
+        "frameCount": 265,
+        "medianIntervalMs": 5.6,
+        "p95IntervalMs": 6.3,
+        "p99IntervalMs": 16.8,
+        "maxIntervalMs": 99.9,
+        "framesOver33ms": 3,
+        "framesOver50ms": 2,
+        "longTaskCount": 2,
+        "longTaskTotalMs": 187,
+        "overflow": false,
+        "pageErrors": [],
+        "finalValues": [
+          "99.2%",
+          "31s",
+          "72h"
+        ],
+        "animatedClones": 0
+      }
+    ],
+    "interpretation": "Additional entry/header effects have a measurable frame-tail cost. Current paired wheel samples have p95 16.5ms desktop/16.7ms touch emulation, no >50ms warmed intervals and no longtasks. Touch retains occasional >33ms intervals. This is local headless evidence, not all-device fixed-frame-rate validation.",
+    "isolatedVariants": {
+      "method": "Exactly two browser-injected CSS intervention variants; no website files edited. Same active mobile390x844 touch20down20up protocol, native scroll, warmed fonts and500msidle sampling. Header-relative keeps progress JS; static reveal CSS keeps animation JS but overrides visual opacity/transform. Compare against current control from same-day-ab.json; single-run differences do not alone prove causality. Root/reviewerChromeheld.",
+      "results": [
+        {
+          "label": "current-header-relative",
+          "p95IntervalMs": 16.6,
+          "p99IntervalMs": 27.5,
+          "maxIntervalMs": 55.7,
+          "framesOver33ms": 6,
+          "framesOver50ms": 2,
+          "longTaskCount": 0,
+          "pageErrors": [],
+          "overflow": false
+        },
+        {
+          "label": "current-static-reveals",
+          "p95IntervalMs": 16.6,
+          "p99IntervalMs": 27.8,
+          "maxIntervalMs": 44.6,
+          "framesOver33ms": 9,
+          "framesOver50ms": 0,
+          "longTaskCount": 0,
+          "pageErrors": [],
+          "overflow": false
+        }
+      ],
+      "conclusion": "Neither disabling sticky positioning nor forcing static reveal opacity/transform materially changed mobile p95. No dominant cause established; keep bounded implementation rather than speculative compositing changes."
+    }
+  },
+  "rawLocalEvidence": [
+    "screenshots/final-validation.json",
+    "navigation-tests/native-roundtrips.json",
+    "navigation-tests/navigation-edges.json",
+    "navigation-tests/section-refinement.json",
+    "reading-review/reviewer-check.json",
+    "continuity-performance/same-day-ab.json",
+    "continuity-performance/mobile-diagnosis.json"
+  ]
+}

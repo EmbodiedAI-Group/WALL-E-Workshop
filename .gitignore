@@ -17,3 +17,8 @@ assets/plates/
 # Local motion measurements and preview recordings.
 .impeccable/performance/
 .impeccable/motion-review/
+
+# Local reading/navigation interaction captures and timings.
+.impeccable/navigation-tests/
+.impeccable/reading-review/
+.impeccable/continuity-performance/

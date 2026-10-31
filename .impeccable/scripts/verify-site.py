@@ -38,9 +38,9 @@ with sync_playwright() as p:
             page.evaluate('document.fonts.ready')
             page.evaluate('Promise.all([...document.images].map(i => {i.loading="eager"; return i.decode()}))')
             page.evaluate('window.scrollTo({top:document.documentElement.scrollHeight,behavior:"instant"})')
-            page.wait_for_timeout(950)
+            page.wait_for_timeout(1800)
             page.evaluate('window.scrollTo({top:0,behavior:"instant"})')
-            page.wait_for_timeout(950)
+            page.wait_for_timeout(1800)
             metrics = page.evaluate('({overflow:document.documentElement.scrollWidth>innerWidth, badImages:[...document.images].filter(i=>!i.naturalWidth).length, h1:document.querySelectorAll("h1").length, main:document.querySelectorAll("main").length})')
             name = ('home-desktop' if width == 1536 else 'home-375') if route == 'index.html' else route.replace('.html', f'-{width}')
             page.screenshot(path=str(out / (name + '.png')), full_page=True)
@@ -69,7 +69,7 @@ with sync_playwright() as p:
     motion['noJsNavigationUsable'] = fallback.locator('#join-magnet a').is_visible() and fallback.locator('h1').is_visible()
     nojs.close()
     browser.close()
-inputs = [*root.glob('*.html'), *root.glob('assets/*.css'), root / 'assets/motion.js', *root.glob('assets/media/*.webp'), *root.glob('assets/fonts/*.woff2')]
+inputs = [*root.glob('*.html'), *root.glob('assets/*.css'), *root.glob('assets/*.js'), *root.glob('assets/media/*.webp'), *root.glob('assets/fonts/*.woff2')]
 hashes = {str(path.relative_to(root)).replace('\\', '/'): sha256(path.read_bytes()).hexdigest() for path in inputs}
 report = {'routes': results, 'motion': motion, 'inputHashes': hashes, 'viewport': '1536x1024 desktop / 375x812 mobile', 'browser': 'Local Chrome via Python Playwright', 'reproduce': 'python .impeccable/scripts/verify-site.py'}
 (out / 'final-validation.json').write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf8')

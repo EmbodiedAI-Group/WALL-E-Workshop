@@ -1,0 +1,40 @@
+@view-transition{navigation:auto}
+/* A selected image/title is the spatial anchor; the reading plane moves only a little. */
+::view-transition-group(navigation-image),::view-transition-group(navigation-title){animation-duration:.44s;animation-timing-function:cubic-bezier(.16,1,.3,1)}
+::view-transition-group(navigation-image){z-index:3}
+::view-transition-group(navigation-title){z-index:4;animation-duration:.32s}
+::view-transition-old(navigation-image),::view-transition-new(navigation-image){height:100%;object-fit:cover;mix-blend-mode:normal}
+::view-transition-old(navigation-title){animation:navigation-title-out .12s ease both;mix-blend-mode:normal}
+::view-transition-new(navigation-title){animation:navigation-title-in .18s .1s ease both;mix-blend-mode:normal}
+::view-transition-group(site-header){z-index:8;animation-duration:.32s}
+::view-transition-old(site-header),::view-transition-new(site-header){animation:none;mix-blend-mode:normal}
+:root[data-navigation-entry]::view-transition-old(root){animation:navigation-section-out .2s ease both;mix-blend-mode:normal}
+:root[data-navigation-entry]::view-transition-new(root){animation:navigation-section-in .34s cubic-bezier(.16,1,.3,1) both;mix-blend-mode:normal}
+:root[data-navigation-entry='detail-forward']::view-transition-old(root){animation-name:navigation-depth-out}
+:root[data-navigation-entry='detail-forward']::view-transition-new(root){animation-name:navigation-depth-in}
+:root[data-navigation-entry='detail-back']::view-transition-old(root){animation-name:navigation-depth-return-out}
+:root[data-navigation-entry='detail-back']::view-transition-new(root){animation-name:navigation-depth-return-in}
+:root[data-navigation-entry='section-back']::view-transition-old(root){animation-name:navigation-section-back-out}
+:root[data-navigation-entry='section-back']::view-transition-new(root){animation-name:navigation-section-back-in}
+:root[data-navigation-fallback] main{animation:navigation-fallback-forward .3s cubic-bezier(.16,1,.3,1) both}
+:root[data-navigation-fallback='detail-back'] main,:root[data-navigation-fallback='section-back'] main{animation-name:navigation-fallback-back}
+.navigation-return-target{animation:navigation-return-confirm 1.1s ease-out both}
+@keyframes navigation-title-out{to{opacity:0}}
+@keyframes navigation-title-in{from{opacity:0}to{opacity:1}}
+@keyframes navigation-depth-out{to{opacity:0;transform:translateX(-12px) scale(.994)}}
+@keyframes navigation-depth-in{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:none}}
+@keyframes navigation-depth-return-out{to{opacity:0;transform:translateX(30px)}}
+@keyframes navigation-depth-return-in{from{opacity:.3;transform:translateX(-12px) scale(.994)}to{opacity:1;transform:none}}
+@keyframes navigation-section-out{to{opacity:0;transform:translateX(-18px)}}
+@keyframes navigation-section-in{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+@keyframes navigation-section-back-out{to{opacity:0;transform:translateX(18px)}}
+@keyframes navigation-section-back-in{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:none}}
+@keyframes navigation-fallback-forward{from{opacity:.6;transform:translateX(16px)}to{opacity:1;transform:none}}
+@keyframes navigation-fallback-back{from{opacity:.6;transform:translateX(-16px)}to{opacity:1;transform:none}}
+@keyframes navigation-return-confirm{0%,25%{background-color:rgba(8,55,165,.065)}100%{background-color:transparent}}
+@media(max-width:600px){::view-transition-group(navigation-image),::view-transition-group(navigation-title){animation-duration:.36s}::view-transition-group(navigation-title){animation-duration:.3s}}
+@media(prefers-reduced-motion:reduce){
+ @view-transition{navigation:none}
+ ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
+ :root[data-navigation-fallback] main,.navigation-return-target{animation:none!important}
+}

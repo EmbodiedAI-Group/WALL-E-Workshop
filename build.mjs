@@ -12,3 +12,14 @@ await build({
   legalComments: 'eof',
   logLevel: 'info'
 });
+
+await build({
+  entryPoints: ['src/navigation.js'],
+  outfile: 'assets/navigation.js',
+  bundle: true,
+  minify: true,
+  format: 'iife',
+  target: ['es2020'],
+  legalComments: 'eof',
+  logLevel: 'info'
+});

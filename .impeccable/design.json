@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-31T07:09:29.556940+00:00",
+  "generatedAt": "2026-10-31T18:20:52.123078+00:00",
   "title": "Design System: moss具身工坊",
   "extensions": {
     "colorMeta": {
@@ -102,7 +102,13 @@
         "purpose": "Compact, readable route controls."
       }
     },
-    "shadows": [],
+    "shadows": [
+      {
+        "name": "scrolled-header",
+        "value": "0 5px 18px rgba(23,20,21,.055)",
+        "purpose": "Only separates the sticky header after scrollY > 96; reading surfaces remain flat."
+      }
+    ],
     "motion": [
       {
         "name": "hero-assembly",
@@ -116,23 +122,23 @@
       },
       {
         "name": "desktop-scroll-clock",
-        "value": "GSAP ticker → lenis.raf(time*1000); autoRaf=false; lerp=.1; smoothWheel=true; syncTouch=false; anchors.offset=-24",
-        "purpose": "Enabled on (hover:hover) and (pointer:fine), regardless of viewport width; native touch path."
+        "value": "GSAP ticker → lenis.raf(time*1000); autoRaf=false; lerp=.1; smoothWheel=true; syncTouch=false; anchors.offset=0",
+        "purpose": "Hover+fine pointer irrespective of viewport width; touch native. html scroll-padding-top96px is the sole anchor offset."
       },
       {
         "name": "gallery-entry",
-        "value": "image inset reveal .64s; sibling stagger=.06; caption y=10 opacity=.5 duration=.48s stagger=.025",
-        "purpose": "Once-only image and caption reveal at top94%, not a repeated looping animation."
+        "value": "ScrollTrigger.batch top92%; interval=.065; batchMax=8; duration=.68s; y=24; capped stagger amount=.24s",
+        "purpose": "Actual visible siblings enter together once; tall catalog rows trigger individually instead of queueing offscreen."
       },
       {
         "name": "research-entry",
-        "value": "heading y=30 .72s; author x=-14 opacity=.6 .60s; research title x=28 desktop or14 other opacity=.65 .70s",
-        "purpose": "Distinct semantic choreography within the research feature, once at top82%."
+        "value": "heading y=24 .66s; author x=-12 .60s at.08s; research title x=24 desktop or12 other .66s at.13s",
+        "purpose": "Semantic research choreography once at top88%; skipped on detail-back."
       },
       {
         "name": "subpage-entry",
-        "value": "main h1 y=22 opacity=.65 duration=.58s power3.out; supporting copy y=12 opacity=.7 duration=.5s delay=.08s",
-        "purpose": "Quiet subpage entrance; content is not statically CSS-hidden."
+        "value": "main h1 y=22 opacity=.4 duration=.58s power3.out; supporting copy y=12 opacity=.5 duration=.5s delay=.08s",
+        "purpose": "Direct-entry only; native navigation-entry skips competing title/image animation. Content remains accessible without scripts."
       },
       {
         "name": "gallery-hover",
@@ -151,8 +157,8 @@
       },
       {
         "name": "cross-document-transition",
-        "value": "@view-transition navigation:auto; old root .18s ease; new root .3s cubic-bezier(.16,1,.3,1)",
-        "purpose": "Progressive native cross-document fades, not SPA routing; disabled under reduced motion."
+        "value": "Native image group .44s/title .32s; <=600px .36s/.30s; root exit .2s/entry .34s; fallback .3s",
+        "purpose": "Selected source/title morph to detail; inverse back restores list position. Global header/footer navigation uses section direction; no SPA interception."
       },
       {
         "name": "join-magnet",
@@ -166,13 +172,33 @@
       },
       {
         "name": "dynamic-reduced-motion",
-        "value": "gsap.matchMedia cleanup; destroy Lenis; clearProps(hero-photo.transform); Magnet.disabled=true; no Threads; CSS animation/transition disabled",
-        "purpose": "Preference changes remove captured transform states and restore native reading paths."
+        "value": "GSAP context cleanup; destroy Lenis; restore original metric nodes; clear hero transform; Magnet.disabled=true; no Threads; no native spatial transition",
+        "purpose": "Preference changes restore final content while sticky category/section/progress state remains usable."
       },
       {
         "name": "focus-outline",
         "value": "2px solid var(--blue); outline-offset:5px",
         "purpose": "Keyboard state; white outline within cobalt contact surface."
+      },
+      {
+        "name": "reading-group-entry",
+        "value": "visible sibling batch .62s; bounded stagger<=.24s; long-form groups .58s, stagger<=.18s",
+        "purpose": "Sections and adjacent reading blocks establish hierarchy once; not per-word or entire-list simultaneous entrance."
+      },
+      {
+        "name": "metric-emphasis",
+        "value": "ordinary quantities count .72s; delay<=.12s; value emphasis .48s; bounds/tolerances do not count",
+        "purpose": "Exact original precision/units remain accessible; visual clone aria-hidden, removed with original-node restoration on completion or cleanup."
+      },
+      {
+        "name": "reading-position",
+        "value": "sticky top0; stable64px desktop/70px <=600px; threshold96px; brand scale.92; progress2px; section text hidden<=760px",
+        "purpose": "Same ScrollTrigger clock; current category/heading and TOC state preserve position without layout-height animation."
+      },
+      {
+        "name": "selected-item-return",
+        "value": "native browser scroll restoration; matching breadcrumb restores source viewport top; confirmation1.1s",
+        "purpose": "Symmetric detail-back restores selected item; unrelated global navigation starts normally without stale selection."
       }
     ],
     "breakpoints": [
@@ -217,7 +243,7 @@
         },
         {
           "path": "src/motion.jsx",
-          "sha256": "e95701203b563d3f80fd819d97cc831e09d5041b8abbd6b3c5a85921aae6c4f1"
+          "sha256": "88ce095edc5f04f506cbeed9f85816fb6e5a40f5fddccce43dfe836c9670b12a"
         },
         {
           "path": "src/vendor/react-bits/Magnet.jsx",
@@ -229,39 +255,39 @@
         },
         {
           "path": "index.html",
-          "sha256": "5f9414d54903a5fe92ba1847aa7118a60cac78f0ef239c80399e513b7b3d889d"
+          "sha256": "bd6e137a95d0644e932bf1391f12dcd8cdf3295b64c11f670cd53ae8e06093ec"
         },
         {
           "path": "projects.html",
-          "sha256": "74c59dda494934b055efc337ef278a8a9338b938d5811efb303ee866b67dca57"
+          "sha256": "190feed21d2411820bd9dfbd2eeca2a7c67e09a584cde7cbfaee209261d85140"
         },
         {
           "path": "project-1.html",
-          "sha256": "dfc64f8491ff3abec93c222a24d016111729fba21a42ee6389dbb58d91a0dea3"
+          "sha256": "f372ee58298f8a840fc92e5dd9a85773be9af6ff567e67dfef150b6dbdd4e471"
         },
         {
           "path": "project-2.html",
-          "sha256": "3920399f5a6e13d13369b7c0745716a39e875cb882b21ab088dc7a84998f3328"
+          "sha256": "05e8ae6ddb90128f4153f50fa0c55c171babb6abdf020bb61f1a9913cded8c36"
         },
         {
           "path": "project-3.html",
-          "sha256": "3d6d618627594663f89e8eeb097b8cac65704a58b181b797ce4f2a1fc0f9f498"
+          "sha256": "0d34f7515122216197a85c6b90d3ce328f99fa4db6e3493eafb4bd736adedbef"
         },
         {
           "path": "project-4.html",
-          "sha256": "f26e3992ff12982147eb8b376564573dd4c42b8f6c7c408691ffeb4038b30d01"
+          "sha256": "3eddec6501f80f17bd0934b9c193fa774ffa99701a05a0d7aaca0448eafd1596"
         },
         {
           "path": "wang-zhi-talk.html",
-          "sha256": "50b684dddf9b194449ed397b1b2445cce5432d4d07e3d28c9bb0bdc924cdfaa5"
+          "sha256": "62f72170bc1ca193f09b999bc55292df3f4cc60732eec3bc0c32c6494a8218fb"
         },
         {
           "path": "src/choreography.js",
-          "sha256": "7c33d31da20b5a0b83d67888427532646a66fc37532206aeeaf54c539365f933"
+          "sha256": "b2d463ab6793c7fc24f851491bc455be943056482fb5face0c0616a740dc825a"
         },
         {
           "path": "assets/motion.js",
-          "sha256": "80047986d8c71bf540e4b6c87eae3f3ad34057082c22f9e1b51c661de4b16795"
+          "sha256": "9eb3c88c464e6672a9036f6d9bcd45a1c85d213fd9840ffb21622fa0fd1f362f"
         },
         {
           "path": "assets/motion.css",
@@ -274,6 +300,34 @@
         {
           "path": "package-lock.json",
           "sha256": "610f408985048f618ff406c4507f77577e203f39be36ae24aec36f82221e5a9f"
+        },
+        {
+          "path": "src/reading-motion.js",
+          "sha256": "278443573194546c097b51123253e8c7ab521a6d5124359818d17066bace5fb8"
+        },
+        {
+          "path": "src/reading-position.js",
+          "sha256": "eedfd00f8108aeb554753574bc39b5985c4686bbb6b822d70fb7995129b6514f"
+        },
+        {
+          "path": "src/navigation.js",
+          "sha256": "633573c37dfe70c55de9a0fdb0f6f57b21a42766a89266676a662cc4f59e1133"
+        },
+        {
+          "path": "assets/reading-position.css",
+          "sha256": "82977107a89cc4adf025db1d92a27f8633a6046b0c8082d551f71808443b5230"
+        },
+        {
+          "path": "assets/navigation.css",
+          "sha256": "fd703bc99c3dcb901f92b06de904f996660ad4f98d6752a127fbdc916be53f68"
+        },
+        {
+          "path": "assets/navigation.js",
+          "sha256": "9480a858b62c1bcee9d3c6bf54b114477d373bece9b58c005b8c4fe19889c252"
+        },
+        {
+          "path": "build.mjs",
+          "sha256": "805930dc32a4d57cc2120fe3a5b66ee476b9b654de6d185d4e6340eef9e3fa9a"
         }
       ],
       "product": "PRODUCT.md",
@@ -302,11 +356,14 @@
         "heroLayering": "photo-frame z1; intact masthead z2; mission z3; note z4",
         "heroMotion": "inner image scale1.08; yPercent±3; fixed outer polygon",
         "threads": "32lines; component opacity.8; outer opacity.22",
-        "scrollInput": "hover+finepointer irrespective width; touch native; reduced restores native"
+        "scrollInput": "hover+finepointer irrespective width; touch native; reduced restores native",
+        "stickyHeader": "Stable min-height64px desktop/70px <=600px; threshold96; layout heading offsets ignore temporary GSAP transforms; single html96px anchor padding.",
+        "metricCleanup": "Exact original values/units remain accessible and original nodes are restored after animation and reduced-motion changes.",
+        "sharedNavigation": "Unique selected image/title names in both old/new snapshots; card/detail/back and matching breadcrumb restore source position; global header/footer links use section order."
       },
       "canonicalRepository": "EmbodiedAI-Group/Moss-Embodied-Workshop",
       "canonicalPagesUrl": "https://embodiedai-group.github.io/Moss-Embodied-Workshop/",
-      "metadataRefresh": "Current motion refinement updates layering, font loading, choreography and source hashes; canonical repository URL synchronized after the external rename.",
+      "metadataRefresh": "Scoped reading-continuity merge: actual visible batches, exact metric cleanup, stable sticky position, selected-item native transitions and separate global section direction. Existing brand and historical numeric status retained.",
       "motionDirection": ".impeccable/surfaces/motion-upgrade.md",
       "primaryRegressionEvidence": ".impeccable/motion-review/user-layering-feedback.png",
       "historicalStaticScreenshots": [
@@ -336,10 +393,29 @@
       "checks": [
         ".impeccable/motion-review/review-runtime.json"
       ],
-      "bundleHash": "80047986d8c71bf540e4b6c87eae3f3ad34057082c22f9e1b51c661de4b16795",
-      "loading": "All seven HTML routes preload both fonts and include assets/motion.css?v=motion2 plus assets/motion.js?v=motion2.",
-      "performanceClaim": "Measure actual wheel scroll and frame intervals on the current machine; no generalized fixed-fps/device guarantee.",
-      "numericWorkflowStatus": "Historical static numeric workflow exception remains open/not-closed; neither this documentation refresh nor later motion evidence declares pipeline PASS."
+      "bundleHash": "9eb3c88c464e6672a9036f6d9bcd45a1c85d213fd9840ffb21622fa0fd1f362f",
+      "loading": "All seven HTML routes use motion3 cache keys. Classic head assets/navigation.js registers pagereveal before defer assets/motion.js; reading-position.css and navigation.css follow shared motion styles.",
+      "performanceClaim": "Use current-machine active traces, matching asset hashes and same-environment baseline; no generalized fixed-fps/device guarantee. No final A/B values asserted by this documentation merge.",
+      "numericWorkflowStatus": "Historical static numeric workflow exception remains open/not-closed; neither this documentation refresh nor later motion evidence declares pipeline PASS.",
+      "navigationBundleHash": "9480a858b62c1bcee9d3c6bf54b114477d373bece9b58c005b8c4fe19889c252",
+      "readingContinuityDirection": ".impeccable/surfaces/reading-continuity.md",
+      "continuityChecks": [
+        ".impeccable/navigation-tests/native-roundtrips.json",
+        ".impeccable/navigation-tests/navigation-edges.json",
+        ".impeccable/navigation-tests/section-refinement.json",
+        ".impeccable/reading-review/reviewer-check.json",
+        ".impeccable/reading-review/reviewer-back-native.json"
+      ],
+      "continuityScreenshots": [
+        ".impeccable/reading-review/reviewer-project-open-90ms.png",
+        ".impeccable/reading-review/reviewer-back-native-60ms.png",
+        ".impeccable/reading-review/reviewer-sticky-anchor.png",
+        ".impeccable/reading-review/reviewer-reduced-mobile.png"
+      ],
+      "continuityPerformance": {
+        "records": ".impeccable/continuity-performance/",
+        "scope": "Local active wheel/touch simulations and same-environment baseline comparison; raw captures are local and ignored. Do not infer universal fixed fps. Navigation demo25fps is choreography evidence only."
+      }
     },
     "layerOrder": {
       "hero-photo-frame": 1,
