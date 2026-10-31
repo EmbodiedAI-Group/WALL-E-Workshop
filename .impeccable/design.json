@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-31T06:08:34.748806+00:00",
+  "generatedAt": "2026-10-31T06:12:23.761644+00:00",
   "title": "Design System: moss具身工坊",
   "extensions": {
     "colorMeta": {
@@ -184,31 +184,31 @@
         },
         {
           "path": "index.html",
-          "sha256": "aafe5aa4a8617af7ba51badad949798b37e548303f8aea03c40853581aaadce4"
+          "sha256": "41de47be872fd6d820c6eff73b1178c8a3baab43b1b5629ff1a37670ec2bd4f4"
         },
         {
           "path": "projects.html",
-          "sha256": "61ae276a08fe40183e4c836b2afadf2b1bded66fd753139efec10b864a7ad77f"
+          "sha256": "6e1a3c66d6dc01e9538ba03fb8626ae4e77f4b7a15607cd4a37083129cbdbd47"
         },
         {
           "path": "project-1.html",
-          "sha256": "ef6685b80bb0a8205310b62570abf338b8d302e7b8fb2c3c71c15f11b5e0b852"
+          "sha256": "d1d1e7d7c3f37648a05a477d814824e5eeb391be9a8b67d9da7ca48f7a00463e"
         },
         {
           "path": "project-2.html",
-          "sha256": "050300fd06957fb80cededbef38e6b24bdf48ccd80bcb5c09c09cbfff63feff9"
+          "sha256": "cdc19e453532c75b253136e4fac2da135c59007d65256a2e8dd525c7acd1025a"
         },
         {
           "path": "project-3.html",
-          "sha256": "1c0f339559f10cdef751409e62ab48a0aa4c6c1fc386baf0c7978fea35a3ac4e"
+          "sha256": "aec38c6874c6b14c313c2842af0581894accdb044e21dfd8d2b9b425e3ed87c1"
         },
         {
           "path": "project-4.html",
-          "sha256": "ed527960372eb905d021901ff3572bb1ea3f016a6710ee91da1420fca47123d3"
+          "sha256": "426f58415296843c6615b092a93a8fd45f10980470abd41e300621771f5a42ba"
         },
         {
           "path": "wang-zhi-talk.html",
-          "sha256": "b61430591c5ae723d8d29b8d43dd4b0f616144b3c5804e85b52658d4df6137f8"
+          "sha256": "5366c66e1444c3a334a1a3cdad0f60121ce68448c51c5db805bbc4bdb4f06e1a"
         }
       ],
       "product": "PRODUCT.md",
@@ -247,7 +247,10 @@
         "microMetadata": "11px minimum in the observed local metadata styles; not a global body-size rule",
         "heroCrop": "Six-vertex angular composition, not an organic subject matte",
         "egoGalleryCrop": "object-position:center 25%"
-      }
+      },
+      "canonicalRepository": "EmbodiedAI-Group/Moss-Embodied-Workshop-Moss-",
+      "canonicalPagesUrl": "https://embodiedai-group.github.io/Moss-Embodied-Workshop-Moss-/",
+      "metadataRefresh": "External GitHub footer URLs updated to administrator-renamed canonical repository. Visual CSS and motion source hashes unchanged."
     }
   },
   "components": [
