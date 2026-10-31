@@ -229,31 +229,31 @@
         },
         {
           "path": "index.html",
-          "sha256": "e873223b2f12565576baebd2d96afa656097f07585dc8e86328c39d26d5cdd2b"
+          "sha256": "5f9414d54903a5fe92ba1847aa7118a60cac78f0ef239c80399e513b7b3d889d"
         },
         {
           "path": "projects.html",
-          "sha256": "b8eea0a3545fa19f1e29ebddd482a6e7ce79fe623e6f20c63379d79fc84396ad"
+          "sha256": "74c59dda494934b055efc337ef278a8a9338b938d5811efb303ee866b67dca57"
         },
         {
           "path": "project-1.html",
-          "sha256": "54944e21f0d9cb304ca1a6e9d26367359a97d4c914c2675fd4c2f25494ec9489"
+          "sha256": "dfc64f8491ff3abec93c222a24d016111729fba21a42ee6389dbb58d91a0dea3"
         },
         {
           "path": "project-2.html",
-          "sha256": "3ffbc115b0901f1164d26d6c2d05df16dc74e902b0344a4d2337053b1d690825"
+          "sha256": "3920399f5a6e13d13369b7c0745716a39e875cb882b21ab088dc7a84998f3328"
         },
         {
           "path": "project-3.html",
-          "sha256": "ba45fb4dc69aee77a03884c634576a33dd1746db84284657de82bb9151d35b26"
+          "sha256": "3d6d618627594663f89e8eeb097b8cac65704a58b181b797ce4f2a1fc0f9f498"
         },
         {
           "path": "project-4.html",
-          "sha256": "3553c92f7babbece0b01452db017738e54d08fde735012696ec5179e41d7d7d4"
+          "sha256": "f26e3992ff12982147eb8b376564573dd4c42b8f6c7c408691ffeb4038b30d01"
         },
         {
           "path": "wang-zhi-talk.html",
-          "sha256": "2b8e4e8902f73fb0a9d5c47e69c02fdb42d8dbb01876d87a700075c7aaf7d21d"
+          "sha256": "50b684dddf9b194449ed397b1b2445cce5432d4d07e3d28c9bb0bdc924cdfaa5"
         },
         {
           "path": "src/choreography.js",
@@ -304,9 +304,9 @@
         "threads": "32lines; component opacity.8; outer opacity.22",
         "scrollInput": "hover+finepointer irrespective width; touch native; reduced restores native"
       },
-      "canonicalRepository": "EmbodiedAI-Group/Moss-Embodied-Workshop-Moss-",
-      "canonicalPagesUrl": "https://embodiedai-group.github.io/Moss-Embodied-Workshop-Moss-/",
-      "metadataRefresh": "Current motion refinement updates layering, font loading, choreography and source hashes; prior canonical repository URL remains unchanged.",
+      "canonicalRepository": "EmbodiedAI-Group/Moss-Embodied-Workshop",
+      "canonicalPagesUrl": "https://embodiedai-group.github.io/Moss-Embodied-Workshop/",
+      "metadataRefresh": "Current motion refinement updates layering, font loading, choreography and source hashes; canonical repository URL synchronized after the external rename.",
       "motionDirection": ".impeccable/surfaces/motion-upgrade.md",
       "primaryRegressionEvidence": ".impeccable/motion-review/user-layering-feedback.png",
       "historicalStaticScreenshots": [

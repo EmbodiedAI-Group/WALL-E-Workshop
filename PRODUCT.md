@@ -12,7 +12,7 @@ web
 汇聚伙伴、分享知识、交流研究、共创机器人项目。首页帮助访客理解社区、发现最新分享和项目并找到加入方式。
 
 ## Operating Context
-由运营者维护的中文社区网站，GitHub 仓库 EmbodiedAI-Group/Moss-Embodied-Workshop-Moss-；GitHub Pages 从 main 分支根目录发布。
+由运营者维护的中文社区网站，GitHub 仓库 EmbodiedAI-Group/Moss-Embodied-Workshop；GitHub Pages 从 main 分支根目录发布。
 
 ## Capabilities and Constraints
 现有静态 HTML 七条页面路由：index.html、projects.html、project-1.html 至 project-4.html、wang-zhi-talk.html。保留内容与路由，视觉重构。React Bits 用于动效，采用局部 React 集成即可，不需要无关后端。
