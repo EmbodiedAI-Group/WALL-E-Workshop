@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "9f5a75f250d2d9f4139d8d807156b4398b2670c9",
+  "notes": "All outputs mechanically derive from pre-existing repository raster assets. No image generation was performed in this conversion. Original asset authorship and creation method are not established. Project 3 is a pre-existing illustration, not a photograph. No crop or content modification. Hero enlargement is purely mechanical and adds no source detail.",
+  "assets": [
+    {
+      "path": "assets/plates/hero-photo.png",
+      "source": "assets/project-1.jpg",
+      "sourceCommit": "9f5a75f250d2d9f4139d8d807156b4398b2670c9",
+      "sourceDimensions": [
+        1080,
+        1269
+      ],
+      "outputDimensions": [
+        1458,
+        1713
+      ],
+      "sourceSha256": "03e9f1eff0a403ba46ea5af6075070dd21d9bc5a4eb1a241bdd0326256e7ae94",
+      "outputSha256": "baba498e5bc22d985d36e50dd6e9d054222439ec28109f6ab169383eba4a5d06",
+      "cropped": false,
+      "conversion": "ImageMagick JPEG to PNG; proportional Lanczos upscale to 1458px width solely for raster gate display dimensions, adds no detail",
+      "embeddedOrigin": true,
+      "sourceVisualType": "pre-existing photograph",
+      "generatedThisConversion": false
+    },
+    {
+      "path": "assets/plates/project-photo-1.png",
+      "source": "assets/project-1.jpg",
+      "sourceCommit": "9f5a75f250d2d9f4139d8d807156b4398b2670c9",
+      "sourceDimensions": [
+        1080,
+        1269
+      ],
+      "outputDimensions": [
+        1080,
+        1269
+      ],
+      "sourceSha256": "03e9f1eff0a403ba46ea5af6075070dd21d9bc5a4eb1a241bdd0326256e7ae94",
+      "outputSha256": "7c70b108323c6c8acef2bad34783be70c4a1bbdc0a2d8c6cf11569ff49e087ff",
+      "cropped": false,
+      "conversion": "ImageMagick JPEG to PNG; original dimensions; decoded RGB pixels identical to source",
+      "embeddedOrigin": true,
+      "sourceVisualType": "pre-existing photograph",
+      "generatedThisConversion": false
+    },
+    {
+      "path": "assets/plates/project-photo-2.png",
+      "source": "assets/project-2.jpg",
+      "sourceCommit": "9f5a75f250d2d9f4139d8d807156b4398b2670c9",
+      "sourceDimensions": [
+        1408,
+        768
+      ],
+      "outputDimensions": [
+        1408,
+        768
+      ],
+      "sourceSha256": "d0393ff679dc6bfb6862a081a52fef516c2b7235996344e0c54e9f39651c1a6c",
+      "outputSha256": "679f656b90c88686549dcfa3bcdd81fee53afd5771e893eb2c223912865c4661",
+      "cropped": false,
+      "conversion": "ImageMagick JPEG to PNG; original dimensions; decoded RGB pixels identical to source",
+      "embeddedOrigin": true,
+      "sourceVisualType": "pre-existing photograph",
+      "generatedThisConversion": false
+    },
+    {
+      "path": "assets/plates/project-photo-3.png",
+      "source": "assets/project-3.jpg",
+      "sourceCommit": "9f5a75f250d2d9f4139d8d807156b4398b2670c9",
+      "sourceDimensions": [
+        1280,
+        1424
+      ],
+      "outputDimensions": [
+        1280,
+        1424
+      ],
+      "sourceSha256": "7996c467706bdeed2e31864adbdeb806c4d15ee86109b121523671e315a2c3ff",
+      "outputSha256": "f47c00530572cd3cf4f065b930bdb13007976d61fccddc53d5e24625221cc4b3",
+      "cropped": false,
+      "conversion": "ImageMagick JPEG to PNG; original dimensions; decoded RGB pixels identical to source",
+      "embeddedOrigin": true,
+      "sourceVisualType": "pre-existing illustration",
+      "generatedThisConversion": false
+    },
+    {
+      "path": "assets/plates/project-photo-4.png",
+      "source": "assets/project-4.jpg",
+      "sourceCommit": "9f5a75f250d2d9f4139d8d807156b4398b2670c9",
+      "sourceDimensions": [
+        828,
+        711
+      ],
+      "outputDimensions": [
+        828,
+        711
+      ],
+      "sourceSha256": "c29bea8eb7550969e88a71415ef7769777ff2294282d124ab48924fbe056dc72",
+      "outputSha256": "3508548e18fa7d74be851ff901fabd0fc9560ea723b1ed111883bc0f0a9df0fb",
+      "cropped": false,
+      "conversion": "ImageMagick JPEG to PNG; original dimensions; decoded RGB pixels identical to source",
+      "embeddedOrigin": true,
+      "sourceVisualType": "pre-existing photograph",
+      "generatedThisConversion": false
+    }
+  ],
+  "productionAssets": [
+    {
+      "path": "assets/media/hero-photo.webp",
+      "format": "WebP",
+      "quality": 88,
+      "source": "assets/plates/hero-photo.png",
+      "sourceSha256": "baba498e5bc22d985d36e50dd6e9d054222439ec28109f6ab169383eba4a5d06",
+      "originalSource": "assets/project-1.jpg",
+      "sourceCommit": "9f5a75f250d2d9f4139d8d807156b4398b2670c9",
+      "sourceVisualType": "pre-existing photograph",
+      "outputDimensions": [
+        1458,
+        1713
+      ],
+      "outputSha256": "a5b8ad2c7159f5195adb8b1964c2308af5730f1b94e5dbfdfd780d7c7ef81633",
+      "bytes": 191010,
+      "conversion": "ImageMagick PNG to WebP quality 88 at unchanged dimensions; no crop or creative content changes",
+      "provenanceStorage": "Impeccable embed-prompt sidecar fallback for WebP",
+      "provenanceSidecar": "assets/media/hero-photo.webp.json",
+      "generatedThisConversion": false,
+      "cropped": false
+    },
+    {
+      "path": "assets/media/project-photo-1.webp",
+      "format": "WebP",
+      "quality": 88,
+      "source": "assets/plates/project-photo-1.png",
+      "sourceSha256": "7c70b108323c6c8acef2bad34783be70c4a1bbdc0a2d8c6cf11569ff49e087ff",
+      "originalSource": "assets/project-1.jpg",
+      "sourceCommit": "9f5a75f250d2d9f4139d8d807156b4398b2670c9",
+      "sourceVisualType": "pre-existing photograph",
+      "outputDimensions": [
+        1080,
+        1269
+      ],
+      "outputSha256": "1de3fd6b8f9b64ba04a3852d9d8267d61ffb411f383ad0475114a2942a950a6d",
+      "bytes": 135058,
+      "conversion": "ImageMagick PNG to WebP quality 88 at unchanged dimensions; no crop or creative content changes",
+      "provenanceStorage": "Impeccable embed-prompt sidecar fallback for WebP",
+      "provenanceSidecar": "assets/media/project-photo-1.webp.json",
+      "generatedThisConversion": false,
+      "cropped": false
+    },
+    {
+      "path": "assets/media/project-photo-2.webp",
+      "format": "WebP",
+      "quality": 88,
+      "source": "assets/plates/project-photo-2.png",
+      "sourceSha256": "679f656b90c88686549dcfa3bcdd81fee53afd5771e893eb2c223912865c4661",
+      "originalSource": "assets/project-2.jpg",
+      "sourceCommit": "9f5a75f250d2d9f4139d8d807156b4398b2670c9",
+      "sourceVisualType": "pre-existing photograph",
+      "outputDimensions": [
+        1408,
+        768
+      ],
+      "outputSha256": "93895f615e504c21cbe770661a4d0235660e15a40b425150287b2b7b955ce7a8",
+      "bytes": 171434,
+      "conversion": "ImageMagick PNG to WebP quality 88 at unchanged dimensions; no crop or creative content changes",
+      "provenanceStorage": "Impeccable embed-prompt sidecar fallback for WebP",
+      "provenanceSidecar": "assets/media/project-photo-2.webp.json",
+      "generatedThisConversion": false,
+      "cropped": false
+    },
+    {
+      "path": "assets/media/project-photo-3.webp",
+      "format": "WebP",
+      "quality": 88,
+      "source": "assets/plates/project-photo-3.png",
+      "sourceSha256": "f47c00530572cd3cf4f065b930bdb13007976d61fccddc53d5e24625221cc4b3",
+      "originalSource": "assets/project-3.jpg",
+      "sourceCommit": "9f5a75f250d2d9f4139d8d807156b4398b2670c9",
+      "sourceVisualType": "pre-existing illustration",
+      "outputDimensions": [
+        1280,
+        1424
+      ],
+      "outputSha256": "c9dd3f2c8e6d97031b097431b495b3deeff0c7da222a75474c0994ff4a8542cc",
+      "bytes": 182294,
+      "conversion": "ImageMagick PNG to WebP quality 88 at unchanged dimensions; no crop or creative content changes",
+      "provenanceStorage": "Impeccable embed-prompt sidecar fallback for WebP",
+      "provenanceSidecar": "assets/media/project-photo-3.webp.json",
+      "generatedThisConversion": false,
+      "cropped": false
+    },
+    {
+      "path": "assets/media/project-photo-4.webp",
+      "format": "WebP",
+      "quality": 88,
+      "source": "assets/plates/project-photo-4.png",
+      "sourceSha256": "3508548e18fa7d74be851ff901fabd0fc9560ea723b1ed111883bc0f0a9df0fb",
+      "originalSource": "assets/project-4.jpg",
+      "sourceCommit": "9f5a75f250d2d9f4139d8d807156b4398b2670c9",
+      "sourceVisualType": "pre-existing photograph",
+      "outputDimensions": [
+        828,
+        711
+      ],
+      "outputSha256": "a748ecaf286dc20cf314d11a61922b90dba96ca26a2db2f5f15151c4508fd8d5",
+      "bytes": 34048,
+      "conversion": "ImageMagick PNG to WebP quality 88 at unchanged dimensions; no crop or creative content changes",
+      "provenanceStorage": "Impeccable embed-prompt sidecar fallback for WebP",
+      "provenanceSidecar": "assets/media/project-photo-4.webp.json",
+      "generatedThisConversion": false,
+      "cropped": false
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+node_modules/
+assets/fonts/source/
+
+# Canonical full-size PNGs are local design-review derivatives; publish optimized WebP.
+assets/plates/
+
+# Local design captures and task journals; approved comp and design system stay tracked.
+.impeccable/build/
+.impeccable/review/
+.impeccable/screenshots/
+.impeccable/mocks/home-comp-1.png*
+.impeccable/mocks/home-comp-3.png*
+/task_plan.md
+/findings.md
+/progress.md

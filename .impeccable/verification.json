@@ -1,0 +1,46 @@
+{
+  "approval": {
+    "source": "chat",
+    "userText": "确认。我也认为第二稿最好。",
+    "scope": "Use homepage composition2 and replace four generated project thumbnails with the four existing project originals, as explicitly asked in preceding assistant message."
+  },
+  "numericPipeline": {
+    "status": "not-closed",
+    "phase": "plates",
+    "reason": "CLI requires a web receipt and compares generated device thumbnails against actual project originals. Written user approval of these original-image substitutions was recorded. No web receipt or pipeline PASS was fabricated.",
+    "rawFinalDiffScore": 0.62,
+    "rawDiffReport": ".impeccable/review/diff/final/report.json"
+  },
+  "independentEvidence": {
+    "reproducibleScript": ".impeccable/scripts/verify-site.py",
+    "validationReport": ".impeccable/screenshots/final-validation.json",
+    "heroCapture": ".impeccable/review/hero-repro.png",
+    "desktopCapture": ".impeccable/screenshots/home-desktop.png",
+    "mobileCapture": ".impeccable/screenshots/home-375.png",
+    "routeViewportChecks": 14,
+    "horizontalOverflow": false,
+    "localLinkFailures": 0,
+    "badImages": 0,
+    "pageErrors": 0,
+    "noJsNavigationUsable": true,
+    "motion": "React Bits Threads1 desktop,0 mobile/reduced-motion; native join href preserved"
+  },
+  "assets": {
+    "shipping": "assets/media/*.webp",
+    "totalBytes": 713844,
+    "previousPngBytes": 7375342,
+    "reductionPercent": 90.32,
+    "provenance": "assets/provenance.json",
+    "canonicalReviewPngs": "assets/plates/ retained locally, excluded from production commit"
+  },
+  "independentReview": {
+    "status": "ship",
+    "scope": "Both ordered material fixes resolved; initial full review found topology/type/material/ground/responsive/catalog/talk matching or approved adaptations. Numeric pipeline remains not-closed, not claimed PASS.",
+    "reviewer": "finish_review",
+    "verdict": ".impeccable/final-review.md"
+  },
+  "documentation": {
+    "design": "DESIGN.md",
+    "sidecar": ".impeccable/design.json"
+  }
+}

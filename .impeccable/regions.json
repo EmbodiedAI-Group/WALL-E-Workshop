@@ -1,0 +1,273 @@
+{
+  "regions": [
+    {
+      "id": "nav-brand",
+      "kind": "text",
+      "pixelBox": {
+        "x": 36,
+        "y": 8,
+        "w": 275,
+        "h": 43
+      },
+      "note": "moss具身工坊 compact publication brand"
+    },
+    {
+      "id": "nav-links",
+      "kind": "control",
+      "pixelBox": {
+        "x": 984,
+        "y": 12,
+        "w": 510,
+        "h": 43
+      },
+      "note": "共创项目 专家分享 加入社区 navigation links"
+    },
+    {
+      "id": "rail-intro",
+      "kind": "text",
+      "pixelBox": {
+        "x": 38,
+        "y": 83,
+        "w": 155,
+        "h": 50
+      },
+      "note": "真实世界 从想法开始 mission introduction"
+    },
+    {
+      "id": "rail-knowledge",
+      "kind": "control",
+      "pixelBox": {
+        "x": 37,
+        "y": 159,
+        "w": 155,
+        "h": 65
+      },
+      "note": "知识共享 navigation action"
+    },
+    {
+      "id": "rail-talk",
+      "kind": "control",
+      "pixelBox": {
+        "x": 37,
+        "y": 230,
+        "w": 155,
+        "h": 61
+      },
+      "note": "专家分享 navigation action"
+    },
+    {
+      "id": "rail-projects",
+      "kind": "control",
+      "pixelBox": {
+        "x": 37,
+        "y": 301,
+        "w": 155,
+        "h": 70
+      },
+      "note": "项目共创 navigation action"
+    },
+    {
+      "id": "rail-copy",
+      "kind": "text",
+      "pixelBox": {
+        "x": 38,
+        "y": 408,
+        "w": 162,
+        "h": 56
+      },
+      "note": "Chinese community introduction"
+    },
+    {
+      "id": "rail-english",
+      "kind": "text",
+      "pixelBox": {
+        "x": 38,
+        "y": 519,
+        "w": 161,
+        "h": 45
+      },
+      "note": "Embodied AI editorial supporting copy"
+    },
+    {
+      "id": "masthead",
+      "kind": "text",
+      "pixelBox": {
+        "x": 223,
+        "y": 71,
+        "w": 819,
+        "h": 272
+      },
+      "note": "Large blue lowercase moss wordmark"
+    },
+    {
+      "id": "headline",
+      "kind": "text",
+      "pixelBox": {
+        "x": 219,
+        "y": 366,
+        "w": 711,
+        "h": 253
+      },
+      "note": "把想法，带进真实世界。 large blue Chinese mission"
+    },
+    {
+      "id": "hero-photo",
+      "kind": "image",
+      "pixelBox": {
+        "x": 528,
+        "y": 69,
+        "w": 972,
+        "h": 568
+      },
+      "note": "Original orange dual robot-arm project photograph, intentionally cropped geometric field; reuse actual source assets/project-1.jpg, not generated altered machinery",
+      "bleed": true
+    },
+    {
+      "id": "right-copy",
+      "kind": "text",
+      "pixelBox": {
+        "x": 1398,
+        "y": 112,
+        "w": 106,
+        "h": 158
+      },
+      "note": "Short purpose description on white upper right reading patch"
+    },
+    {
+      "id": "right-english",
+      "kind": "text",
+      "pixelBox": {
+        "x": 1398,
+        "y": 325,
+        "w": 107,
+        "h": 27
+      },
+      "note": "Ideas to real world small supporting words"
+    },
+    {
+      "id": "event-band",
+      "kind": "control",
+      "pixelBox": {
+        "x": 37,
+        "y": 646,
+        "w": 1465,
+        "h": 51
+      },
+      "note": "Next talk 王治 Leo Wang HumanEgo ForceBand 11.07 07:00–09:00 查看详情"
+    },
+    {
+      "id": "project-heading",
+      "kind": "text",
+      "pixelBox": {
+        "x": 37,
+        "y": 742,
+        "w": 548,
+        "h": 61
+      },
+      "note": "一起 把项目做出来 project gallery heading"
+    },
+    {
+      "id": "project-description",
+      "kind": "text",
+      "pixelBox": {
+        "x": 1213,
+        "y": 746,
+        "w": 254,
+        "h": 40
+      },
+      "note": "Short project-gallery contextual introduction"
+    },
+    {
+      "id": "project-photo-1",
+      "kind": "image",
+      "pixelBox": {
+        "x": 37,
+        "y": 822,
+        "w": 351,
+        "h": 140
+      },
+      "note": "Project preview photograph; production maps to original asset project-1.jpg, generated extra device evidence must not be reused",
+      "bleed": true
+    },
+    {
+      "id": "project-link-1",
+      "kind": "control",
+      "pixelBox": {
+        "x": 37,
+        "y": 965,
+        "w": 351,
+        "h": 39
+      },
+      "note": "Project title and detail navigation action"
+    },
+    {
+      "id": "project-photo-2",
+      "kind": "image",
+      "pixelBox": {
+        "x": 406,
+        "y": 822,
+        "w": 352,
+        "h": 140
+      },
+      "note": "Project preview photograph; production maps to original asset project-2.jpg, generated extra device evidence must not be reused",
+      "bleed": true
+    },
+    {
+      "id": "project-link-2",
+      "kind": "control",
+      "pixelBox": {
+        "x": 406,
+        "y": 965,
+        "w": 352,
+        "h": 39
+      },
+      "note": "Project title and detail navigation action"
+    },
+    {
+      "id": "project-photo-3",
+      "kind": "image",
+      "pixelBox": {
+        "x": 777,
+        "y": 822,
+        "w": 352,
+        "h": 140
+      },
+      "note": "Project preview photograph; production maps to original asset project-3.jpg, generated extra device evidence must not be reused",
+      "bleed": true
+    },
+    {
+      "id": "project-link-3",
+      "kind": "control",
+      "pixelBox": {
+        "x": 777,
+        "y": 965,
+        "w": 352,
+        "h": 39
+      },
+      "note": "Project title and detail navigation action"
+    },
+    {
+      "id": "project-photo-4",
+      "kind": "image",
+      "pixelBox": {
+        "x": 1146,
+        "y": 822,
+        "w": 353,
+        "h": 140
+      },
+      "note": "Project preview photograph; production maps to original asset project-4.jpg, generated extra device evidence must not be reused",
+      "bleed": true
+    },
+    {
+      "id": "project-link-4",
+      "kind": "control",
+      "pixelBox": {
+        "x": 1146,
+        "y": 965,
+        "w": 353,
+        "h": 39
+      },
+      "note": "Project title and detail navigation action"
+    }
+  ]
+}

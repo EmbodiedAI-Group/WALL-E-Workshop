@@ -4,128 +4,38 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>双臂打包装成功率 → 100% · moss具身工坊</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--dark:#0c1a2b;--orange:#e88934;--orange-light:#f5b06b;--blue:#4a9eff;--green:#34d399;--bg:#f4f7fc;--card:#fff;--text:#1a2332;--text-mid:#3d4a5c;--text-light:#8a9bb0;--shadow-sm:0 8px 30px rgba(12,26,43,.08);--shadow-lg:0 24px 64px rgba(12,26,43,.18);--radius:24px;--transition:all .3s cubic-bezier(.25,.46,.45,.94);--font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
-html{scroll-behavior:smooth}
-body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
-.container{max-width:1100px;margin:0 auto;padding:0 24px}
-.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;background:rgba(12,26,43,.9);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}
-.navbar .container{display:flex;align-items:center;justify-content:space-between}
-.nav-logo{display:flex;align-items:center;gap:12px;color:#fff;font-weight:700;font-size:1.4rem}
-.nav-logo i{font-size:1.8rem;color:var(--orange)}
-.nav-logo span{background:linear-gradient(135deg,#fff 60%,var(--orange-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.nav-right{display:flex;align-items:center;gap:24px}
-.nav-back{color:rgba(255,255,255,.7);font-size:.92rem;display:flex;align-items:center;gap:8px;transition:var(--transition)}
-.nav-back:hover{color:#fff}
-.nav-cta{background:var(--orange);color:#fff;padding:8px 22px;border-radius:50px;font-weight:600;font-size:.92rem;transition:var(--transition);box-shadow:0 4px 16px rgba(232,137,52,.3)}
-.nav-cta:hover{transform:translateY(-2px);background:#f09a4a}
-.page-hero{padding:160px 0 110px;background:linear-gradient(160deg,#0c1a2b,#1a2f44 55%,#1f3a54);color:#fff;position:relative;overflow:hidden}
-.page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
-.page-hero::after{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(232,137,52,.12),transparent 65%);pointer-events:none}
-.page-hero .container{position:relative;z-index:2}
-.breadcrumb{font-size:.85rem;color:rgba(255,255,255,.45);margin-bottom:24px}
-.breadcrumb a{color:rgba(255,255,255,.7);transition:var(--transition)}
-.breadcrumb a:hover{color:var(--orange)}
-.project-badge{display:inline-block;font-family:monospace;font-size:.75rem;font-weight:700;letter-spacing:2px;color:var(--orange);background:rgba(232,137,52,.15);padding:4px 14px;border-radius:50px;margin-bottom:18px}
-.page-hero h1{font-size:2.8rem;font-weight:800;line-height:1.2;letter-spacing:-1.2px;margin-bottom:16px;max-width:820px}
-.page-hero .lead{font-size:1.05rem;color:rgba(255,255,255,.7);line-height:1.75;max-width:720px}
-.join-hero{position:relative;z-index:3;margin-top:-50px;padding-bottom:50px}
-.join-card{display:flex;align-items:center;gap:32px;max-width:720px;margin:0 auto;padding:28px 36px;background:var(--card);border-radius:var(--radius);box-shadow:0 24px 64px rgba(12,26,43,.15);border-top:4px solid var(--orange)}
-.qr-box{flex-shrink:0;width:140px;height:140px;padding:8px;background:#fff;border-radius:14px;box-shadow:0 6px 20px rgba(12,26,43,.1);display:flex;align-items:center;justify-content:center}
-.qr-box img{width:100%;height:100%;object-fit:contain;border-radius:8px}
-.join-info h3{font-size:1.25rem;font-weight:700;color:var(--dark);margin-bottom:6px}
-.join-info p{font-size:.92rem;color:var(--text-mid);line-height:1.6;margin-bottom:14px}
-.join-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:50px;background:var(--orange);color:#fff;font-weight:600;font-size:.88rem;transition:var(--transition);box-shadow:0 6px 18px rgba(232,137,52,.3)}
-.join-btn:hover{transform:translateY(-2px);background:#f09a4a}
-.project-detail{padding:40px 0 100px}
-.detail-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:start}
-.visual{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);background:var(--dark);position:sticky;top:100px}
-.visual svg,
-.visual img{width:100%;height:auto;display:block}
-.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px;padding:22px;background:var(--card);border-radius:18px;box-shadow:var(--shadow-sm);border:1px solid rgba(12,26,43,.04)}
-.metric .value{font-size:1.55rem;font-weight:800;letter-spacing:-.8px;color:var(--dark);line-height:1.1}
-.metric .value .accent{color:var(--orange)}
-.metric .label{font-size:.75rem;color:var(--text-light);margin-top:4px}
-.content h4{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--orange);margin:24px 0 10px}
-.content h4:first-child{margin-top:0}
-.content p{font-size:.92rem;color:var(--text-mid);line-height:1.75;margin-bottom:10px}
-.content ul{list-style:none;padding:0;margin:0 0 10px}
-.content ul li{position:relative;padding:5px 0 5px 22px;font-size:.9rem;color:var(--text-mid);line-height:1.65}
-.content ul li::before{content:'';position:absolute;left:4px;top:13px;width:6px;height:6px;border-radius:50%;background:var(--orange)}
-.content ul li strong{color:var(--dark);font-weight:600}
-.progress li{display:flex;align-items:flex-start;gap:10px;font-size:.9rem;padding:5px 0;line-height:1.6}
-.progress li i{margin-top:4px;font-size:.85rem}
-.progress li.done i{color:#34d399}
-.progress li.doing i{color:var(--blue)}
-.progress li.goal i{color:var(--orange)}
-.progress li::before{display:none}
-.tech-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;padding-top:22px;border-top:1px solid rgba(12,26,43,.06)}
-.tech-tags span{font-size:.78rem;font-weight:500;color:var(--text-mid);background:rgba(12,26,43,.04);padding:5px 14px;border-radius:50px;border:1px solid rgba(12,26,43,.06)}
-.footer{background:#08121e;color:rgba(255,255,255,.5);padding:36px 0;font-size:.85rem;text-align:center}
-.footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-.footer .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:600}
-.footer .brand i{color:var(--orange)}
-.footer a{color:rgba(255,255,255,.5);transition:var(--transition)}
-.footer a:hover{color:#fff}
-@media(max-width:1024px){.page-hero{padding:130px 0 90px}.page-hero h1{font-size:2.2rem}.detail-grid{grid-template-columns:1fr;gap:40px}.visual{position:static;max-width:600px;margin:0 auto}}
-@media(max-width:768px){.nav-back span{display:none}.nav-logo{font-size:1.15rem}.nav-logo i{font-size:1.5rem}.page-hero h1{font-size:1.8rem}.join-card{flex-direction:column;text-align:center;padding:24px 20px}.qr-box{width:120px;height:120px}.metrics{grid-template-columns:1fr 1fr;padding:18px}.metric .value{font-size:1.3rem}.footer .container{flex-direction:column}}
-@media(max-width:480px){.container{padding:0 16px}.page-hero h1{font-size:1.55rem}.join-card{padding:20px 16px}.qr-box{width:110px;height:110px}.nav-cta{padding:7px 16px;font-size:.85rem}}
-</style>
-</head>
-<body>
 
-<nav class="navbar">
-<div class="container">
-<a href="index.html" class="nav-logo"><i class="fas fa-robot"></i><span>moss具身工坊</span></a>
-<div class="nav-right">
-<a href="index.html" class="nav-back"><i class="fas fa-arrow-left"></i> <span>返回首页</span></a>
-<a href="index.html#join" class="nav-cta">加入社群</a>
-</div>
-</div>
-</nav>
+<link rel="stylesheet" href="assets/site.css" />
+<link rel="stylesheet" href="assets/pages.css" />
+</head>
+<body class="page-project-detail">
+
+<header class="site-header"><a class="brand" href="index.html"><span class="brand-word">moss</span><span>具身工坊</span></a><nav aria-label="主导航"><a href="projects.html">共创项目</a><a href="wang-zhi-talk.html">专家分享</a><a class="join-link" href="index.html#join">加入社区 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></nav></header>
+<main>
 
 <section class="page-hero">
 <div class="container">
 <div class="breadcrumb"><a href="index.html">首页</a> / <a href="projects.html">极客项目共创</a> / 项目 01</div>
-<span class="project-badge">PROJECT 01</span>
+
 <h1>将工业场景双臂打包装任务成功率推向 100%</h1>
 <p class="lead">让双臂机器人在真实产线上稳定完成「又柔、又长、又难」的打包装任务——从 82.4% 到 99.2%，我们想把最后那一步也拿下来。</p>
-</div>
-</section>
-
-<section class="join-hero">
-<div class="container">
-<div class="join-card">
-<div class="qr-box"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23f4f7fc'/%3E%3Crect x='10' y='10' width='180' height='180' fill='none' stroke='%23d5deea' stroke-width='3' stroke-dasharray='8 6'/%3E%3Ctext x='100' y='95' font-size='16' text-anchor='middle' fill='%238a9bb0' font-family='sans-serif'%3E二维码%3C/text%3E%3Ctext x='100' y='118' font-size='11' text-anchor='middle' fill='%23b0bccd' font-family='sans-serif'%3E待替换%3C/text%3E%3C/svg%3E" alt="项目 01 共创群二维码" /></div>
-<div class="join-info">
-<h3>扫码加入项目群</h3>
-<p>备注「打包装项目」，与项目成员直接交流、一起推进。</p>
-<a href="index.html#join" class="join-btn"><i class="fas fa-users"></i> 查看更多加入方式</a>
-</div>
-</div>
 </div>
 </section>
 
 <section class="project-detail">
 <div class="container">
 <div class="detail-grid">
-<div class="visual">
-<img src="assets/project-1.jpg" alt="双臂机器人打包装示意图" />
-</div>
+<aside class="visual"><figure><img src="assets/media/project-photo-1.webp" width="1080" height="1269" decoding="async" alt="双臂机器人打包装示意图" /><figcaption>双臂打包装 · 项目图</figcaption></figure><nav class="project-index" aria-label="本文目录"><a href="#section-1">项目背景</a><a href="#section-2">技术路线</a><a href="#section-3">当前进展</a></nav></aside>
 <div class="content">
 <div class="metrics">
 <div class="metric"><div class="value">99.2<span class="accent">%</span></div><div class="label">当前成功率</div></div>
 <div class="metric"><div class="value">31<span class="accent">s</span></div><div class="label">单次作业时间</div></div>
 <div class="metric"><div class="value">72<span class="accent">h</span></div><div class="label">连续无人值守</div></div>
 </div>
-<h4>项目背景</h4>
+<h2 id="section-1">项目背景</h2>
 <p>在 3C 与汽车零部件产线中，打包装是双臂协作机器人最难啃的硬骨头之一——纸箱会变形、胶带会粘歪、产品姿态每次都不完全一样。传统规则式编程面对这种柔性多变场景，成功率往往止步于 80% 上下，最后一道关还是要靠人。</p>
 <p>我们的目标很直接：把这个数字推向 100%，让整条线真正做到无人值守。</p>
-<h4>技术路线</h4>
+<h2 id="section-2">技术路线</h2>
 <ul>
 <li><strong>多模态感知融合</strong>：RGB-D 相机 + 六维力传感器 + 触觉阵列，把「看得见」和「感觉得到」统一到一套表征里</li>
 <li><strong>扩散策略打底</strong>：用真机示教数据训练 Diffusion Policy，覆盖柔性操作的多种模式</li>
@@ -133,12 +43,12 @@ img{max-width:100%;display:block}
 <li><strong>失败自恢复</strong>：实时检测偏差，自动回滚重试，而不是一错到底</li>
 <li><strong>数据飞轮</strong>：仿真增强 + 真机采集 + 自动标注，持续喂给策略迭代</li>
 </ul>
-<h4>当前进展</h4>
+<h2 id="section-3">当前进展</h2>
 <ul class="progress">
-<li class="done"><i class="fas fa-circle-check"></i> 试验线 72 小时连续无人值守运行，成功率稳定在 99.2%</li>
-<li class="done"><i class="fas fa-circle-check"></i> 部分数据集与训练脚本已在社区开源</li>
-<li class="doing"><i class="fas fa-circle-notch"></i> 正在与两家制造企业推进产线落地试点</li>
-<li class="goal"><i class="fas fa-flag"></i> 目标：Q4 实现 99.8% 稳定成功率</li>
+<li class="done"> 试验线 72 小时连续无人值守运行，成功率稳定在 99.2%</li>
+<li class="done"> 部分数据集与训练脚本已在社区开源</li>
+<li class="doing"> 正在与两家制造企业推进产线落地试点</li>
+<li class="goal"> 目标：Q4 实现 99.8% 稳定成功率</li>
 </ul>
 <div class="tech-tags">
 <span>#ROS 2</span><span>#Diffusion Policy</span><span>#力控</span><span>#双臂协同</span><span>#Isaac Sim</span><span>#模仿学习</span>
@@ -148,12 +58,21 @@ img{max-width:100%;display:block}
 </div>
 </section>
 
-<footer class="footer">
+<section class="join-hero">
 <div class="container">
-<div class="brand"><i class="fas fa-robot"></i> moss具身工坊</div>
-<div><a href="index.html">返回首页</a> &nbsp;|&nbsp; <a href="projects.html">项目列表</a> &nbsp;|&nbsp; &copy; 2026 moss具身工坊</div>
+<div class="join-card">
+
+<div class="join-info">
+<h3>参与项目共创</h3>
+<p>备注「打包装项目」，与项目成员直接交流、一起推进。</p>
+<a href="index.html#join" class="join-btn"> 查看社群加入方式</a>
 </div>
-</footer>
+</div>
+</div>
+</section>
+
+</main>
+<footer class="site-footer"><a class="brand" href="index.html"><span class="brand-word">moss</span><span>具身工坊</span></a><nav aria-label="页脚导航"><a href="index.html">首页</a><a href="projects.html">共创项目</a><a href="https://github.com/EmbodiedAI-Group/WALL-E-Workshop" target="_blank" rel="noopener noreferrer">GitHub <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></nav><p>© 2026 moss具身工坊</p></footer>
 
 </body>
 </html>

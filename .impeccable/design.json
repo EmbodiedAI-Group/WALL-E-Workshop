@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-31T06:08:34.748806+00:00",
+  "title": "Design System: moss具身工坊",
+  "extensions": {
+    "colorMeta": {
+      "blue": {
+        "role": "primary",
+        "displayName": "研究钴蓝",
+        "canonical": "#0837a5",
+        "tonalRamp": [
+          "oklch(0.150 0.0398 263.17)",
+          "oklch(0.260 0.0691 263.17)",
+          "oklch(0.370 0.0983 263.17)",
+          "oklch(0.480 0.1275 263.17)",
+          "oklch(0.590 0.1355 263.17)",
+          "oklch(0.700 0.1063 263.17)",
+          "oklch(0.820 0.0744 263.17)",
+          "oklch(0.950 0.0398 263.17)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "纸白",
+        "canonical": "#f6f6f5",
+        "tonalRamp": [
+          "oklch(0.150 0.0003 106.42)",
+          "oklch(0.260 0.0005 106.42)",
+          "oklch(0.370 0.0007 106.42)",
+          "oklch(0.480 0.0009 106.42)",
+          "oklch(0.590 0.0010 106.42)",
+          "oklch(0.700 0.0008 106.42)",
+          "oklch(0.820 0.0005 106.42)",
+          "oklch(0.950 0.0003 106.42)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "墨色",
+        "canonical": "#171415",
+        "tonalRamp": [
+          "oklch(0.150 0.0011 355.35)",
+          "oklch(0.260 0.0020 355.35)",
+          "oklch(0.370 0.0028 355.35)",
+          "oklch(0.480 0.0036 355.35)",
+          "oklch(0.590 0.0039 355.35)",
+          "oklch(0.700 0.0030 355.35)",
+          "oklch(0.820 0.0021 355.35)",
+          "oklch(0.950 0.0011 355.35)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "阅读灰",
+        "canonical": "#55595d",
+        "tonalRamp": [
+          "oklch(0.150 0.0018 248.01)",
+          "oklch(0.260 0.0031 248.01)",
+          "oklch(0.370 0.0044 248.01)",
+          "oklch(0.480 0.0058 248.01)",
+          "oklch(0.590 0.0061 248.01)",
+          "oklch(0.700 0.0048 248.01)",
+          "oklch(0.820 0.0034 248.01)",
+          "oklch(0.950 0.0018 248.01)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "规则线灰",
+        "canonical": "#b7b9b8",
+        "tonalRamp": [
+          "oklch(0.150 0.0006 165.06)",
+          "oklch(0.260 0.0010 165.06)",
+          "oklch(0.370 0.0014 165.06)",
+          "oklch(0.480 0.0018 165.06)",
+          "oklch(0.590 0.0020 165.06)",
+          "oklch(0.700 0.0015 165.06)",
+          "oklch(0.820 0.0011 165.06)",
+          "oklch(0.950 0.0006 165.06)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Condensed masthead",
+        "purpose": "Latin brand and selected research display words; giant homepage expression is route-specific."
+      },
+      "headline": {
+        "displayName": "Chinese section headline",
+        "purpose": "Primary section hierarchy."
+      },
+      "article-title": {
+        "displayName": "Reading section title",
+        "purpose": "Long-form academic and project sections."
+      },
+      "body": {
+        "displayName": "Chinese reading",
+        "purpose": "Default text; long-form pages locally increase line height."
+      },
+      "navigation": {
+        "displayName": "Direct navigation",
+        "purpose": "Compact, readable route controls."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "gallery-hover",
+        "value": "transform .55s cubic-bezier(.16,1,.3,1); scale(1.035)",
+        "purpose": "Homepage image-only hover; disabled under reduced motion."
+      },
+      {
+        "name": "catalog-hover",
+        "value": "transform .5s cubic-bezier(.22,1,.36,1); scale(1.025)",
+        "purpose": "Small catalog photograph hover; disabled under reduced motion."
+      },
+      {
+        "name": "join-magnet",
+        "value": "padding=24; magnetStrength=8; maxOffset=5px; spring stiffness=170 damping=16 mass=1",
+        "purpose": "Only the primary join navigation anchor. Vendor respects touch/reduced motion."
+      },
+      {
+        "name": "community-threads",
+        "value": "48 lines; amplitude=.65; distance=.4; speed=.22; angle=16; thickness=.45; softness=1.1; opacity=.28; fade=.2; outer opacity=.22",
+        "purpose": "Bounded non-interactive join background; not mounted at <=700px or reduced motion."
+      },
+      {
+        "name": "focus-outline",
+        "value": "2px solid var(--blue); outline-offset:5px",
+        "purpose": "Keyboard state; white outline within cobalt contact surface."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "home-wide",
+        "value": "1200px"
+      },
+      {
+        "name": "reading-intermediate",
+        "value": "1000px"
+      },
+      {
+        "name": "home-tablet",
+        "value": "900px"
+      },
+      {
+        "name": "subpage-single-column",
+        "value": "760px"
+      },
+      {
+        "name": "threads-static",
+        "value": "700px"
+      },
+      {
+        "name": "home-mobile",
+        "value": "600px"
+      },
+      {
+        "name": "home-small",
+        "value": "390px"
+      }
+    ],
+    "evidence": {
+      "sourceFiles": [
+        {
+          "path": "assets/site.css",
+          "sha256": "1cd4bd4755056b7f01925e39f0bcfd972343206102fb7df76a02810ebbe2008a"
+        },
+        {
+          "path": "assets/pages.css",
+          "sha256": "b4702b43db7e93e5290d0ee3459e4801e44cc28d7ef9193bf2875646d1240486"
+        },
+        {
+          "path": "src/motion.jsx",
+          "sha256": "bde8c9c2f02ebd9b8fe84c894d5104b09f6bcedaad2e4db11d2b2737f44c0ba3"
+        },
+        {
+          "path": "src/vendor/react-bits/Magnet.jsx",
+          "sha256": "f84da211a2202b8a5b7756f7969e2ebba16fb36987caee86171d099251ef0903"
+        },
+        {
+          "path": "src/vendor/react-bits/Threads.jsx",
+          "sha256": "8c08b4459efd9710c05e02594d52c9f8a6a78093a786aaf42bfdba1e301d7abe"
+        },
+        {
+          "path": "index.html",
+          "sha256": "aafe5aa4a8617af7ba51badad949798b37e548303f8aea03c40853581aaadce4"
+        },
+        {
+          "path": "projects.html",
+          "sha256": "61ae276a08fe40183e4c836b2afadf2b1bded66fd753139efec10b864a7ad77f"
+        },
+        {
+          "path": "project-1.html",
+          "sha256": "ef6685b80bb0a8205310b62570abf338b8d302e7b8fb2c3c71c15f11b5e0b852"
+        },
+        {
+          "path": "project-2.html",
+          "sha256": "050300fd06957fb80cededbef38e6b24bdf48ccd80bcb5c09c09cbfff63feff9"
+        },
+        {
+          "path": "project-3.html",
+          "sha256": "1c0f339559f10cdef751409e62ab48a0aa4c6c1fc386baf0c7978fea35a3ac4e"
+        },
+        {
+          "path": "project-4.html",
+          "sha256": "ed527960372eb905d021901ff3572bb1ea3f016a6710ee91da1420fca47123d3"
+        },
+        {
+          "path": "wang-zhi-talk.html",
+          "sha256": "b61430591c5ae723d8d29b8d43dd4b0f616144b3c5804e85b52658d4df6137f8"
+        }
+      ],
+      "product": "PRODUCT.md",
+      "direction": ".impeccable/surfaces/home.md",
+      "approval": {
+        "comp": ".impeccable/mocks/home-comp-2.png",
+        "originalProjectSubstitutions": "Explicitly approved by user; actual project-1..4 source images are retained, with project-3 remaining an illustration."
+      },
+      "screenshots": [
+        ".impeccable/screenshots/home-desktop.png",
+        ".impeccable/screenshots/home-375.png",
+        ".impeccable/screenshots/subpages/projects-desktop.png",
+        ".impeccable/screenshots/subpages/projects-mobile.png",
+        ".impeccable/screenshots/subpages/project-1-desktop.png",
+        ".impeccable/screenshots/subpages/project-1-mobile.png",
+        ".impeccable/screenshots/subpages/wang-zhi-talk-desktop.png",
+        ".impeccable/screenshots/subpages/wang-zhi-talk-mobile.png"
+      ],
+      "checks": [
+        ".impeccable/screenshots/home-validation.json",
+        ".impeccable/screenshots/subpages/checks.json"
+      ],
+      "productionMedia": [
+        "assets/media/hero-photo.webp",
+        "assets/media/project-photo-1.webp",
+        "assets/media/project-photo-2.webp",
+        "assets/media/project-photo-3.webp",
+        "assets/media/project-photo-4.webp"
+      ],
+      "rampProvenance": "Tonal ramps synthesized in OKLCH for panel exploration only; they are not shipping CSS semantic tokens.",
+      "notCanonized": "Unverified contact, meeting timezone, and project metrics remain product/content uncertainties. Tiny local metadata sizes are not a universal body-text standard.",
+      "productionMediaBytes": 713844,
+      "productionMediaSource": "All seven HTML routes now reference assets/media/*.webp wherever project media is used. The five WebP files retain the approved original imagery; total 713844 bytes.",
+      "verifiedDetails": {
+        "masthead": "440px desktop cap; top:-.375em",
+        "microMetadata": "11px minimum in the observed local metadata styles; not a global body-size rule",
+        "heroCrop": "Six-vertex angular composition, not an organic subject matte",
+        "egoGalleryCrop": "object-position:center 25%"
+      }
+    }
+  },
+  "components": [
+    {
+      "name": "Text action",
+      "kind": "button",
+      "refersTo": "text-action",
+      "description": "Direct text link with cobalt rule and direction arrow.",
+      "html": "<a class=\"ds-text-action\" href=\"#details\">查看分享与完整大纲 <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\"/></svg></a>",
+      "css": ".ds-text-action{display:inline-flex;align-items:center;gap:20px;min-height:44px;color:var(--blue);font-family:var(--font);font-weight:700;border-bottom:1px solid currentColor;text-decoration:none}.ds-text-action svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6}.ds-text-action:hover{color:var(--ink)}.ds-text-action:focus-visible{outline:2px solid var(--blue);outline-offset:5px}"
+    },
+    {
+      "name": "Publication navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Flat, text-first navigation; publication wordmark uses the actual display font.",
+      "html": "<nav class=\"ds-navigation\"><a class=\"ds-brand\" href=\"#home\"><span>moss</span>具身工坊</a><a href=\"#projects\">共创项目</a><a href=\"#talk\">专家分享</a></nav>",
+      "css": ".ds-navigation{display:flex;align-items:center;gap:28px;flex-wrap:wrap;padding:6px 0;border-bottom:1px solid var(--ink);font-family:var(--font);color:var(--ink);font-size:15px;font-weight:600}.ds-navigation a{min-height:44px;display:inline-flex;align-items:center;text-decoration:none;color:inherit}.ds-navigation .ds-brand{font-size:24px;font-weight:850;gap:8px}.ds-brand span{font-family:var(--display);font-size:1.75em;font-weight:900;color:var(--blue);line-height:.9}.ds-navigation a:hover{color:var(--blue)}.ds-navigation a:focus-visible{outline:2px solid var(--blue);outline-offset:5px}"
+    },
+    {
+      "name": "Event band",
+      "kind": "custom",
+      "refersTo": "event-band",
+      "description": "Compact horizontal event information organized with rules.",
+      "html": "<a class=\"ds-event\" href=\"#talk\"><strong>下一场分享</strong><span>王治 Leo Wang</span><span>HumanEgo × ForceBand</span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\"/></svg></a>",
+      "css": ".ds-event{display:flex;align-items:center;gap:24px;flex-wrap:wrap;border-block:1px solid var(--ink);padding:12px 0;color:var(--ink);font-family:var(--font);font-size:18px;text-decoration:none}.ds-event strong{color:var(--blue)}.ds-event span{border-left:1px solid var(--line);padding-left:22px}.ds-event svg{width:24px;height:24px;fill:none;stroke:var(--blue);stroke-width:1.6}.ds-event:hover{color:var(--blue)}.ds-event:focus-visible{outline:2px solid var(--blue);outline-offset:5px}"
+    },
+    {
+      "name": "Open project tags",
+      "kind": "chip",
+      "description": "Metadata stays open text rather than filled capsules.",
+      "html": "<div class=\"ds-tags\"><span>#ROS 2</span><span>#Diffusion Policy</span><span>#双臂协同</span></div>",
+      "css": ".ds-tags{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--muted);font-family:var(--font);font-size:.79rem;line-height:1.9}"
+    },
+    {
+      "name": "Reading index",
+      "kind": "custom",
+      "description": "Ruled index with ordinary anchor links, without a raised panel.",
+      "html": "<nav class=\"ds-index\" aria-label=\"本文目录\"><a href=\"#background\">项目背景</a><a href=\"#method\">技术路线</a><a href=\"#progress\">当前进展</a></nav>",
+      "css": ".ds-index{display:flex;flex-wrap:wrap;gap:0 20px;border-top:1px solid var(--line);padding-top:14px;font-family:var(--font)}.ds-index a{font-size:.8rem;color:var(--muted);line-height:1.7;padding-block:8px;text-decoration:underline;text-underline-offset:4px}.ds-index a:hover{color:var(--blue)}.ds-index a:focus-visible{outline:2px solid var(--blue);outline-offset:5px}"
+    },
+    {
+      "name": "Community contact",
+      "kind": "custom",
+      "refersTo": "community-contact",
+      "description": "Cobalt contact surface retaining the actual published handle and missing-QR state.",
+      "html": "<section class=\"ds-contact\"><h3>加入 moss具身工坊</h3><p>添加社区小助手微信，了解入群方式。</p><code tabindex=\"0\">wall-e-helper</code><p>群二维码更新中，暂通过小助手联系。</p></section>",
+      "css": ".ds-contact{background:var(--blue);color:var(--paper);padding:28px;font-family:var(--font)}.ds-contact h3{font-size:22px;margin:0 0 14px}.ds-contact p{font-size:14px;line-height:1.9;color:#e0e7ff}.ds-contact code{display:inline-block;font-family:var(--font);font-size:30px;border-bottom:1px solid #c6d4ff;line-height:1.6;user-select:all;color:#fff;margin:18px 0 12px}.ds-contact code:focus-visible{outline:2px solid #fff;outline-offset:5px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "研究社区报刊",
+    "overview": "以纸白、钴蓝与墨色建立中文具身智能社区的出版物气质。品牌字标与实际项目图承担识别，细分隔线、明确列宽和可读的中文正文承担结构；正文、项目与学术分享共享一套平面视觉语言。\n\n用户明确选择 home-comp-2，并批准用原有四个项目素材替代视觉稿中的生成图。落地实现保留原素材内容：EGO 项目图仍是插画，不被包装成实拍。选定首页的具体版面属于 .impeccable/surfaces/home.md，不是所有新页面必须复制的模板。",
+    "keyCharacteristics": [
+      "纸白底、钴蓝强调、墨色正文与细规则线。",
+      "凝缩英文品牌字标搭配清晰的中文无衬线正文。",
+      "真实项目图、独立阅读列与直接的文本链接。",
+      "平面排版；有界动效仅作状态反馈和局部氛围。"
+    ],
+    "rules": [
+      {
+        "name": "The Cobalt Signal Rule",
+        "body": "钴蓝承担品牌、重要标题、可执行链接与重点数据；墨色和中性灰维持阅读层级。",
+        "section": "colors"
+      },
+      {
+        "name": "The Rules Before Panels Rule",
+        "body": "用列宽、留白和一像素规则线组织内容，不用浮起的容器替代信息结构。",
+        "section": "elevation"
+      },
+      {
+        "name": "The Real Source Rule",
+        "body": "项目图片和学术内容沿用可追溯素材；不把生成图、假二维码或未确认数据写成新的事实背书。",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do 使用已托管的 Noto Sans SC 中文字体与 Barlow Condensed 字标，保持中文和拉丁文各自清晰的层级。",
+      "Do 让项目照片、插画、学术信息保留原身份，并明确缺失的入群二维码。",
+      "Do 保持文本链接可见、焦点环明确，内容不依赖 React 岛才能访问。",
+      "Do 在小屏把阅读双栏收成单栏，保留所有正文与参会信息。"
+    ],
+    "donts": [
+      "Don't 用渐变字、光晕、阴影圆角卡片替代现有的平面出版物语言。",
+      "Don't 把首页巨型字标、照片裁切或具体首屏叙事当作每条路由的模板。",
+      "Don't 在正文层放置持续跟随鼠标的装饰；Threads 仅存在于加入区域，减少动态偏好与窄屏不运行。",
+      "Don't 猜造讲者照片、社交账号、二维码、会议链接或项目表现。"
+    ]
+  }
+}
